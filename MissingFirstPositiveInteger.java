@@ -1,25 +1,22 @@
 
-import java.util.Arrays;
+import java.util.*;
 
 public class MissingFirstPositiveInteger {
     public static void main(String[] args) {
-        
+        firstMissingPositive(new int[]{-1,1,3,4,5});
     }
     public int firstMissingPositive(int[] nums) {
-        Arrays.sort(nums);
         int n=nums.length;
-        if(nums[0]>1 || nums[n-1]<=0){
-            return 1;
-        }
-        int sum=((n)*(n+1))/2;
+        Set<Integer> st=new HashSet<>();
         for(int i=0;i<n;i++){
-            if(nums[i]<=0){
-                continue;
-            }
-            if(i>=1 && nums[i]!=nums[i-1]){
-                sum-=nums[i];
-            }
+            st.add(nums[i]);
         }
-        return sum;
+        ArrayList list=new ArrayList();
+        Iterator it=st.iterator();
+        while(it.hasNext()){
+            list.add((int)it.next());
+        }
+        System.out.println(list);
+        return 0;
     }
 }
