@@ -15,7 +15,7 @@
 }
 
 public class invenSample extends Product  {
-     void fun(){
+    public void fun(){
         int sum=90;
         System.out.println(sum);
     }
@@ -23,7 +23,8 @@ public class invenSample extends Product  {
 
     public static void main(String args[]) {
         //a = 10;
-        fun();
+        invenSample a=new invenSample();
+        a.fun();
         String word = "Flag";
         int count1 = 0;
         int count2 = 0;

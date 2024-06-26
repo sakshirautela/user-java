@@ -1,4 +1,4 @@
-public class If2 { 
+public class j { 
 	static boolean b1, b2; 
 	public static void main(String [] args) { 
 		int x = 0; 

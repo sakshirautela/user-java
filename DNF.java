@@ -7,10 +7,9 @@ import java.util.*;
 
 // } Driver Code Ends
 //User function template for Java
-
-class Solution
+public class DNF
 {
-    public static void sort012(int a[], int n)
+    public  void sort012(int a[], int n)
     {
         // code here 
         int mid=0,beg=0,end=n-1,temp;
@@ -49,7 +48,7 @@ class GFG {
             for(int i=0; i<n; i++){
                 arr[i] = Integer.parseInt(inputLine[i]);
             }
-            Solution ob=new Solution();
+            DNF ob=new DNF();
             ob.sort012(arr, n);
             StringBuffer str = new StringBuffer();
             for(int i=0; i<n; i++){
