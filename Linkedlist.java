@@ -13,17 +13,19 @@ public class Linkedlist {
 
     public static void main(String... args) {
         Linkedlist list = new Linkedlist();
-        ListNode node = new ListNode(45);
+        ListNode node = new ListNode(1);
         // System.out.println(node.data);
-        list.insert(node, 34);
-        list.insertFromStrat(node, "sakshi");
-        list.insert(node, "sa");
-        list.insert(node, 78);
-        list.countNode(node);
+        list.insert(node, 2);
+        //list.insertFromStrat(node, "sakshi");
+        //list.insert(node, "sa");
+        //list.insert(node, 78);
+        System.out.println(countNode(node));
 
         list.Display(node);
-        // removeNthFromEnd(node, 2);
+        removeNthFromEnd(node, 1);
         // System.out.println(node.data);
+        list.Display(node);
+
     }
 
     ListNode insert(ListNode node, Object i) {
@@ -58,7 +60,7 @@ public class Linkedlist {
         }
     }
 
-    public int countNode(ListNode head) {
+    public static int countNode(ListNode head) {
         int count = 0;
         ListNode current = head;
         while (current != null) {
@@ -69,25 +71,38 @@ public class Linkedlist {
     }
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head == null) {
-            return null;
-        }
-        ListNode curr = head;
-        ListNode temp = head;
-        for (int i = 0; i < n; i++) {
-            curr = curr.next;
-        }
-        if (curr == null) {
-            head = head.next;
-            return head;
-        }
+        // if (head == null) {
+        //     return null;
+        // }
+        // ListNode curr = head;
+        // ListNode temp = head;
+        // for (int i = 0; i < n; i++) {
+        //     curr = curr.next;
+        // }
+        // if (curr == null) {
+        //     head = head.next;
+        //     return head;
+        // }
 
-        while ((curr.next) != null) {
-            curr = curr.next;
-            temp = temp.next;
+        // while ((curr.next) != null) {
+        //     curr = curr.next;
+        //     temp = temp.next;
 
+        // }
+        // temp.next = temp.next.next;
+        // return head;
+        int count=countNode(head);
+        if(n==count){
+            return head.next;
         }
-        temp.next = temp.next.next;
+        System.out.println(count);
+        ListNode curr=head;
+        int j=1;
+        while(j<=count-n-1){
+            curr=curr.next;
+            j++;
+        }
+        curr.next=(curr.next==null)?null:curr.next.next;
         return head;
     }
 
