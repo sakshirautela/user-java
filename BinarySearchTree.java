@@ -324,8 +324,7 @@ public class BinarySearchTree {
         TreeNode rightN = lowestCommonAncester2(root.right, n1, n2);
         if (leftN != null || rightN == null) {
             return leftN;
-        }
-        else{
+        } else {
             return rightN;
         }
     }
@@ -412,11 +411,11 @@ public class BinarySearchTree {
     }
 
     public static void main(String args[]) {
-        //BinarySearchTree tree = new BinarySearchTree();
+        // BinarySearchTree tree = new BinarySearchTree();
         // int val = 15;
         // var t = tree.GetNode(3);
-        //TreeNode root = new TreeNode(4);
-        //tree.insertion(root, 2);
+        // TreeNode root = new TreeNode(4);
+        // tree.insertion(root, 2);
         // tree.insertion(root, 3);
         // tree.insertion(root, 2);
         // tree.insertion(root, 1);
@@ -519,27 +518,56 @@ public class BinarySearchTree {
         }
     }
     // public TreeNode balanceBST(TreeNode root) {
-    //     ArrayList<Integer> arrayList=new ArrayList<Integer>();
-    //     inOrderbalanceBST(arrayList, root);
-    //     return createTree(arrayList,0,arrayList.size()-1);
+    // ArrayList<Integer> arrayList=new ArrayList<Integer>();
+    // inOrderbalanceBST(arrayList, root);
+    // return createTree(arrayList,0,arrayList.size()-1);
     // }
     // private TreeNode createTree(ArrayList<Integer> arrayList, int i, int j) {
-    //     if(i>j){
-    //         return null;
-    //     }
-    //     int mid=(i+j)/2;
-    //     TreeNode rightTreeNode=createTree(arrayList, mid+1, j);
-    //     TreeNode lefTreeNode=createTree(arrayList, mid-1, i);
-    //     TreeNode Node=new TreeNode(arrayList.get(mid),lefTreeNode,rightTreeNode);
-    //     return Node;
+    // if(i>j){
+    // return null;
+    // }
+    // int mid=(i+j)/2;
+    // TreeNode rightTreeNode=createTree(arrayList, mid+1, j);
+    // TreeNode lefTreeNode=createTree(arrayList, mid-1, i);
+    // TreeNode Node=new TreeNode(arrayList.get(mid),lefTreeNode,rightTreeNode);
+    // return Node;
     // }
     // public void inOrderbalanceBST(ArrayList<Integer> arrayList,TreeNode root) {
     // if (root == null) {
-    //     return;
+    // return;
     // }
 
     // inOrderbalanceBST(arrayList,root.left);
     // arrayList.add(root.val);
     // inOrderbalanceBST(arrayList,root.right);
     // }
+    public void flatten(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        inorderFlatten(root, list);
+        root.val = list.get(0);
+        root.left = null;
+        for (int i = 0; i < list.size(); i++) {
+            if (root.right == null) {
+                root.right = new TreeNode(list.get(i));
+                root = root.right;
+                root.left = null;
+            } else {
+                root.val = list.get(i);
+                root = root.right;
+                root.left = null;
+            }
+        }
+    }
+
+    private void inorderFlatten(TreeNode root, ArrayList<Integer> list) {
+        if (root == null) {
+            return;
+        }
+        list.add(root.val);
+        inorderFlatten(root.left, list);
+        inorderFlatten(root.right, list);
+    }
 }
