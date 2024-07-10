@@ -1,9 +1,11 @@
+import java.util.HashMap;
+
 class ListNode {
-    Object data;
+    int val;
     ListNode next;
 
-    ListNode(Object data) {
-        this.data = data;
+    ListNode(int data) {
+        this.val = data;
         this.next = null;
     }
 }
@@ -14,7 +16,7 @@ public class Linkedlist {
     public static void main(String... args) {
         Linkedlist list = new Linkedlist();
         ListNode node = new ListNode(1);
-        // System.out.println(node.data);
+        // System.out.println(node.val);
         list.insert(node, 2);
         //list.insertFromStrat(node, "sakshi");
         //list.insert(node, "sa");
@@ -28,7 +30,7 @@ public class Linkedlist {
 
     }
 
-    ListNode insert(ListNode node, Object i) {
+    ListNode insert(ListNode node, int i) {
         // Node new_node=new Node(i);
         // head=node;
         if (node == null) {
@@ -44,18 +46,18 @@ public class Linkedlist {
         return node;
     }
 
-    ListNode insertFromStrat(ListNode node, Object i) {
+    ListNode insertFromStrat(ListNode node, int i) {
         ListNode new_node = new ListNode(i);
         head = new_node;
         new_node.next = node;
         // System.out.println(new_node.data);
-        System.out.println(head.data);
+        System.out.println(head.val);
         return head;
     }
 
     void Display(ListNode node) {
         while (node != null) {
-            System.out.println(node.data);
+            System.out.println(node.val);
             node = node.next;
         }
     }
@@ -128,5 +130,45 @@ public class Linkedlist {
 
         )
     }*/
+    public ListNode mergeNodesBetweenZeroes(ListNode head) {
+        ListNode ptr=head.next; 
+        ListNode temp=head; 
+        int sum=0;
+        while (ptr!=null) {
+            while (ptr!=null && ptr.val!=0) {
+                sum+=ptr.val;
+                ptr=ptr.next;
+            }
+            if(ptr.val==0){
+                temp.next.val=sum;
+                sum=0;
+                temp=temp.next;
+            }
+        }
+        temp.next=null;
+        return head.next;
+    }
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        ListNode temp=headA;
+        hm.put(temp.val, 1);
+        while (temp.next!=null) {
+            hm.put(temp.next.val, 1);
+            temp=temp.next;
+        }
+        temp=headB;
+        ListNode res=null;
+        while (temp!=null) {
+            while(temp!=null && hm.containsKey(temp.val)){
+                temp=temp.next;
+            }
+            if(temp==null){
+                return res;
+            }
+            res=temp;
+            temp=temp.next;
+        }
+        return res;
+    }
 
 }
