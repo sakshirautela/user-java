@@ -1,21 +1,24 @@
 class SqrtFind {
-    public static int mySqrt(int x) {
-        int end=x;
-        int start=1;
-        while(start<=end){
-            int mid= start  +  (end  - start) / 2;
-            System.out.println(mid);
-            if(mid*mid==x){
-                return mid;
+    public static long mySqrt(int n) {
+        long low = 0;
+        long high = n;
+        long ans = 0; 
+
+        while(low <= high){
+          
+            long mid = low + (high - low) / 2;
+            
+          
+            if((mid * mid) <= n){
+                ans = mid;        
+                low = mid + 1;
             }
-            else if(mid*mid>x){
-                end=mid-1;
-            }
-            else{
-                start=mid+1;
+            
+            else if((mid * mid) > n){
+                high = mid - 1;    
             }
         }
-        return Math.round(start);
+        return ans;
     }
     public static int mySqrt2(int x){
         int result=-1;

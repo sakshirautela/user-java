@@ -1,6 +1,11 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
 class ListNode {
     Object data;
     ListNode next;
+    public Integer val;
 
     ListNode(Object data) {
         this.data = data;
@@ -113,5 +118,66 @@ public class Linkedlist {
 
         )
     }*/
+    public boolean isPalindrome(ListNode head) {
+        ArrayList<Integer> al=new ArrayList<>();
+        while(head!=null){
+            al.add(head.val);
+            head=head.next;
+        }
+        int i=0;
+        int j=al.size()-1;
+        while(i<j){
+            if(al.get(i)!=al.get(j)){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        HashSet<ListNode> hm=new HashSet<>();
+        ListNode temp=headA;
+        while (temp!=null) {
+            hm.add(temp);
+            temp=temp.next;
+        }
+        while (headB!=null) {
+            if(hm.contains(headB)){
+                return headB;
+            }
+            headB=headB.next;
+        }
+        return headB;
+    }
+    public Node rotate(Node head, int k) {
+        if (head == null || k == 0) {
+            return head;
+        }
+
+        // Step 1: Find the length of the linked list
+        Node current = head;
+        int length = 1;
+        while (current.next != null) {
+            current = current.next;
+            length++;
+        }
+        k = k % length;
+        if (k == 0) {
+            return head;
+        }
+        current = head;
+        for (int i = 1; i < k; i++) {
+            current = current.next;
+        }
+        Node newHead = current.next;
+        current.next = null;
+        Node tail = newHead;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        tail.next = head;
+        return newHead;
+    }
 
 }
