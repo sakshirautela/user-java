@@ -3,6 +3,7 @@ import java.util.HashMap;
 class ListNode {
     int val;
     ListNode next;
+    public Integer val;
 
     ListNode(int data) {
         this.val = data;

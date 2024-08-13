@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Scanner;
 
 class TreeNode {
     int val;
@@ -10,8 +11,11 @@ class TreeNode {
 
     public TreeNode(int val) {
         this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }
+
 
 public class BinarySearchTree {
 
@@ -324,9 +328,11 @@ public class BinarySearchTree {
         TreeNode rightN = lowestCommonAncester2(root.right, n1, n2);
         if (leftN != null || rightN == null) {
             return leftN;
-        } else {
+        }
+        if (rightN != null || leftN == null) {
             return rightN;
         }
+        return root;
     }
 
     public static int lowestCommonAncester(TreeNode root, int n1, int n2) {
@@ -411,7 +417,7 @@ public class BinarySearchTree {
     }
 
     public static void main(String args[]) {
-        // BinarySearchTree tree = new BinarySearchTree();
+        BinarySearchTree tree = new BinarySearchTree();
         // int val = 15;
         // var t = tree.GetNode(3);
         // TreeNode root = new TreeNode(4);
@@ -445,7 +451,7 @@ public class BinarySearchTree {
         int array[] = { 2, 3, 4, 5, 6 };
         TreeNode root = new TreeNode(array[0]);
         createTreeArray(root, array);
-        System.out.print(minDepth(root));
+        // System.out.print(minDepth(root));
 
     }
 
@@ -463,6 +469,58 @@ public class BinarySearchTree {
             int diff1 = Math.abs(root.val - root.left.val);
             mindiff = Math.min(diff1, mindiff);
             helper(root.left, mindiff);
+        }
+        if (root.right != null) {
+            int diff2 = Math.abs(root.val - root.right.val);
+            mindiff = Math.min(diff2, mindiff);
+            helper(root.right, mindiff);
+
+        }
+        return mindiff;
+    }
+
+    public static int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return helperMinDepth(root, 1);
+    }
+
+    public static int helperMinDepth(TreeNode root, int level) {
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+        if (root.left == null && root.right == null) {
+            return level;
+        }
+        int left = helperMinDepth(root.right, level + 1);
+        int right = helperMinDepth(root.left, level + 1);
+        return Math.min(left, right);
+    }
+
+    public static void createTreeArray(TreeNode root, int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            insertion(root, array[i]);
+        }
+    }
+
+    public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        helperDistance(root, target, list, k, 1);
+        return list;
+    }
+
+    private void helperDistance(TreeNode root, TreeNode target, ArrayList<Integer> list, int k, int i) {
+        if (root == null) {
+            return;
+        }
+
+        if (i == k) {
+            list.add(root.val);
+        }
+
+        if (root.val == target.val) {
+            helperDistance(root, target, list, k, i + 1);
         }
         if (root.right != null) {
             int diff2 = Math.abs(root.val - root.right.val);

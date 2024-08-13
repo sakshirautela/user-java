@@ -1,9 +1,11 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 class TreeNode {
     int val;
@@ -263,9 +265,7 @@ public class BinaryTree {
     // }
     static class Info {
         TreeNode node;
-        public Object left;
         int hd;
-
         Info(TreeNode node, int hd) {
             this.node = node;
             this.hd = hd;
@@ -305,6 +305,27 @@ public class BinaryTree {
         for (int i = min; i <= max; i++) {
             System.out.println(map.get(i));
         }
+    }
+    public static ArrayList<Integer> bottomView(TreeNode root){
+        ArrayList<Integer> al=new ArrayList<Integer>();
+        Queue<Info> q=new ArrayDeque<Info>();
+        int hd=0;
+        TreeMap<Integer,Integer> hm=new TreeMap();
+        q.add(new Info(root, hd));
+        while (!q.isEmpty()) {
+            Info a=q.poll();
+            hm.put(a.hd,a.node.val);
+            if(a.node.left!=null){
+                q.add(new Info(a.node.left, a.hd-1));
+            }
+            if(a.node.right!=null){
+                q.add(new Info(a.node.right, a.hd+1));
+            }
+        }
+        for(int s:hm.keySet()){
+            al.add(hm.get(s));
+        }
+        return al;
     }
 
     public static void kthLevel(TreeNode root, int level, int k) {
