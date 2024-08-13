@@ -7,7 +7,7 @@ class sol{
     }
 }
 
-class Solution{
+public class Leaders{
     // function to find leaders 
     static ArrayList<Integer> leaders(int[] arr,int n){
         int max=arr[n-1];

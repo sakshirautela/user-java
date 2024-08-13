@@ -543,25 +543,20 @@ public class BinaryTree {
             helperDistance(root, target, list, k, i + 1);
         }
     }
-
-    //left sum+right sum==root
-    static boolean isSumTree(TreeNode root) {
-        // Your code here
+    public boolean isSymmetric(TreeNode root) {
         if(root==null){
             return true;
         }
-        if(Sum(root.left)+Sum(root.right)==root.val && isSumTree(root.left) && isSumTree(root.right)){
+        return isSymmetricHelper(root.left,root.right);
+    }
+
+    private static boolean isSymmetricHelper(TreeNode node1, TreeNode node2) {
+        if(node1==null && node2==null){
             return true;
-        }else{
+        }
+        else if(node1==null || node2==null){
             return false;
         }
-    }
-    private static int Sum(TreeNode node) {
-        if(node==null){
-            return 0;
-        }
-        int l=Sum(node.left);
-        int r=Sum(node.right);
-        return l+r+node.val;
+        return (node1.val==node2.val && isSymmetricHelper(node1.left,node2.right) && isSymmetricHelper(node1.right, node2.left));
     }
 }

@@ -16,6 +16,7 @@ class TreeNode {
     }
 }
 
+
 public class BinarySearchTree {
 
     // public Node GetNode(int i) {
@@ -521,5 +522,110 @@ public class BinarySearchTree {
         if (root.val == target.val) {
             helperDistance(root, target, list, k, i + 1);
         }
+        if (root.right != null) {
+            int diff2 = Math.abs(root.val - root.right.val);
+            mindiff = Math.min(diff2, mindiff);
+            helper(root.right, mindiff);
+
+        }
+        return mindiff;
+    }
+
+    public static int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return helperMinDepth(root, 1);
+    }
+
+    public static int helperMinDepth(TreeNode root, int level) {
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+        if (root.left == null && root.right == null) {
+            return level;
+        }
+        int left = helperMinDepth(root.right, level + 1);
+        int right = helperMinDepth(root.left, level + 1);
+        return Math.min(left, right);
+    }
+
+    public static void createTreeArray(TreeNode root, int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            insertion(root, array[i]);
+        }
+    }
+
+    public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        helperDistance(root, target, list, k, 1);
+        return list;
+    }
+
+    private void helperDistance(TreeNode root, TreeNode target, ArrayList<Integer> list, int k, int i) {
+        if (root == null) {
+            return;
+        }
+
+        if (i == k) {
+            list.add(root.val);
+        }
+
+        if (root.val == target.val) {
+            helperDistance(root, target, list, k, i + 1);
+        }
+    }
+    // public TreeNode balanceBST(TreeNode root) {
+    // ArrayList<Integer> arrayList=new ArrayList<Integer>();
+    // inOrderbalanceBST(arrayList, root);
+    // return createTree(arrayList,0,arrayList.size()-1);
+    // }
+    // private TreeNode createTree(ArrayList<Integer> arrayList, int i, int j) {
+    // if(i>j){
+    // return null;
+    // }
+    // int mid=(i+j)/2;
+    // TreeNode rightTreeNode=createTree(arrayList, mid+1, j);
+    // TreeNode lefTreeNode=createTree(arrayList, mid-1, i);
+    // TreeNode Node=new TreeNode(arrayList.get(mid),lefTreeNode,rightTreeNode);
+    // return Node;
+    // }
+    // public void inOrderbalanceBST(ArrayList<Integer> arrayList,TreeNode root) {
+    // if (root == null) {
+    // return;
+    // }
+
+    // inOrderbalanceBST(arrayList,root.left);
+    // arrayList.add(root.val);
+    // inOrderbalanceBST(arrayList,root.right);
+    // }
+    public void flatten(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        inorderFlatten(root, list);
+        root.val = list.get(0);
+        root.left = null;
+        for (int i = 0; i < list.size(); i++) {
+            if (root.right == null) {
+                root.right = new TreeNode(list.get(i));
+                root = root.right;
+                root.left = null;
+            } else {
+                root.val = list.get(i);
+                root = root.right;
+                root.left = null;
+            }
+        }
+    }
+
+    private void inorderFlatten(TreeNode root, ArrayList<Integer> list) {
+        if (root == null) {
+            return;
+        }
+        list.add(root.val);
+        inorderFlatten(root.left, list);
+        inorderFlatten(root.right, list);
     }
 }
