@@ -6,7 +6,7 @@ public class IndexesOfSubArraySum {
         // Your code here
         int sum=0;
         int j=0;
-        ArrayList<Integer> al=new ArrayList();
+        ArrayList<Integer> al=new ArrayList<Integer>();
         for(int i=0;i<n;i++){
             sum+=arr[i];
             while(sum>s && j<=i){

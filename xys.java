@@ -1,10 +1,10 @@
 class sample {
-    public static class abc {
+    static class abc {
         public void print() {
             System.out.println("this is vipin Bhandari");
         }
 
-        public static void print1() {
+        public void print1() {
             System.out.println("this is vipin Bhandari87675");
         }
     }
@@ -15,7 +15,7 @@ class sample {
 }
 
 
-public static class xys {
+public class xys {
     static sample b;
 
     public static void main(String args[]) {

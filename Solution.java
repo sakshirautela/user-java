@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class Solution {
@@ -15,5 +14,6 @@ public class Solution {
             r=a+(b*result);
             System.out.print(" "+r);
         }
+        obj.close();
     }
 }

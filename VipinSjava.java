@@ -8,9 +8,9 @@ public class VipinSjava {
         for(int i=0;i<nums.length;i++){
             sum+=nums[i];
         }
-        final int sub(int a,int b) {
-            return a-b;
-        }
+        // final int sub(int a,int b) {
+        //     return a-b;
+        // }
         return sum;
     }
 }
