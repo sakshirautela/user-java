@@ -3,7 +3,7 @@
 
 
 import java.util.*;
-class GfG
+public class GfG
 {
     public static void main(String args[])
         {

@@ -9,7 +9,7 @@ class SortedSquares {
             System.out.println(nums[i]);
         }
         for(int i=0;i<nums.length;i++){
-            //int data=Math.abs(nums[i]);
+            int data=Math.abs(nums[i]);
             // System.out.println(nums[i]);
             res[i]=(int)Math.sqrt(data);
         }

@@ -3,7 +3,6 @@ import java.util.HashMap;
 class ListNode {
     int val;
     ListNode next;
-    public Integer val;
 
     ListNode(int data) {
         this.val = data;
@@ -171,5 +170,40 @@ public class Linkedlist {
         }
         return res;
     }
+    // 3->3->5 +1==3->3->6
+    public ListNode addOne(ListNode head) {
+        // code here.
+        head = reversLinkedList(head);
+        ListNode current = head;
+        int carry = 1;
+        
+        while (current != null) {
+            int sum = current.val + carry;
+            carry = sum / 10;
+            current.val = sum % 10;
+            
+            if (current.next == null && carry > 0) {
+                current.next = new ListNode(carry);
+                carry = 0;
+            }
+            current = current.next;
+        }
+        
+        head = reversLinkedList(head);
+        return head;
+    }
 
+    private static ListNode reversLinkedList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        ListNode next = null;
+        
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
 }

@@ -8,8 +8,8 @@ public class ClassRoom{
             this.dest=d;
         }
     }
-    public static void CreateGraph(ArrayList<Edges> graph){
-        for(int i=0;i<graph.size();i++){
+    public static void CreateGraph(ArrayList<Edges>[] graph){
+        for(int i=0;i<graph.length;i++){
             graph[i]=new ArrayList<Edges>();
         }
         graph[0].add(new Edges(0,2));

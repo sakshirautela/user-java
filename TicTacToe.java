@@ -21,9 +21,9 @@ public class TicTacToe extends JFrame {
                 JButton button = (JButton) e.getSource();
                 if (button.getText().isEmpty()) {
                     if (xTurn) {
-                        button.setText("c");
-                    } else {
                         button.setText("X");
+                    } else {
+                        button.setText("O");
                     }
 
                     xTurn = !xTurn;

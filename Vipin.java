@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-public class vipin {
+public class Vipin {
 
     public static void main(String args[]) {
         int[] digit = { 9, 8, 6, 8, 6 };

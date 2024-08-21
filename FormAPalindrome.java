@@ -18,5 +18,6 @@ public class FormAPalindrome {
                 j--;
             }
         }
+        return res;
     }
 }
