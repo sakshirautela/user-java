@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.HashSet;
 
 class ListNode {
     int val;
@@ -7,6 +8,17 @@ class ListNode {
     ListNode(int data) {
         this.val = data;
         this.next = null;
+    }
+}
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int data) {
+        this.val = data;
+        this.right = null;
+        this.left = null;
     }
 }
 
@@ -206,4 +218,141 @@ public class Linkedlist {
         }
         return prev;
     }
+        // Function to find the length of a loop in the linked list.
+    public int countNodesinLoop(ListNode head) {
+        // Add your code here.
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow){
+                int len=1;
+                slow=slow.next;
+                while(slow!=fast){
+                    len++;
+                    slow=slow.next;
+                }
+                return len;
+            }
+        }
+        return 0;
+    }
+    public ListNode modifiedList(int[] nums, ListNode head) {
+        HashSet<Integer> hs =new HashSet<Integer>();
+        for (int i : nums) {
+            hs.add(i);
+        }
+        while(head!=null && hs.contains(head.val)){
+            head=head.next;
+        }
+        if(head==null){
+            return null;
+        }
+        ListNode temp=head;
+        while (temp.next!=null) {
+            if(hs.contains(temp.next.val)){
+                temp.next=temp.next.next;
+            }
+            else{
+                temp=temp.next;
+            }
+        }
+        return head;
+    }
+    public boolean isSubPath(ListNode head, TreeNode root) {
+        if(root==null){
+            return false;
+        }
+        return (getPath(head, root) || isSubPath(head, root.right)) || isSubPath(head, root.left);
+    }
+
+    private boolean getPath(ListNode head, TreeNode root) {
+        if (head==null ){
+            return true;
+        }if ( root==null) {
+            return false;
+        }
+        if (head.val==root.val) {
+            return getPath(head.next,root.left)|| getPath(head.next,root.right);
+        }
+        return false;
+    }
+    
+    public boolean isSubPath2(ListNode head, TreeNode root) {
+        return dfs(head, head, root);
+    }
+
+    boolean dfs(ListNode head, ListNode cur, TreeNode root) {
+        if(cur == null) return true;
+        if(root == null) return false;
+        if(cur.val == root.val) cur = cur.next;
+        else if (head.val == root.val) head = head.next;
+        else cur = head;
+        return dfs(head, cur, root.left) || dfs(head, cur, root.right);
+    }
+    public ListNode[] splitListToParts(ListNode head, int k) {
+        ListNode[] res=new ListNode[k];
+        int len=getLen(head);
+        int s=len/k;
+        int rem=len%k;
+        ListNode temp=head;
+        for (int i = 0; i < k; i++) {
+            ListNode newNode=new ListNode(0);
+            ListNode trav=newNode;
+            int n=s;
+            if(rem>0){
+                rem--;
+                n++;
+            }
+            while(n>0){
+                n--;
+                trav.next=new ListNode(temp.val);
+                trav=trav.next;
+                temp=temp.next;
+            }
+            res[i]=newNode.next;
+        }
+        return res;
+    }
+
+    private int getLen(ListNode head) {
+        if(head==null){
+            return 0;
+        }
+        int c=0;
+        while(head!=null){
+            c++;
+            head=head.next;
+        }
+        return c;
+    }
+    public ListNode insertGreatestCommonDivisors(ListNode head) {
+        ListNode temp=head;
+        while (temp!=null && temp.next!=null) {
+            ListNode curr=temp.next;
+            temp.next=new ListNode(GCD(temp.val,temp.next.val));
+            temp.next.next=curr;
+            temp=temp.next.next;
+        }
+        return head;
+    }
+
+    private int GCD(int a, int b) {
+        if(b==0){
+            return a;
+        }
+        return GCD(b, a%b);
+    }
+    int getMiddle(Node head) {
+        // Your code here.
+        Node slow=head;
+        Node fast=head;
+        while(fast.next!=null && fast.next.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+        }
+        return slow.data;
+    }
+
 }
