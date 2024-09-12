@@ -183,7 +183,32 @@ public class GraphUnDirected {
         
     }
     
-    
+    public static int dijkstra(ArrayList<Edge>[] graph,int src){
+        boolean visited[]=new boolean[graph.length];
+        int dist[] = new int[graph.length];
+        for (int i = 0; i < dist.length; i++) {
+            if(i!=src){
+                dist[i]=Integer.MAX_VALUE;
+            }
+        }
+        PriorityQueue<dijkstraPair> pq=new PriorityQueue<dijkstraPair>();
+        pq.add(new dijkstraPair(src, 0));
+        while (!pq.isEmpty()) {
+            dijkstraPair p=pq.remove();
+            visited[p.node]=true;
+            for (int index = 0; index < graph[p.node].size(); index++) {
+                Edge e=graph[p.node].get(index);
+                if(!visited[e.dest]){
+                    pq.add(new dijkstraPair(e.dest, e.weight));
+                    if(dist[e.dest]>(dist[e.src]+e.weight)){
+                        dist[e.dest]=dist[e.src]+e.weight;
+                    }
+                }
+            }
+        }
+        return dist[graph.length-1];
+
+    }
     public static class primsPair implements Comparable<primsPair>{
         int vertex;
         int cost;
@@ -200,8 +225,8 @@ public class GraphUnDirected {
     public static int primsAlgoMST(ArrayList<Edge>[] graph,int src){
         int cost=0;
         boolean[] visit=new boolean[graph.length];
-        ArrayList<Integer> ans=new ArrayList();
-        PriorityQueue<primsPair> pq=new PriorityQueue();
+        //ArrayList<Integer> ans=new ArrayList<Integer>();
+        PriorityQueue<primsPair> pq=new PriorityQueue<primsPair>();
         pq.add(new primsPair(src, 0));
         while (!pq.isEmpty()) {
             primsPair curr=pq.remove();
@@ -220,6 +245,7 @@ public class GraphUnDirected {
     }
     public static void main(String[] args) {
         int v = 4;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge>[] graph = new ArrayList[v];
         //graohCreation(v, graph);
         // BFS(graph);
@@ -240,6 +266,7 @@ public class GraphUnDirected {
         System.out.println(primsAlgoMST(graph, 0));
     }
 
+    @SuppressWarnings("unused")
     private static void createGraph(ArrayList<Edge>[] graph, int v) {
         for (int i = 0; i < v; i++) {
             graph[i] = new ArrayList<>();

@@ -6,8 +6,6 @@ public class SortJumbleNumbers {
         for(int i:nums){
             hm.put(i,jumbled(i,mapping));
         }
-        Arrays.
-        
     }
     public static int jumbled(int n,int[] mapping){
         String res="";

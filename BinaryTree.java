@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Scanner;
 import java.util.TreeMap;
+
 
 class TreeNode {
     int val;
@@ -13,8 +13,20 @@ class TreeNode {
 
     public TreeNode(int val) {
         this.val = val;
-        this.left = left;
-        this.right = right;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class Node {
+    int val;
+    Node left;
+    Node right;
+
+    public Node(int val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
     }
 }
 
@@ -92,35 +104,33 @@ public class BinaryTree {
 
     // }
 
-    // public void BFS(TreeNode root) {
-    // if(root==null){
-    // return;
-    // }
-    // Queue<TreeNode> q = new LinkedList();
-    // q.add(root);
-    // q.add(null);
-    // while (!q.isEmpty()) {
-    // TreeNode curr=q.remove();
-    // if(curr==null){
-    // System.out.println();
-    // if(q.isEmpty()){
-    // break;
-    // }
-    // else{
-    // q.add(null);
-    // }
-    // }
-    // else{
-    // System.out.print(curr.val+" ");
-    // if(curr.left!=null){
-    // q.add(curr.left);
-    // }
-    // if(curr.right!=null){
-    // q.add(curr.right);
-    // }
-    // }
-    // }
-    // }
+    public void BFS(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        q.add(root);
+        q.add(null);
+        while (!q.isEmpty()) {
+            TreeNode curr = q.remove();
+            if (curr == null) {
+                System.out.println();
+                if (q.isEmpty()) {
+                    break;
+                } else {
+                    q.add(null);
+                }
+            } else {
+                System.out.print(curr.val + " ");
+                if (curr.left != null) {
+                    q.add(curr.left);
+                }
+                if (curr.right != null) {
+                    q.add(curr.right);
+                }
+            }
+        }
+    }
 
     // public int height(TreeNode root) {
     // int count1 = 0;
@@ -266,6 +276,7 @@ public class BinaryTree {
     static class Info {
         TreeNode node;
         int hd;
+
         Info(TreeNode node, int hd) {
             this.node = node;
             this.hd = hd;
@@ -306,23 +317,24 @@ public class BinaryTree {
             System.out.println(map.get(i));
         }
     }
-    public static ArrayList<Integer> bottomView(TreeNode root){
-        ArrayList<Integer> al=new ArrayList<Integer>();
-        Queue<Info> q=new ArrayDeque<Info>();
-        int hd=0;
-        TreeMap<Integer,Integer> hm=new TreeMap();
+
+    public static ArrayList<Integer> bottomView(TreeNode root) {
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        Queue<Info> q = new ArrayDeque<Info>();
+        int hd = 0;
+        TreeMap<Integer, Integer> hm = new TreeMap<Integer, Integer>();
         q.add(new Info(root, hd));
         while (!q.isEmpty()) {
-            Info a=q.poll();
-            hm.put(a.hd,a.node.val);
-            if(a.node.left!=null){
-                q.add(new Info(a.node.left, a.hd-1));
+            Info a = q.poll();
+            hm.put(a.hd, a.node.val);
+            if (a.node.left != null) {
+                q.add(new Info(a.node.left, a.hd - 1));
             }
-            if(a.node.right!=null){
-                q.add(new Info(a.node.right, a.hd+1));
+            if (a.node.right != null) {
+                q.add(new Info(a.node.right, a.hd + 1));
             }
         }
-        for(int s:hm.keySet()){
+        for (int s : hm.keySet()) {
             al.add(hm.get(s));
         }
         return al;
@@ -340,6 +352,7 @@ public class BinaryTree {
         kthLevel(root.right, level + 1, k);
     }
 
+    @SuppressWarnings("unused")
     public static TreeNode lowestCommonAncester2(TreeNode root, int n1, int n2) {
         if (root == null || root.val == n1 || root.val == n2) {
             return root;
@@ -437,7 +450,7 @@ public class BinaryTree {
     }
 
     public static void main(String args[]) {
-        BinaryTree tree = new BinaryTree();
+        // BinaryTree tree = new BinaryTree();
         // int val = 15;
         // var t = tree.GetNode(3);
         // TreeNode root = new TreeNode(4);
@@ -476,29 +489,38 @@ public class BinaryTree {
     }
 
     public static int getMinimumDifference(TreeNode root) {
-        int b = helper(root.right, Integer.MAX_VALUE);
-        int a = helper(root.left, Integer.MAX_VALUE);
-        return Math.min(a, b);
-
+        int res=Integer.MAX_VALUE;
+        ArrayList<Integer> list=new ArrayList<Integer>();
+        for (int i = 1; i < list.size(); i++) {
+            res=Math.min(res,Math.abs(list.get(i)-list.get(i-1)));
+        }
+        return res;
     }
 
-    public static int helper(TreeNode root, int mindiff) {
-        if (root == null)
-            return Integer.MAX_VALUE;
-        if (root.left != null) {
-            int diff1 = Math.abs(root.val - root.left.val);
-            mindiff = Math.min(diff1, mindiff);
-            helper(root.left, mindiff);
+    public static void helpergetMinimumDifference(TreeNode root,ArrayList<Integer> list) {
+        if(root==null){
+            return;
         }
-        if (root.right != null) {
-            int diff2 = Math.abs(root.val - root.right.val);
-            mindiff = Math.min(diff2, mindiff);
-            helper(root.right, mindiff);
-
-        }
-        return mindiff;
+        helpergetMinimumDifference(root.left, list);
+        list.add(root.val);
+        helpergetMinimumDifference(root.right, list);
     }
+    static int min=Integer.MAX_VALUE;
+    static Integer prev=null;
 
+    public int getMinimumDifference2(TreeNode root) {
+        getMinimumDifferenceHelper(root);
+        return min;
+    }
+    public static void getMinimumDifferenceHelper(TreeNode root){
+        if(root == null) return;
+        getMinimumDifferenceHelper(root.left);
+        if(prev != null){
+            min= Math.min(min,root.val-prev);
+        }
+        prev=root.val;
+        getMinimumDifferenceHelper(root.right);
+    }
     public static int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -543,20 +565,72 @@ public class BinaryTree {
             helperDistance(root, target, list, k, i + 1);
         }
     }
+
     public boolean isSymmetric(TreeNode root) {
-        if(root==null){
+        if (root == null) {
             return true;
         }
-        return isSymmetricHelper(root.left,root.right);
+        return isSymmetricHelper(root.left, root.right);
     }
 
     private static boolean isSymmetricHelper(TreeNode node1, TreeNode node2) {
-        if(node1==null && node2==null){
+        if (node1 == null && node2 == null) {
             return true;
-        }
-        else if(node1==null || node2==null){
+        } else if (node1 == null || node2 == null) {
             return false;
         }
-        return (node1.val==node2.val && isSymmetricHelper(node1.left,node2.right) && isSymmetricHelper(node1.right, node2.left));
+        return (node1.val == node2.val && isSymmetricHelper(node1.left, node2.right)
+                && isSymmetricHelper(node1.right, node2.left));
+    }
+
+    ArrayList<Integer> leftView(Node root) {
+        // Your code here
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        Queue<Node> q=new LinkedList<Node>();
+        q.offer(root);
+        al.add(root.val);
+        q.offer(null);
+        while (!q.isEmpty()) {
+            Node curr=q.poll();
+            if(curr==null){
+                if(q.isEmpty()){
+                    break;
+                }else{
+                    al.add(q.peek().val);
+                    q.offer(null);
+                    
+                }
+            }else{
+                if(curr.left!=null){
+                    q.offer(curr.left);
+                }
+                if(curr.right!=null){
+                    q.offer(curr.right);
+                }
+            }
+        }
+        return al;
+    }
+    ArrayList<Integer> leftView2(Node root)
+    {
+      // Your code here
+      ArrayList<Integer> list = new ArrayList<>();
+      Queue<Node> q = new LinkedList<>();
+      q.add(root);
+      while(!q.isEmpty()){
+          int size = q.size();
+          Node peek = q.peek();
+          list.add(peek.val);
+          for(int i=0;i<size;i++){
+              Node curr = q.poll();
+              if(curr.left != null){
+                  q.add(curr.left);
+              }
+              if(curr.right != null){
+                  q.add(curr.right);
+              }
+          }
+      }
+      return list;
     }
 }
