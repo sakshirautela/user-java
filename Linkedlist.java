@@ -16,9 +16,9 @@ public class Linkedlist {
         ListNode node = new ListNode(1);
         // System.out.println(node.data);
         list.insert(node, 2);
-        //list.insertFromStrat(node, "sakshi");
-        //list.insert(node, "sa");
-        //list.insert(node, 78);
+        // list.insertFromStrat(node, "sakshi");
+        // list.insert(node, "sa");
+        // list.insert(node, 78);
         System.out.println(countNode(node));
 
         list.Display(node);
@@ -72,37 +72,37 @@ public class Linkedlist {
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         // if (head == null) {
-        //     return null;
+        // return null;
         // }
         // ListNode curr = head;
         // ListNode temp = head;
         // for (int i = 0; i < n; i++) {
-        //     curr = curr.next;
+        // curr = curr.next;
         // }
         // if (curr == null) {
-        //     head = head.next;
-        //     return head;
+        // head = head.next;
+        // return head;
         // }
 
         // while ((curr.next) != null) {
-        //     curr = curr.next;
-        //     temp = temp.next;
+        // curr = curr.next;
+        // temp = temp.next;
 
         // }
         // temp.next = temp.next.next;
         // return head;
-        int count=countNode(head);
-        if(n==count){
+        int count = countNode(head);
+        if (n == count) {
             return head.next;
         }
         System.out.println(count);
-        ListNode curr=head;
-        int j=1;
-        while(j<=count-n-1){
-            curr=curr.next;
+        ListNode curr = head;
+        int j = 1;
+        while (j <= count - n - 1) {
+            curr = curr.next;
             j++;
         }
-        curr.next=(curr.next==null)?null:curr.next.next;
+        curr.next = (curr.next == null) ? null : curr.next.next;
         return head;
     }
 
@@ -122,11 +122,54 @@ public class Linkedlist {
 
     }
 
-    /*(public ListNode isPalindromic(ListNode head){
-        int mid=countNode(head)/2;
-        while(
+    /*
+     * (public ListNode isPalindromic(ListNode head){
+     * int mid=countNode(head)/2;
+     * while(
+     * 
+     * )
+     * }
+     */
+    public static void removeLoop(Node head) {
+        // code here
+        // remove the loop without losing any nodes
+        if (head == null || head.next == null)
+            return; // Check for empty list or single node
 
-        )
-    }*/
+        Node slow = head;
+        Node fast = head;
+
+        // Step 1: Detect if a cycle exists using Floyd’s Cycle-Finding Algorithm
+        while (fast != null && fast.next != null) {
+            slow = slow.next; // Move slow pointer by one step
+            fast = fast.next.next; // Move fast pointer by two steps
+
+            if (slow == fast) { // Cycle detected
+                break;
+            }
+        }
+
+        // If fast pointer reached the end, there is no cycle
+        if (fast == null || fast.next == null) {
+            return;
+        }
+
+        // Step 2: Find the start of the cycle
+        Node startOfCycle = head;
+        while (startOfCycle != slow) {
+            startOfCycle = startOfCycle.next; // Move startOfCycle pointer by one step
+            slow = slow.next; // Move slow pointer by one step
+        }
+
+        // Step 3: Find the node just before the start of the cycle
+        Node cycleNode = slow;
+        while (cycleNode.next != slow) {
+            cycleNode = cycleNode.next; // Move to the end of the cycle
+        }
+
+        // Step 4: Remove the cycle
+        cycleNode.next = null;
+
+    }
 
 }

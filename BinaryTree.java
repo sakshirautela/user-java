@@ -3,7 +3,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.Scanner;
 
 class TreeNode {
     int val;
@@ -11,8 +10,23 @@ class TreeNode {
 
     public TreeNode(int val) {
         this.val = val;
-        this.left = left;
-        this.right = right;
+        this.left = null;
+        this.right = null;
+    }
+}
+class Node {
+    int data;
+    Node left;
+    Node right;
+
+    public Node(int val) {
+        this.data = val;
+        this.left = null;
+        this.right = null;
+    }
+
+    public Node() {
+        //TODO Auto-generated constructor stub
     }
 }
 
@@ -319,6 +333,7 @@ public class BinaryTree {
         kthLevel(root.right, level + 1, k);
     }
 
+    @SuppressWarnings("unused")
     public static TreeNode lowestCommonAncester2(TreeNode root, int n1, int n2) {
         if (root == null || root.val == n1 || root.val == n2) {
             return root;
@@ -416,7 +431,7 @@ public class BinaryTree {
     }
 
     public static void main(String args[]) {
-        BinaryTree tree = new BinaryTree();
+        //BinaryTree tree = new BinaryTree();
         // int val = 15;
         // var t = tree.GetNode(3);
         // TreeNode root = new TreeNode(4);
@@ -521,5 +536,33 @@ public class BinaryTree {
         if (root.val == target.val) {
             helperDistance(root, target, list, k, i + 1);
         }
+    }
+    void mirror(Node node) {
+        // Your code here
+        if(node==null){
+            return;
+        }
+        Node temp=node.left;
+        node.left=node.right;
+        node.right=temp;
+        mirror(node.left);
+        mirror(node.right);
+
+    }
+	//  Your code here	
+    Node prev = null, head = null;
+    Node bToDLL(Node root){
+       if(root == null) return null;
+        bToDLL(root.left);
+        
+        if(prev == null) head = root;
+        else{
+            root.left = prev;
+            prev.right = root;
+        }
+        prev = root;
+        bToDLL(root.right);
+        return head;
+        
     }
 }
