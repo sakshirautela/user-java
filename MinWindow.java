@@ -1,6 +1,6 @@
 import java.util.*;
 
-class MinWindow {
+public class MinWindow {
     public static String minWindow(String s, String t) {
         if (s.length() < t.length()) {
             return "";

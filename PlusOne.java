@@ -6,7 +6,7 @@ public class PlusOne {
         int[] digits = {4,3,2,1};
         int i=digits.length-1;
         int sum=1;
-        ArrayList<Integer> result = new ArrayList();
+        ArrayList<Integer> result = new ArrayList<Integer>();
         while(i>=0 || sum>0){
             if(i>=0){
                 sum+=digits[i];
