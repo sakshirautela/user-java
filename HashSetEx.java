@@ -14,7 +14,7 @@ public class HashSetEx {
         hs.add(0);
         hs.add(6);
         System.out.println(hs.contains(1));
-        Iterator it=hs.iterator();
+        Iterator<Integer> it=hs.iterator();
         while (it.hasNext()) {
             System.out.println(it.next());
         }

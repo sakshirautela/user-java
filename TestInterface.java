@@ -1,12 +1,8 @@
 interface ITest{
     void print1();
-    
-
 }
 interface ITest2{
     void print1();
-    
-
 }
 public class TestInterface   {
     // TestInterface(ITest abc, ITest2 zys){

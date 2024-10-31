@@ -18,7 +18,7 @@ public class HashMapImplement {
             this.n=0;
             this.bucket=new LinkedList[4];
             for(int i=0;i<n;i++){
-                this.bucket[i]=new LinkedList();
+                this.bucket[i]=new LinkedList<Node>();
             }
         }
 

@@ -1,8 +1,7 @@
 //{ Driver Code Starts
-    import java.lang.*;
     import java.io.*;
     import java.util.*;
-    class GFG
+    public class MinimumJumpsGFG
      {
        public static void main (String[] args) throws IOException
          {
@@ -17,16 +16,14 @@
                 for(int i = 0;i<size;i++){
                     arr[i] = Integer.parseInt(arrStr[i]);
                 }
-                System.out.println(new Solution().minJumps(arr));
+                System.out.println(minJumps(arr));
             }
          }
          
-    }
     
     // } Driver Code Ends
     
     
-    class Solution{
         static int minJumps(int[] arr){
             // your code here
             if (arr.length <= 1) 

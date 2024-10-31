@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-class WordPattern {
+public class WordPattern2 {
     public boolean wordPattern(String p, String s) {
         HashMap<String ,Character> backward=new HashMap<>();
         HashMap<Character,String> forward=new HashMap<>();
