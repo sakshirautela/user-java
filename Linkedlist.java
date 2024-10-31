@@ -1,16 +1,14 @@
-<<<<<<< HEAD
-import java.util.*;
-=======
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
->>>>>>> 1787daf9ffb736af58a08e289cc33cea01e33838
 
 class ListNode {
-    int val;
+    int data;
     ListNode next;
 
     ListNode(int data) {
-        this.val = data;
+        this.data = data;
         this.next = null;
     }
 }
@@ -27,7 +25,6 @@ class TreeNode {
 }
 
 public class Linkedlist {
-<<<<<<< HEAD
     static class Node {
         int data;
         Linkedlist.Node next;
@@ -38,32 +35,9 @@ public class Linkedlist {
         }
     }
     static ListNode head;
-    ListNode insert(ListNode node, Object i) {
-        head=node;
-=======
-    static ListNode head;
-
-    public static void main(String... args) {
-        Linkedlist list = new Linkedlist();
-        ListNode node = new ListNode(1);
-        // System.out.println(node.val);
-        list.insert(node, 2);
-        //list.insertFromStrat(node, "sakshi");
-        //list.insert(node, "sa");
-        //list.insert(node, 78);
-        System.out.println(countNode(node));
-
-        list.Display(node);
-        removeNthFromEnd(node, 1);
-        // System.out.println(node.data);
-        list.Display(node);
-
-    }
-
     ListNode insert(ListNode node, int i) {
         // Node new_node=new Node(i);
         // head=node;
->>>>>>> 1787daf9ffb736af58a08e289cc33cea01e33838
         if (node == null) {
             node = new ListNode(i);
             return node;
@@ -81,19 +55,16 @@ public class Linkedlist {
         ListNode new_node = new ListNode(i);
         head = new_node;
         new_node.next = node;
-<<<<<<< HEAD
         System.out.println(new_node.data);
         System.out.println(head.data);
-=======
         // System.out.println(new_node.data);
-        System.out.println(head.val);
->>>>>>> 1787daf9ffb736af58a08e289cc33cea01e33838
+        System.out.println(head.data);
         return head;
     }
 
     void Display(ListNode node) {
         while (node != null) {
-            System.out.println(node.val);
+            System.out.println(node.data);
             node = node.next;
         }
     }
@@ -173,7 +144,6 @@ public class Linkedlist {
         if (head == null || head.next == null)
             return; // Check for empty list or single node
 
-<<<<<<< HEAD
         Node slow = head;
         Node fast = head;
 
@@ -350,7 +320,7 @@ public class Linkedlist {
         }
         return node;
     }
-    public static void main(String... args) {
+    public static void main(String[] args) {
         int[] arr={5,6,9,3,4,10};
         Node node = new Node(0);
         Node curr=node;
@@ -360,20 +330,18 @@ public class Linkedlist {
         }
         Display(node);
         System.out.println(sumOfLastN_Nodes(node.next,3));
-=======
-        )
-    }*/
+    }
     public ListNode mergeNodesBetweenZeroes(ListNode head) {
         ListNode ptr=head.next; 
         ListNode temp=head; 
         int sum=0;
         while (ptr!=null) {
-            while (ptr!=null && ptr.val!=0) {
-                sum+=ptr.val;
+            while (ptr!=null && ptr.data!=0) {
+                sum+=ptr.data;
                 ptr=ptr.next;
             }
-            if(ptr.val==0){
-                temp.next.val=sum;
+            if(ptr.data==0){
+                temp.next.data=sum;
                 sum=0;
                 temp=temp.next;
             }
@@ -384,15 +352,15 @@ public class Linkedlist {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         HashMap<Integer,Integer> hm=new HashMap<>();
         ListNode temp=headA;
-        hm.put(temp.val, 1);
+        hm.put(temp.data, 1);
         while (temp.next!=null) {
-            hm.put(temp.next.val, 1);
+            hm.put(temp.next.data, 1);
             temp=temp.next;
         }
         temp=headB;
         ListNode res=null;
         while (temp!=null) {
-            while(temp!=null && hm.containsKey(temp.val)){
+            while(temp!=null && hm.containsKey(temp.data)){
                 temp=temp.next;
             }
             if(temp==null){
@@ -411,9 +379,9 @@ public class Linkedlist {
         int carry = 1;
         
         while (current != null) {
-            int sum = current.val + carry;
+            int sum = current.data + carry;
             carry = sum / 10;
-            current.val = sum % 10;
+            current.data = sum % 10;
             
             if (current.next == null && carry > 0) {
                 current.next = new ListNode(carry);
@@ -464,7 +432,7 @@ public class Linkedlist {
         for (int i : nums) {
             hs.add(i);
         }
-        while(head!=null && hs.contains(head.val)){
+        while(head!=null && hs.contains(head.data)){
             head=head.next;
         }
         if(head==null){
@@ -472,7 +440,7 @@ public class Linkedlist {
         }
         ListNode temp=head;
         while (temp.next!=null) {
-            if(hs.contains(temp.next.val)){
+            if(hs.contains(temp.next.data)){
                 temp.next=temp.next.next;
             }
             else{
@@ -494,7 +462,7 @@ public class Linkedlist {
         }if ( root==null) {
             return false;
         }
-        if (head.val==root.val) {
+        if (head.data==root.val) {
             return getPath(head.next,root.left)|| getPath(head.next,root.right);
         }
         return false;
@@ -507,8 +475,8 @@ public class Linkedlist {
     boolean dfs(ListNode head, ListNode cur, TreeNode root) {
         if(cur == null) return true;
         if(root == null) return false;
-        if(cur.val == root.val) cur = cur.next;
-        else if (head.val == root.val) head = head.next;
+        if(cur.data == root.val) cur = cur.next;
+        else if (head.data == root.val) head = head.next;
         else cur = head;
         return dfs(head, cur, root.left) || dfs(head, cur, root.right);
     }
@@ -528,7 +496,7 @@ public class Linkedlist {
             }
             while(n>0){
                 n--;
-                trav.next=new ListNode(temp.val);
+                trav.next=new ListNode(temp.data);
                 trav=trav.next;
                 temp=temp.next;
             }
@@ -552,7 +520,7 @@ public class Linkedlist {
         ListNode temp=head;
         while (temp!=null && temp.next!=null) {
             ListNode curr=temp.next;
-            temp.next=new ListNode(GCD(temp.val,temp.next.val));
+            temp.next=new ListNode(GCD(temp.data,temp.next.data));
             temp.next.next=curr;
             temp=temp.next.next;
         }
@@ -574,7 +542,6 @@ public class Linkedlist {
             slow=slow.next;
         }
         return slow.data;
->>>>>>> 1787daf9ffb736af58a08e289cc33cea01e33838
     }
 
 }

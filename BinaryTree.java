@@ -5,11 +5,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-<<<<<<< HEAD
-=======
 import java.util.TreeMap;
 
->>>>>>> 1787daf9ffb736af58a08e289cc33cea01e33838
 
 class TreeNode {
     int val;
@@ -23,20 +20,12 @@ class TreeNode {
 }
 
 class Node {
-<<<<<<< HEAD
-    int data;
-=======
     int val;
->>>>>>> 1787daf9ffb736af58a08e289cc33cea01e33838
     Node left;
     Node right;
 
     public Node(int val) {
-<<<<<<< HEAD
-        this.data = val;
-=======
         this.val = val;
->>>>>>> 1787daf9ffb736af58a08e289cc33cea01e33838
         this.left = null;
         this.right = null;
     }
@@ -120,11 +109,7 @@ public class BinaryTree {
         if (root == null) {
             return;
         }
-<<<<<<< HEAD
-        Queue<TreeNode> q = new LinkedList();
-=======
         Queue<TreeNode> q = new LinkedList<TreeNode>();
->>>>>>> 1787daf9ffb736af58a08e289cc33cea01e33838
         q.add(root);
         q.add(null);
         while (!q.isEmpty()) {
@@ -582,92 +567,6 @@ public class BinaryTree {
         }
     }
 
-<<<<<<< HEAD
-    void mirror(Node node) {
-        // Your code here
-        if (node == null) {
-            return;
-        }
-        Node temp = node.left;
-        node.left = node.right;
-        node.right = temp;
-        mirror(node.left);
-        mirror(node.right);
-
-    }
-
-    // Your code here
-    Node prev = null, head = null;
-
-    Node bToDLL(Node root) {
-        if (root == null)
-            return null;
-        bToDLL(root.left);
-
-        if (prev == null)
-            head = root;
-        else {
-            root.left = prev;
-            prev.right = root;
-        }
-        prev = root;
-        bToDLL(root.right);
-        return head;
-
-    }
-
-    public List<Integer> merge(Node root1, Node root2) {
-        // Write your code here
-        List<Integer> list = new ArrayList<Integer>();
-        getBst(list, root1);
-        getBst(list, root2);
-        Collections.sort(list);
-        return list;
-    }
-
-    private void getBst(List<Integer> list, Node root) {
-        if (root == null) {
-            return;
-        }
-        getBst(list, root.left);
-        list.add(root.data);
-        getBst(list, root.right);
-    }
-
-    public long kthLargestLevelSum(TreeNode root, int k) {
-        if (root == null) {
-            return 0;
-        }
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
-        List<Long> li = new ArrayList<Long>();
-        q.add(root);
-        q.add(null);
-        long sum=0;
-        while (!q.isEmpty()) {
-            TreeNode curr = q.remove();
-            if (curr == null) {
-                li.add(sum);
-                sum=0;
-                if (q.isEmpty()) {
-                    break;
-                } else {
-                    q.add(null);
-                }
-            } else {
-                sum+=curr.val;
-                if (curr.left != null) {
-                    q.add(curr.left);
-                }
-                if (curr.right != null) {
-                    q.add(curr.right);
-                }
-            }
-        }
-        Collections.sort(li);
-        return (k<=li.size())?li.get(k):-1;
-    }
-    
-=======
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {
             return true;
@@ -735,5 +634,4 @@ public class BinaryTree {
       }
       return list;
     }
->>>>>>> 1787daf9ffb736af58a08e289cc33cea01e33838
 }
