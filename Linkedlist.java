@@ -543,5 +543,14 @@ public class Linkedlist {
         }
         return slow.data;
     }
+    public boolean isLengthEven(Node head) {
+        // code here
+        int count=0;
+        while (head!=null) {
+            head=head.next;
+            count++;
+        }
+        return (count%2==0);
+    }
 
 }
