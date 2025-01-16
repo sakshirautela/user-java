@@ -2,7 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../6Companies30days-"
 		}
-	],
-	"settings": {}
+	]
 }

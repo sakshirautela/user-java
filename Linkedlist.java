@@ -553,4 +553,21 @@ public class Linkedlist {
         return (count%2==0);
     }
 
+    int intersectPoint(Node head1, Node head2) {
+        // code here
+        HashMap<Node,Integer> dt=new HashMap<Node,Integer>();
+        Node curr1=head1;
+        Node curr2=head2;
+        while (curr1!=null) {
+            dt.put(curr1,curr1.data);
+            curr1=curr1.next;            
+        }
+        while (curr2!=null) {
+            if(dt.containsKey(curr2)){
+                return dt.get(curr2);
+            }
+            curr2=curr2.next;
+        }
+        return -1;
+    }
 }

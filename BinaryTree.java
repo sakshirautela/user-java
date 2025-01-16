@@ -1,12 +1,12 @@
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.TreeMap;
-
 
 class TreeNode {
     int val;
@@ -490,38 +490,42 @@ public class BinaryTree {
     }
 
     public static int getMinimumDifference(TreeNode root) {
-        int res=Integer.MAX_VALUE;
-        ArrayList<Integer> list=new ArrayList<Integer>();
+        int res = Integer.MAX_VALUE;
+        ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i = 1; i < list.size(); i++) {
-            res=Math.min(res,Math.abs(list.get(i)-list.get(i-1)));
+            res = Math.min(res, Math.abs(list.get(i) - list.get(i - 1)));
         }
         return res;
     }
 
-    public static void helpergetMinimumDifference(TreeNode root,ArrayList<Integer> list) {
-        if(root==null){
+    public static void helpergetMinimumDifference(TreeNode root, ArrayList<Integer> list) {
+        if (root == null) {
             return;
         }
         helpergetMinimumDifference(root.left, list);
         list.add(root.val);
         helpergetMinimumDifference(root.right, list);
     }
-    static int min=Integer.MAX_VALUE;
-    static Integer prev=null;
+
+    static int min = Integer.MAX_VALUE;
+    static Integer prev = null;
 
     public int getMinimumDifference2(TreeNode root) {
         getMinimumDifferenceHelper(root);
         return min;
     }
-    public static void getMinimumDifferenceHelper(TreeNode root){
-        if(root == null) return;
+
+    public static void getMinimumDifferenceHelper(TreeNode root) {
+        if (root == null)
+            return;
         getMinimumDifferenceHelper(root.left);
-        if(prev != null){
-            min= Math.min(min,root.val-prev);
+        if (prev != null) {
+            min = Math.min(min, root.val - prev);
         }
-        prev=root.val;
+        prev = root.val;
         getMinimumDifferenceHelper(root.right);
     }
+
     public static int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -587,51 +591,207 @@ public class BinaryTree {
     ArrayList<Integer> leftView(Node root) {
         // Your code here
         ArrayList<Integer> al = new ArrayList<Integer>();
-        Queue<Node> q=new LinkedList<Node>();
+        Queue<Node> q = new LinkedList<Node>();
         q.offer(root);
         al.add(root.val);
         q.offer(null);
         while (!q.isEmpty()) {
-            Node curr=q.poll();
-            if(curr==null){
-                if(q.isEmpty()){
+            Node curr = q.poll();
+            if (curr == null) {
+                if (q.isEmpty()) {
                     break;
-                }else{
+                } else {
                     al.add(q.peek().val);
                     q.offer(null);
-                    
+
                 }
-            }else{
-                if(curr.left!=null){
+            } else {
+                if (curr.left != null) {
                     q.offer(curr.left);
                 }
-                if(curr.right!=null){
+                if (curr.right != null) {
                     q.offer(curr.right);
                 }
             }
         }
         return al;
     }
-    ArrayList<Integer> leftView2(Node root)
-    {
-      // Your code here
-      ArrayList<Integer> list = new ArrayList<>();
-      Queue<Node> q = new LinkedList<>();
-      q.add(root);
-      while(!q.isEmpty()){
-          int size = q.size();
-          Node peek = q.peek();
-          list.add(peek.val);
-          for(int i=0;i<size;i++){
-              Node curr = q.poll();
-              if(curr.left != null){
-                  q.add(curr.left);
-              }
-              if(curr.right != null){
-                  q.add(curr.right);
-              }
-          }
-      }
-      return list;
+
+    ArrayList<Integer> leftView2(Node root) {
+        // Your code here
+        ArrayList<Integer> list = new ArrayList<>();
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            int size = q.size();
+            Node peek = q.peek();
+            list.add(peek.val);
+            for (int i = 0; i < size; i++) {
+                Node curr = q.poll();
+                if (curr.left != null) {
+                    q.add(curr.left);
+                }
+                if (curr.right != null) {
+                    q.add(curr.right);
+                }
+            }
+        }
+        return list;
+    }
+
+    static int sum;
+
+    public static int treePathsSum(Node root) {
+        // add code here.
+        sum = 0;
+        treePathsSumHelper(root, 0);
+        return sum;
+    }
+
+    private static void treePathsSumHelper(Node root, int val) {
+        if (root == null) {
+            return;
+        }
+        val = val * 10 + root.val;
+        if (root.left == null && root.right == null) {
+            sum += val;
+            return;
+        }
+        if (root.left != null) {
+            treePathsSumHelper(root.left, val);
+        }
+        if (root.right != null) {
+            treePathsSumHelper(root.right, val);
+        }
+    }
+
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        TreeNode temp = root.right;
+        root.right = root.left;
+        root.left = temp;
+        invertTree(root.right);
+        invertTree(root.left);
+        return root;
+    }
+
+    public TreeNode reverseOddLevels(TreeNode root) {
+        reverseOddLevelsHelper(root.left, root.right, 0);
+        return root;
+    }
+
+    private void reverseOddLevelsHelper(TreeNode leftChild, TreeNode rightChild, int i) {
+        if (leftChild == null || rightChild == null) {
+            return;
+        }
+        if (i % 2 == 0) {
+            int temp = rightChild.val;
+            rightChild.val = leftChild.val;
+            leftChild.val = temp;
+        }
+        reverseOddLevelsHelper(leftChild.left, rightChild.right, i + 1);
+        reverseOddLevelsHelper(leftChild.right, rightChild.left, i + 1);
+    }
+
+    private int indexOf(int[] arr, int ele) {
+        for (int i = 0; i < arr.length; i++)
+            if (arr[i] == ele)
+                return i;
+
+        return -1;
+    }
+
+    private void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    private int minSwaps(int[] arr, int N) {
+        int ans = 0;
+        int[] temp = Arrays.copyOfRange(arr, 0, N);
+        Arrays.sort(temp);
+
+        for (int i = 0; i < N; i++) {
+            if (arr[i] != temp[i]) {
+                ans++;
+                swap(arr, i, indexOf(arr, temp[i]));
+            }
+        }
+        return ans;
+    }
+
+    public int minimumOperations(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        int count = 0;
+
+        while (!q.isEmpty()) {
+            TreeNode curr = q.peek();
+            int size = q.size();
+
+            for (int i = 0; i < size; i++) {
+                curr = q.remove();
+                if (curr.left != null)
+                    q.add(curr.left);
+
+                if (curr.right != null)
+                    q.add(curr.right);
+            }
+
+            int[] arr = new int[q.size()];
+            int k = 0;
+            for (TreeNode num : q)
+                arr[k++] = num.val;
+
+            count += minSwaps(arr, k);
+        }
+        return count;
+    }
+
+    // Constants for bit manipulation
+    final int SHIFT = 20;
+    final int MASK = 0xFFFFF;
+
+    public int minimumOperations2(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList();
+        queue.add(root);
+        int swaps = 0;
+
+        // Process tree level by level using BFS
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            long[] nodes = new long[levelSize];
+
+            // Store node values with encoded positions
+            for (int i = 0; i < levelSize; i++) {
+                TreeNode node = queue.poll();
+                // Encode value and index: high 20 bits = value, low 20 bits = index
+                nodes[i] = ((long) node.val << SHIFT) + i;
+
+                if (node.left != null)
+                    queue.add(node.left);
+                if (node.right != null)
+                    queue.add(node.right);
+            }
+
+            // Sort nodes by their values (high 20 bits)
+            Arrays.sort(nodes);
+
+            // Count swaps needed to match indices with original positions
+            for (int i = 0; i < levelSize; i++) {
+                int origPos = (int) (nodes[i] & MASK);
+                if (origPos != i) {
+                    // Swap nodes and decrement i to recheck current position
+                    long temp = nodes[i];
+                    nodes[i--] = nodes[origPos];
+                    nodes[origPos] = temp;
+                    swaps++;
+                }
+            }
+        }
+        return swaps;
     }
 }

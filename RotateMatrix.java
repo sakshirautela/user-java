@@ -5,13 +5,9 @@ class RotateMatrix {
         for (int i = 0; i <n;i++){
             temp[0][i] = matrix[i][0];
         }
-        System.out.println();
         for (int i = 0; i <n;i++){
             temp[1][i] = matrix[0][i];
         }
-        System.out.println();       
-         System.out.println();
-
         int r=0;
         int c=0;
         for(int i=n-1;i>=0;i--){
