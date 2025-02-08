@@ -1,12 +1,4 @@
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.TreeMap;
+import java.util.*;
 
 class TreeNode {
     int val;
@@ -237,7 +229,7 @@ public class BinaryTree {
     // this.h=h;
     // }
     // }
-    // public static Info diameter2(TreeNode root){
+    // public static diameter2(TreeNode root){
     // if(root==null){
     // return new Info(0, 0);
     // }
@@ -756,7 +748,7 @@ public class BinaryTree {
     final int MASK = 0xFFFFF;
 
     public int minimumOperations2(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         int swaps = 0;
 
@@ -793,5 +785,99 @@ public class BinaryTree {
             }
         }
         return swaps;
+    }
+
+    ArrayList<Integer> li = new ArrayList<Integer>();
+
+    boolean isBST(Node root) {
+        // code here.
+        if (root == null) {
+            return true;
+        }
+        isBSTHaleper(root);
+        for (int index = 0; index < li.size() - 1; index++) {
+            if (li.get(index) > li.get(index + 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void isBSTHaleper(Node root) {
+        if (root == null) {
+            return;
+        }
+        isBST(root.left);
+        li.add(root.val);
+        isBST(root.right);
+    }
+
+    public ArrayList<ArrayList<Integer>> levelOrder(Node root) {
+        // Your code here
+        ArrayList<ArrayList<Integer>> li = new ArrayList<ArrayList<Integer>>();
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(root);
+        q.add(null);
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        while (!q.isEmpty()) {
+            Node curr = q.remove();
+            if (curr == null) {
+                li.add(al);
+                al = new ArrayList<>();
+                if (q.isEmpty()) {
+                    break;
+                } else {
+                    q.add(null);
+                }
+            } else {
+                al.add(curr.val);
+                if (curr.left != null) {
+                    q.add(curr.left);
+                }
+                if (curr.right != null) {
+                    q.add(curr.right);
+                }
+            }
+        }
+        return li;
+    }
+
+    static class dia {
+        int daimeter;
+        int height;
+
+        public dia(int d, int h) {
+            this.daimeter = d;
+            this.height = h;
+        }
+    }
+
+    int diameter(Node root) {
+        // Your code here
+        dia d=diameterHelepr(root);
+        return Math.max(d.daimeter,d.height);
+    }
+
+    static dia diameterHelepr(Node root) {
+        // Your code here
+        if (root == null) {
+            return new dia(0, 0);
+        }
+        dia l=diameterHelepr(root.left);
+        dia r=diameterHelepr(root.right);
+        int d=Math.max(l.daimeter+r.daimeter+1,l.height+r.height+1);
+        int h=l.height+r.height+1;
+        return new dia(d, h);
+    }
+    void mirror(Node node) {
+        // Your code here
+        if(node==null){
+            return;
+        }
+        Node temp=node.left;
+        node.left=node.right;
+        node.right=temp;
+        mirror(node.left);
+        mirror(node.right);
     }
 }

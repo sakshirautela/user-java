@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 class ListNode {
     int data;
@@ -12,6 +9,7 @@ class ListNode {
         this.next = null;
     }
 }
+
 class TreeNode {
     int val;
     TreeNode left;
@@ -28,13 +26,15 @@ public class Linkedlist {
     static class Node {
         int data;
         Linkedlist.Node next;
-    
+
         Node(int data) {
             this.data = data;
             this.next = null;
         }
     }
+
     static ListNode head;
+
     ListNode insert(ListNode node, int i) {
         // Node new_node=new Node(i);
         // head=node;
@@ -140,14 +140,13 @@ public class Linkedlist {
      * }
      */
     public static void removeLoop(Node head) {
-        //remove the loop without losing any nodes
+        // remove the loop without losing any nodes
         if (head == null || head.next == null)
             return; // Check for empty list or single node
 
         Node slow = head;
         Node fast = head;
-
-        //Step 1: Detect if a cycle exists using Floyd’s Cycle-Finding Algorithm
+        // Step 1: Detect if a cycle exists using Floyd’s Cycle-Finding Algorithm
         while (fast != null && fast.next != null) {
             slow = slow.next; // Move slow pointer by one step
             fast = fast.next.next; // Move fast pointer by two steps
@@ -157,31 +156,31 @@ public class Linkedlist {
             }
         }
 
-        //If fast pointer reached the end, there is no cycle
+        // If fast pointer reached the end, there is no cycle
         if (fast == null || fast.next == null) {
             return;
         }
 
-        //Step 2: Find the start of the cycle
+        // Step 2: Find the start of the cycle
         Node startOfCycle = head;
         while (startOfCycle != slow) {
             startOfCycle = startOfCycle.next; // Move startOfCycle pointer by one step
             slow = slow.next; // Move slow pointer by one step
         }
 
-        //Step 3: Find the node just before the start of the cycle
+        // Step 3: Find the node just before the start of the cycle
         Node cycleNode = slow;
         while (cycleNode.next != slow) {
             cycleNode = cycleNode.next; // Move to the end of the cycle
         }
 
-        //Step 4: Remove the cycle
+        // Step 4: Remove the cycle
         cycleNode.next = null;
 
     }
 
     boolean isPalindrome(Node head) {
-        //Your code here
+        // Your code here
         ArrayList<Integer> al = new ArrayList<Integer>();
         Node curr = head;
         while (curr != null) {
@@ -201,7 +200,7 @@ public class Linkedlist {
     }
 
     public long multiplyTwoLists(Node first, Node second) {
-        //Code here
+        // Code here
         long mod = 1000000007;
         long firstVal = 0;
         long secondVal = 0;
@@ -216,7 +215,7 @@ public class Linkedlist {
         return (firstVal * secondVal) % mod;
     }
 
-    //Function to reverse a circular linked list
+    // Function to reverse a circular linked list
     Node reverse(Node head) {
         if (head == null || head.next == head)
             return head;
@@ -232,7 +231,7 @@ public class Linkedlist {
         return prev;
     }
 
-    //Function to delete a node from the circular linked list
+    // Function to delete a node from the circular linked list
     Node deleteNode(Node head, int key) {
         if (head == null || (head.next == head && head.data == key))
             return null;
@@ -253,143 +252,152 @@ public class Linkedlist {
         } while (curr != head);
         return head;
     }
+
     public void deleteAlt(Node head) {
-        Node temp=head;
-        while(temp!=null && temp.next!=null){
-            temp.next=temp.next.next;
-            temp=temp.next;
+        Node temp = head;
+        while (temp != null && temp.next != null) {
+            temp.next = temp.next.next;
+            temp = temp.next;
         }
     }
+
     Node[] alternatingSplitList(Node head) {
-        if(head.next==null){
-            return new Node[]{head,null};
+        if (head.next == null) {
+            return new Node[] { head, null };
         }
-        Node curr=head.next;
-        Node first=head;
-        Node second=head.next;
-        while(curr!=null){
-            first.next=curr.next;
-            first=curr;
-            curr=curr.next;
+        Node curr = head.next;
+        Node first = head;
+        Node second = head.next;
+        while (curr != null) {
+            first.next = curr.next;
+            first = curr;
+            curr = curr.next;
         }
-        return new Node[]{head,second};
+        return new Node[] { head, second };
     }
+
     public static int sumOfLastN_Nodes(Node head, int n) {
-        int len=getLen(head);
-        len-=n;
-        while (len>0) {
-            head=head.next;
+        int len = getLen(head);
+        len -= n;
+        while (len > 0) {
+            head = head.next;
             len--;
         }
-        int sum=0;
-        while (head!=null) {
-            sum+=head.data;
-            head=head.next;
+        int sum = 0;
+        while (head != null) {
+            sum += head.data;
+            head = head.next;
         }
         return sum;
     }
 
     private static int getLen(Node head) {
-        int len=0;
-        while(head!=null){
-            head=head.next;
+        int len = 0;
+        while (head != null) {
+            head = head.next;
             len++;
         }
         return len;
     }
+
     private static void Display(Node node) {
-        while (node!=null) {
+        while (node != null) {
             System.out.println(node.data);
-            node=node.next;
+            node = node.next;
         }
     }
+
     public static Node quickSort(Node node) {
         // Your code here
-        ArrayList<Integer> ar=new ArrayList<Integer>();
-        Node temp=node;
-        while (temp!=null) {
+        ArrayList<Integer> ar = new ArrayList<Integer>();
+        Node temp = node;
+        while (temp != null) {
             ar.add(temp.data);
-            temp=temp.next;
+            temp = temp.next;
         }
         Collections.sort(ar);
-        temp=node;
-        while (temp!=null) {
-            temp.data=ar.get(0);
+        temp = node;
+        while (temp != null) {
+            temp.data = ar.get(0);
             ar.remove(0);
-            temp=temp.next;
+            temp = temp.next;
         }
         return node;
     }
+
     public static void main(String[] args) {
-        int[] arr={5,6,9,3,4,10};
+        int[] arr = { 5, 6, 9, 3, 4, 10 };
         Node node = new Node(0);
-        Node curr=node;
+        Node curr = node;
         for (int d : arr) {
-            curr.next=new Node(d);
-            curr=curr.next;
+            curr.next = new Node(d);
+            curr = curr.next;
         }
         Display(node);
-        System.out.println(sumOfLastN_Nodes(node.next,3));
+        System.out.println(sumOfLastN_Nodes(node.next, 3));
     }
+
     public ListNode mergeNodesBetweenZeroes(ListNode head) {
-        ListNode ptr=head.next; 
-        ListNode temp=head; 
-        int sum=0;
-        while (ptr!=null) {
-            while (ptr!=null && ptr.data!=0) {
-                sum+=ptr.data;
-                ptr=ptr.next;
+        ListNode ptr = head.next;
+        ListNode temp = head;
+        int sum = 0;
+        while (ptr != null) {
+            while (ptr != null && ptr.data != 0) {
+                sum += ptr.data;
+                ptr = ptr.next;
             }
-            if(ptr.data==0){
-                temp.next.data=sum;
-                sum=0;
-                temp=temp.next;
+            if (ptr.data == 0) {
+                temp.next.data = sum;
+                sum = 0;
+                temp = temp.next;
             }
         }
-        temp.next=null;
+        temp.next = null;
         return head.next;
     }
+
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        HashMap<Integer,Integer> hm=new HashMap<>();
-        ListNode temp=headA;
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        ListNode temp = headA;
         hm.put(temp.data, 1);
-        while (temp.next!=null) {
+        while (temp.next != null) {
             hm.put(temp.next.data, 1);
-            temp=temp.next;
+            temp = temp.next;
         }
-        temp=headB;
-        ListNode res=null;
-        while (temp!=null) {
-            while(temp!=null && hm.containsKey(temp.data)){
-                temp=temp.next;
+        temp = headB;
+        ListNode res = null;
+        while (temp != null) {
+            while (temp != null && hm.containsKey(temp.data)) {
+                temp = temp.next;
             }
-            if(temp==null){
+            if (temp == null) {
                 return res;
             }
-            res=temp;
-            temp=temp.next;
+            res = temp;
+            temp = temp.next;
         }
         return res;
     }
+
     // 3->3->5 +1==3->3->6
     public ListNode addOne(ListNode head) {
         // code here.
         head = reversLinkedList(head);
         ListNode current = head;
         int carry = 1;
-        
+
         while (current != null) {
             int sum = current.data + carry;
             carry = sum / 10;
             current.data = sum % 10;
-            
+
             if (current.next == null && carry > 0) {
                 current.next = new ListNode(carry);
                 carry = 0;
             }
             current = current.next;
         }
-        
+
         head = reversLinkedList(head);
         return head;
     }
@@ -398,7 +406,7 @@ public class Linkedlist {
         ListNode prev = null;
         ListNode current = head;
         ListNode next = null;
-        
+
         while (current != null) {
             next = current.next;
             current.next = prev;
@@ -407,167 +415,379 @@ public class Linkedlist {
         }
         return prev;
     }
-        // Function to find the length of a loop in the linked list.
+
+    // Function to find the length of a loop in the linked list.
     public int countNodesinLoop(ListNode head) {
         // Add your code here.
-        ListNode slow=head;
-        ListNode fast=head;
-        while(fast!=null && fast.next!=null){
-            fast=fast.next.next;
-            slow=slow.next;
-            if(fast==slow){
-                int len=1;
-                slow=slow.next;
-                while(slow!=fast){
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                int len = 1;
+                slow = slow.next;
+                while (slow != fast) {
                     len++;
-                    slow=slow.next;
+                    slow = slow.next;
                 }
                 return len;
             }
         }
         return 0;
     }
+
     public ListNode modifiedList(int[] nums, ListNode head) {
-        HashSet<Integer> hs =new HashSet<Integer>();
+        HashSet<Integer> hs = new HashSet<Integer>();
         for (int i : nums) {
             hs.add(i);
         }
-        while(head!=null && hs.contains(head.data)){
-            head=head.next;
+        while (head != null && hs.contains(head.data)) {
+            head = head.next;
         }
-        if(head==null){
+        if (head == null) {
             return null;
         }
-        ListNode temp=head;
-        while (temp.next!=null) {
-            if(hs.contains(temp.next.data)){
-                temp.next=temp.next.next;
-            }
-            else{
-                temp=temp.next;
+        ListNode temp = head;
+        while (temp.next != null) {
+            if (hs.contains(temp.next.data)) {
+                temp.next = temp.next.next;
+            } else {
+                temp = temp.next;
             }
         }
         return head;
     }
+
     public boolean isSubPath(ListNode head, TreeNode root) {
-        if(root==null){
+        if (root == null) {
             return false;
         }
         return (getPath(head, root) || isSubPath(head, root.right)) || isSubPath(head, root.left);
     }
 
     private boolean getPath(ListNode head, TreeNode root) {
-        if (head==null ){
+        if (head == null) {
             return true;
-        }if ( root==null) {
+        }
+        if (root == null) {
             return false;
         }
-        if (head.data==root.val) {
-            return getPath(head.next,root.left)|| getPath(head.next,root.right);
+        if (head.data == root.val) {
+            return getPath(head.next, root.left) || getPath(head.next, root.right);
         }
         return false;
     }
-    
+
     public boolean isSubPath2(ListNode head, TreeNode root) {
         return dfs(head, head, root);
     }
 
     boolean dfs(ListNode head, ListNode cur, TreeNode root) {
-        if(cur == null) return true;
-        if(root == null) return false;
-        if(cur.data == root.val) cur = cur.next;
-        else if (head.data == root.val) head = head.next;
-        else cur = head;
+        if (cur == null)
+            return true;
+        if (root == null)
+            return false;
+        if (cur.data == root.val)
+            cur = cur.next;
+        else if (head.data == root.val)
+            head = head.next;
+        else
+            cur = head;
         return dfs(head, cur, root.left) || dfs(head, cur, root.right);
     }
+
     public ListNode[] splitListToParts(ListNode head, int k) {
-        ListNode[] res=new ListNode[k];
-        int len=getLen(head);
-        int s=len/k;
-        int rem=len%k;
-        ListNode temp=head;
+        ListNode[] res = new ListNode[k];
+        int len = getLen(head);
+        int s = len / k;
+        int rem = len % k;
+        ListNode temp = head;
         for (int i = 0; i < k; i++) {
-            ListNode newNode=new ListNode(0);
-            ListNode trav=newNode;
-            int n=s;
-            if(rem>0){
+            ListNode newNode = new ListNode(0);
+            ListNode trav = newNode;
+            int n = s;
+            if (rem > 0) {
                 rem--;
                 n++;
             }
-            while(n>0){
+            while (n > 0) {
                 n--;
-                trav.next=new ListNode(temp.data);
-                trav=trav.next;
-                temp=temp.next;
+                trav.next = new ListNode(temp.data);
+                trav = trav.next;
+                temp = temp.next;
             }
-            res[i]=newNode.next;
+            res[i] = newNode.next;
         }
         return res;
     }
 
     private int getLen(ListNode head) {
-        if(head==null){
+        if (head == null) {
             return 0;
         }
-        int c=0;
-        while(head!=null){
+        int c = 0;
+        while (head != null) {
             c++;
-            head=head.next;
+            head = head.next;
         }
         return c;
     }
+
     public ListNode insertGreatestCommonDivisors(ListNode head) {
-        ListNode temp=head;
-        while (temp!=null && temp.next!=null) {
-            ListNode curr=temp.next;
-            temp.next=new ListNode(GCD(temp.data,temp.next.data));
-            temp.next.next=curr;
-            temp=temp.next.next;
+        ListNode temp = head;
+        while (temp != null && temp.next != null) {
+            ListNode curr = temp.next;
+            temp.next = new ListNode(GCD(temp.data, temp.next.data));
+            temp.next.next = curr;
+            temp = temp.next.next;
         }
         return head;
     }
 
     private int GCD(int a, int b) {
-        if(b==0){
+        if (b == 0) {
             return a;
         }
-        return GCD(b, a%b);
+        return GCD(b, a % b);
     }
+
     int getMiddle(Node head) {
         // Your code here.
-        Node slow=head;
-        Node fast=head;
-        while(fast.next!=null && fast.next.next!=null){
-            fast=fast.next.next;
-            slow=slow.next;
+        Node slow = head;
+        Node fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
         }
         return slow.data;
     }
+
     public boolean isLengthEven(Node head) {
         // code here
-        int count=0;
-        while (head!=null) {
-            head=head.next;
+        int count = 0;
+        while (head != null) {
+            head = head.next;
             count++;
         }
-        return (count%2==0);
+        return (count % 2 == 0);
     }
 
     int intersectPoint(Node head1, Node head2) {
         // code here
-        HashMap<Node,Integer> dt=new HashMap<Node,Integer>();
-        Node curr1=head1;
-        Node curr2=head2;
-        while (curr1!=null) {
-            dt.put(curr1,curr1.data);
-            curr1=curr1.next;            
+        HashMap<Node, Integer> dt = new HashMap<Node, Integer>();
+        Node curr1 = head1;
+        Node curr2 = head2;
+        while (curr1 != null) {
+            dt.put(curr1, curr1.data);
+            curr1 = curr1.next;
         }
-        while (curr2!=null) {
-            if(dt.containsKey(curr2)){
+        while (curr2 != null) {
+            if (dt.containsKey(curr2)) {
                 return dt.get(curr2);
             }
-            curr2=curr2.next;
+            curr2 = curr2.next;
         }
         return -1;
     }
+
+    public Node rotateLinkedListByK(Node head, int k) {
+        // add code here
+        if (head == null || k == 0) {
+            return head;
+        }
+        Node current = head;
+        int len = 1;
+        while (current.next != null) {
+            current = current.next;
+            len++;
+        }
+        k = k % len;
+        if (k == 0) {
+            return head;
+        }
+        current = head;
+        for (int i = 1; i < k; i++) {
+            current = current.next;
+        }
+        Node newHead = current.next;
+        current.next = null;
+        Node tail = newHead;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        tail.next = head;
+        return newHead;
+    }
+
+    Node sortedMerge(Node head1, Node head2) {
+        // code here
+        Node newNode = new Node(0);
+        Node temp = newNode;
+        while (head1 != null && head2 != null) {
+            if (head1.data < head2.data) {
+                temp.next = new Node(head1.data);
+                head1 = head1.next;
+            } else {
+                temp.next = new Node(head2.data);
+                head2 = head2.next;
+            }
+            temp = temp.next;
+        }
+        while (head1 != null) {
+            temp.next = new Node(head1.data);
+            head1 = head1.next;
+            temp = temp.next;
+        }
+        while (head2 != null) {
+            temp.next = new Node(head2.data);
+            head2 = head2.next;
+            temp = temp.next;
+        }
+        return newNode.next;
+    }
+
+    public static Node reverseKGroup(Node head, int k) {
+        // code here
+        if (head == null || k == 1) {
+            return head;
+        }
+        Stack<Node> st = new Stack<>();
+        Node temp = head;
+        Node prev = null;
+        while (temp != null) {
+            int len = 0;
+            while (temp != null && len < k) {
+                st.push(temp);
+                len++;
+                temp = temp.next;
+            }
+            while (!st.isEmpty()) {
+                if (prev == null) {
+                    prev = st.pop();
+                    head = prev;
+                } else {
+                    prev.next = st.pop();
+                    prev = prev.next;
+                }
+            }
+        }
+        prev.next = null;
+        return head;
+    }
+
+    static Node reverseList(Node head) {
+        // code here
+        Node prev = null;
+        Node current = head;
+        Node nextNode;
+
+        while (current != null) {
+            nextNode = current.next;
+            current.next = prev;
+            prev = current;
+            current = nextNode;
+        }
+        return prev;
+
+    }
+
+    static Node addTwoLists(Node num1, Node num2) {
+        // code here
+        Node res = null;
+        Node curr = null;
+        int carry = 0;
+
+        num1 = trimLeadingZeros(num1);
+        num2 = trimLeadingZeros(num2);
+
+        num1 = reverseList(num1);
+        num2 = reverseList(num2);
+        while (num1 != null || num2 != null || carry != 0) {
+            int sum = carry;
+            if (num1 != null) {
+                sum += num1.data;
+                num1 = num1.next;
+            }
+            if (num2 != null) {
+                sum += num2.data;
+                num2 = num2.next;
+            }
+            Node newNode = new Node(sum % 10);
+            carry = sum / 10;
+            if (res == null) {
+                res = newNode;
+                curr = newNode;
+            } else {
+                curr.next = newNode;
+                curr = curr.next;
+            }
+        }
+        return reverseList(res);
+    }
+
+    static Node trimLeadingZeros(Node head) {
+        while (head != null && head.data == 0) {
+            head = head.next;
+        }
+        return head;
+    }
+
+    // public Node cloneLinkedList(Node head) {
+    // // code here
+    // Map<Node, Node> mp = new HashMap<>();
+    // Node curr = head;
+    // while (curr != null) {
+    // mp.put(curr, new Node(curr.data));
+    // curr = curr.next;
+    // }
+
+    // curr = head;
+    // while (curr != null) {
+    // Node newNode = mp.get(curr);
+    // newNode.next = mp.get(curr.next);
+    // newNode.random = mp.get(curr.random);
+    // curr = curr.next;
+    // }
+    // return mp.get(head);
+    // }
+    public static boolean detectLoop(Node head) {
+        // Add code here
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static Node findFirstNode(Node head) {
+        // code here
+        if (head == null || head.next == null) {
+            return null;
+        }
+        Node slow = head;
+        Node fast = head;
+        while (fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == null) {
+                return null;
+            }
+            if (slow == fast) {
+                Node temp = head;
+                while (temp != fast) {
+                    fast = fast.next;
+                    temp = temp.next;
+                }
+                return temp;
+            }
+        }
+        return null;
+    }
+    
 }
