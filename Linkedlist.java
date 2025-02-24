@@ -789,5 +789,28 @@ public class Linkedlist {
         }
         return null;
     }
-    
+
+    Node mergeKLists(List<Node> arr) {
+        // Add your code here.
+        List<Node>ans=new ArrayList<>();
+        for(int i=0;i<arr.size();i++)
+        {
+            Node node=arr.get(i);
+            while(node!=null)
+            {
+                ans.add(node);
+                node=node.next;
+            }
+        }
+        Collections.sort(ans,(a,b)->(a.data-b.data));
+        Node head=new Node(-1);
+        Node temp=head;
+        for(Node i:ans)
+        {
+            temp.next=i;
+            temp=temp.next;
+        }
+        return head.next;
+    }
+
 }
