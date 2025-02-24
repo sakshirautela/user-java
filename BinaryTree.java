@@ -854,8 +854,8 @@ public class BinaryTree {
 
     int diameter(Node root) {
         // Your code here
-        dia d=diameterHelepr(root);
-        return Math.max(d.daimeter,d.height);
+        dia d = diameterHelepr(root);
+        return Math.max(d.daimeter, d.height);
     }
 
     static dia diameterHelepr(Node root) {
@@ -863,21 +863,245 @@ public class BinaryTree {
         if (root == null) {
             return new dia(0, 0);
         }
-        dia l=diameterHelepr(root.left);
-        dia r=diameterHelepr(root.right);
-        int d=Math.max(l.daimeter+r.daimeter+1,l.height+r.height+1);
-        int h=l.height+r.height+1;
+        dia l = diameterHelepr(root.left);
+        dia r = diameterHelepr(root.right);
+        int d = Math.max(l.daimeter + r.daimeter + 1, l.height + r.height + 1);
+        int h = l.height + r.height + 1;
         return new dia(d, h);
     }
+
     void mirror(Node node) {
         // Your code here
-        if(node==null){
+        if (node == null) {
             return;
         }
-        Node temp=node.left;
-        node.left=node.right;
-        node.right=temp;
+        Node temp = node.left;
+        node.left = node.right;
+        node.right = temp;
         mirror(node.left);
         mirror(node.right);
+    }
+
+    private void boundaryTraversalLeft(Node node, ArrayList<Integer> al) {
+        if (node == null || (node.left == null && node.right == null)) {
+            return;
+        }
+        al.add(node.val);
+        if (node.left != null) {
+            boundaryTraversalLeft(node.left, al);
+        } else {
+            boundaryTraversalLeft(node.right, al);
+        }
+    }
+
+    private void boundaryTraversalLeaf(Node node, ArrayList<Integer> al) {
+        if (node == null) {
+            return;
+        }
+        if (node.left == null && node.right == null) {
+            al.add(node.val);
+        }
+        boundaryTraversalLeaf(node.left, al);
+        boundaryTraversalLeaf(node.right, al);
+    }
+
+    private void boundaryTraversalRight(Node node, ArrayList<Integer> al) {
+        if (node == null || (node.left == null && node.right == null)) {
+            return;
+        }
+        if (node.right != null) {
+            boundaryTraversalRight(node.right, al);
+        } else {
+            boundaryTraversalRight(node.left, al);
+        }
+        al.add(node.val);
+    }
+
+    ArrayList<Integer> boundaryTraversal(Node node) {
+        // code here
+        ArrayList<Integer> al = new ArrayList<>();
+        if (!(node.left == null && node.right == null)) {
+            al.add(node.val);
+        }
+        boundaryTraversalLeft(node.left, al);
+        boundaryTraversalLeaf(node, al);
+        boundaryTraversalRight(node.right, al);
+        return al;
+    }
+
+    int findMaxSum(Node node) {
+        // your code goes here
+        int[] res = { node.val };
+        findMaxSumUtil(node, res);
+        return res[0];
+    }
+
+    private int findMaxSumUtil(Node root, int[] res) {
+        if (root == null) {
+            return 0;
+        }
+        int l = Math.max(0, findMaxSumUtil(root.left, res));
+        int r = Math.max(0, findMaxSumUtil(root.right, res));
+        res[0] = Math.max(res[0], l + r + root.val);
+        System.out.println(res[0] + "," + r + "," + l);
+        return root.val + Math.max(l, r);
+    }
+
+    private void solve(Node root, int k, int currSum, HashMap<Integer, Integer> prefixSum, int[] count) {
+        if (root == null)
+            return;
+
+        currSum += root.val;
+
+        if (currSum == k)
+            count[0]++;
+
+        if (prefixSum.containsKey(currSum - k)) {
+            count[0] += prefixSum.get(currSum - k);
+        }
+
+        prefixSum.put(currSum, prefixSum.getOrDefault(currSum, 0) + 1);
+
+        solve(root.left, k, currSum, prefixSum, count);
+        solve(root.right, k, currSum, prefixSum, count);
+
+        prefixSum.put(currSum, prefixSum.get(currSum) - 1);
+    }
+
+    public int sumK(Node root, int k) {
+        // code here
+        HashMap<Integer, Integer> prefixSum = new HashMap<>();
+        int[] count = new int[1];
+        solve(root, k, 0, prefixSum, count);
+        return count[0];
+    }
+
+    public int kthSmallest(Node root, int k) {
+        // Write your code here
+        int[] count = { 0, -1 };
+        kthSmallestUtil(root, count, k);
+        return count[1];
+    }
+
+    private void kthSmallestUtil(Node root, int[] count, int k) {
+        if (root == null) {
+            return;
+        }
+        kthSmallestUtil(root.left, count, k);
+        count[0]++;
+        if (count[0] == k) {
+            count[1] = root.val;
+            return;
+        }
+        kthSmallestUtil(root.right, count, k);
+    }
+
+    boolean findTarget(Node root, int target) {
+        // Write your code here
+        return helper(root, root, target);
+    }
+
+    boolean helper(Node root, Node current, int target) {
+        if (root == null || current == null) {
+            return false;
+        }
+        if (findNode(root, current, target - current.val)) {
+            return true;
+        }
+        return helper(root, current.left, target)
+                || helper(root, current.right, target);
+    }
+
+    boolean findNode(Node root, Node current, int target) {
+        if (root == null || root == current) {
+            return false;
+        }
+        if (root.val == target) {
+            return true;
+        } else if (root.val > target) {
+            return findNode(root.left, current, target);
+        } else {
+            return findNode(root.right, current, target);
+        }
+    }
+
+    static Node prevs, first, second;
+
+    void correctBST(Node root) {
+        prevs = first = second = null;
+        solve(root);
+        int temp = first.val;
+        first.val = second.val;
+        second.val = temp;
+    }
+
+    void solve(Node root) {
+        if (root == null)
+            return;
+        solve(root.left);
+        if (prev != null) {
+            if (first == null) {
+                if (root.val < prevs.val) {
+                    first = prevs;
+                    second = root;
+                }
+            } else {
+                if (root.val < prevs.val)
+                    second = root;
+            }
+        }
+        prevs = root;
+        solve(root.right);
+    }
+
+    Node LCA(Node root, Node n1, Node n2) {
+        // your code here.
+        if (root == null) {
+            return null;
+        }
+        if (root.val > n1.val && root.val > n2.val) {
+            return LCA(root.left, n1, n2);
+        }
+        if (root.val < n1.val && root.val < n2.val) {
+            return LCA(root.right, n1, n2);
+        }
+        return root;
+    }
+
+    public ArrayList<Integer> serialize(Node root) {
+        // code here
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        serializeUtil(root, al);
+        return al;
+    }
+
+    private void serializeUtil(Node root, ArrayList<Integer> al) {
+        if (root == null) {
+            al.add(-1);
+            return;
+        }
+        al.add(root.val);
+        serializeUtil(root.left, al);
+        serializeUtil(root.right, al);
+    }
+
+    // Function to deserialize a list and construct the tree.
+    public Node deSerialize(ArrayList<Integer> arr) {
+        // code here'
+        int[] idx=new int[]{0};
+        return deSerializeUtil(arr,idx );
+
+    }
+
+    private Node deSerializeUtil(ArrayList<Integer> al, int[] idx) {
+        if(al.get(idx[0])==-1){
+            idx[0]++;
+            return null;
+        }
+        Node newNode=new Node(al.get(idx[0]));
+        idx[0]++;
+        newNode.left=deSerializeUtil(al, idx);
+        newNode.right=deSerializeUtil(al, idx);
+        return newNode;
     }
 }
