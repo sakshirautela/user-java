@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boarding Pass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .boarding-pass {
+            border: 1px solid #000;
+            width: 600px;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 10px;
+            margin: 5px 0;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px;
+        }
+
+        .flex-container > div {
+            background-color: white;
+            border: 1px solid #000;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .header {
+            font-weight: bold;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boarding-pass">
+        <table>
+            <tr>
+                <th colspan="2">IndiGo - Boarding Pass (Web Check-in)</th>
+                <th colspan="2">IndiGo - Boarding Pass (Web Check-in)</th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p>Vipin</p><t>hell</t>
+                    <div class="flex-container">
+                        <div>
+                            <p>Flight</p>
+                            <b>6E 432</b>
+                        </div>
+                        <div>
+                            <p>Gate</p>
+                            <b>01</b>
+                        </div>
+                        <div>
+                            <p>Seat</p>
+                            <b>19F</b>
+                        </div>
+                        <div>
+                            <p>Zone</p>
+                            <b>2</b>
+                        </div>
+                    </div>
+                </td>
+                <td>hello</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
