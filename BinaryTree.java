@@ -315,7 +315,7 @@ public class BinaryTree {
         ArrayList<Integer> al = new ArrayList<Integer>();
         Queue<Info> q = new ArrayDeque<Info>();
         int hd = 0;
-        TreeMap<Integer, Integer> hm = new TreeMap<Integer, Integer>();
+        HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
         q.add(new Info(root, hd));
         while (!q.isEmpty()) {
             Info a = q.poll();

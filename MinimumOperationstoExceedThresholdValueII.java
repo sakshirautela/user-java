@@ -1,3 +1,5 @@
+import java.util.*;
+import java.util.stream.Collectors;
 public class MinimumOperationstoExceedThresholdValueII {
 
     public int minOperations(int[] nums, int k) {
