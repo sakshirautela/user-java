@@ -1,7 +1,7 @@
 import java.util.*;
 public class WordBreak {
     public static boolean wordBreak(String s, String[] wordDict) {
-        HashSet<String> hs =new HashSet();
+        HashSet<String> hs =new HashSet<>();
         for(int i=0;i<wordDict.length;i++){
             hs.add(wordDict[i]);
         }
@@ -28,6 +28,31 @@ public class WordBreak {
             temp.put(str,result);
         }
         return temp.get(str);
+    }
+    public boolean wordBreakOptimize(String s, String[] dictionary) {
+        // code here
+        int n = s.length();
+        boolean[] dp = new boolean[n + 1];
+        dp[0] = true;
+
+        // Traverse through the given string
+        for (int i = 1; i <= n; i++) {
+            // Traverse through the dictionary words
+            for (String w : dictionary) {
+                // Check if the current word is present and
+                // the prefix before the word is also
+                // breakable
+                int start = i - w.length();
+                if (start >= 0 && dp[start]
+                    && s.substring(start,
+                                   start + w.length())
+                           .equals(w)) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[n];
     }
     public static void main(String[] args) {
         System.out.println(wordBreak("abcd",new String[]{"a","abc","cd","b"}));
