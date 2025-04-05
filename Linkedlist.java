@@ -792,25 +792,67 @@ public class Linkedlist {
 
     Node mergeKLists(List<Node> arr) {
         // Add your code here.
-        List<Node>ans=new ArrayList<>();
-        for(int i=0;i<arr.size();i++)
-        {
-            Node node=arr.get(i);
-            while(node!=null)
-            {
+        List<Node> ans = new ArrayList<>();
+        for (int i = 0; i < arr.size(); i++) {
+            Node node = arr.get(i);
+            while (node != null) {
                 ans.add(node);
-                node=node.next;
+                node = node.next;
             }
         }
-        Collections.sort(ans,(a,b)->(a.data-b.data));
-        Node head=new Node(-1);
-        Node temp=head;
-        for(Node i:ans)
-        {
-            temp.next=i;
-            temp=temp.next;
+        Collections.sort(ans, (a, b) -> (a.data - b.data));
+        Node head = new Node(-1);
+        Node temp = head;
+        for (Node i : ans) {
+            temp.next = i;
+            temp = temp.next;
         }
         return head.next;
     }
 
+    public ListNode sortList(ListNode head) {
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        ListNode temp = head;
+        while (temp != null) {
+            al.add(temp.data);
+            temp = temp.next;
+        }
+        temp = head;
+        Collections.sort(al);
+        for (int a : al) {
+            temp.data = a;
+            temp = temp.next;
+        }
+        return head;
+    }
+
+    public ListNode sortList2(ListNode head) {
+        ListNode p = new ListNode(0);
+        quickSort(p, null);
+        return p.next;
+    }
+
+    public static void quickSort(ListNode p, ListNode end) {
+        if (p.next == null || p.next.next == null || p.next == end || p.next.next == end) {
+            return;
+        }
+        ListNode mid = p.next;
+        ListNode prev = mid;
+        boolean isSorted = true;
+        while (prev.next != end) {
+            isSorted = isSorted && prev.data <= prev.next.data;
+            if (prev.next.data < mid.data) {
+                ListNode temp = prev.next;
+                prev.next = prev.next.next;
+                temp.next = p.next;
+                p.next = temp;
+            } else {
+                prev = prev.next;
+            }
+        }
+        if (isSorted)
+            return;
+        quickSort(p, mid);
+        quickSort(mid, end);
+    }
 }

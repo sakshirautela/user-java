@@ -1104,4 +1104,30 @@ public class BinaryTree {
         newNode.right=deSerializeUtil(al, idx);
         return newNode;
     }
+    public TreeNode lcaDeepestLeaves(TreeNode root) {
+        return lcaDeepestLeavesHelper(root);
+    }
+
+    private TreeNode lcaDeepestLeavesHelper(TreeNode root) {
+        if(root==null){
+            return null;
+        }
+        int lheight=height(root.left);
+        int rheight=height(root.right);
+        if(lheight==rheight){
+            return root;
+        }
+        if(lheight>rheight){
+            return lcaDeepestLeavesHelper(root.left);
+        }else{
+           return  lcaDeepestLeaves(root.right);
+        }
+    }
+
+    private int height(TreeNode root) {
+        if(root==null){
+            return 0;
+        }
+        return 1+Math.max(height(root.left),height(root.right));
+    }
 }
