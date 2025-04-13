@@ -5,7 +5,10 @@ public class ValidNumber {
 
     public static boolean isNumber(String s) {
         int idx=(s.charAt(0)=='-'|| s.charAt(0)=='+')?1:0;
-        boolean isE=false;
+        if(s.charAt(idx+1)=='-' || s.charAt(idx+1)=='+'){
+            return false;
+        }
+        int isE=-1;
         int n=s.length();
         for(int i=idx;i<n;i++){
             
