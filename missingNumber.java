@@ -2,44 +2,39 @@ import java.util.Arrays;
 
 public class missingNumber {
     public static void main(String[] args) {
-        int[] nums={ 7, 8, 9, 11, 12};
+        int[] nums = { 7, 8, 9, 11, 12 };
         Arrays.sort(nums);
-        int n=nums[nums.length-1];
-        int tsum=n*(n+1)/2;
-        int sum=0;
+        int n = nums[nums.length - 1];
+        int tsum = n * (n + 1) / 2;
+        int sum = 0;
         for (int i = 0; i < nums.length; i++) {
-            sum=sum+nums[i];
+            sum = sum + nums[i];
         }
-        int missing=tsum-sum;
-        if(missing==0 && isPresent(nums,0)){
-            missing=n+1;
+        int missing = tsum - sum;
+        if (missing == 0 && isPresent(nums, 0)) {
+            missing = n + 1;
         }
         System.out.println(missing);
     }
-    
+
     private static boolean isPresent(int[] nums, int i) {
         for (int j = 0; j < nums.length; j++) {
-            if(nums[i]==0){
+            if (nums[i] == 0) {
                 return true;
             }
         }
         return false;
     }
 
-    class Solution {
-        public int missingNumber(int[] nums) {
-            int x = 0;
-            for (int i = 0; i < nums.length; i++) {
-                x ^= i;
-                x ^= nums[i];
-            }
-            return x ^= nums.length;
+    public int missingNumber2(int[] nums) {
+        int x = 0;
+        for (int i = 0; i < nums.length; i++) {
+            x ^= i;
+            x ^= nums[i];
         }
+        return x ^= nums.length;
     }
-}
-
-class Solution {
-    public int missingNumber(int[] nums) {
+    public int missingNumber3(int[] nums) {
         // 1st Approch
 
         // Arrays.sort(nums);
