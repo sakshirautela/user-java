@@ -12,12 +12,12 @@ class TreeNode {
 }
 
 class Node {
-    int val;
+    int data;
     Node left;
     Node right;
 
     public Node(int val) {
-        this.val = val;
+        this.data = val;
         this.left = null;
         this.right = null;
     }
@@ -585,7 +585,7 @@ public class BinaryTree {
         ArrayList<Integer> al = new ArrayList<Integer>();
         Queue<Node> q = new LinkedList<Node>();
         q.offer(root);
-        al.add(root.val);
+        al.add(root.data);
         q.offer(null);
         while (!q.isEmpty()) {
             Node curr = q.poll();
@@ -593,7 +593,7 @@ public class BinaryTree {
                 if (q.isEmpty()) {
                     break;
                 } else {
-                    al.add(q.peek().val);
+                    al.add(q.peek().data);
                     q.offer(null);
 
                 }
@@ -617,7 +617,7 @@ public class BinaryTree {
         while (!q.isEmpty()) {
             int size = q.size();
             Node peek = q.peek();
-            list.add(peek.val);
+            list.add(peek.data);
             for (int i = 0; i < size; i++) {
                 Node curr = q.poll();
                 if (curr.left != null) {
@@ -644,7 +644,7 @@ public class BinaryTree {
         if (root == null) {
             return;
         }
-        val = val * 10 + root.val;
+        val = val * 10 + root.data;
         if (root.left == null && root.right == null) {
             sum += val;
             return;
@@ -808,7 +808,7 @@ public class BinaryTree {
             return;
         }
         isBST(root.left);
-        li.add(root.val);
+        li.add(root.data);
         isBST(root.right);
     }
 
@@ -830,7 +830,7 @@ public class BinaryTree {
                     q.add(null);
                 }
             } else {
-                al.add(curr.val);
+                al.add(curr.data);
                 if (curr.left != null) {
                     q.add(curr.left);
                 }
@@ -886,7 +886,7 @@ public class BinaryTree {
         if (node == null || (node.left == null && node.right == null)) {
             return;
         }
-        al.add(node.val);
+        al.add(node.data);
         if (node.left != null) {
             boundaryTraversalLeft(node.left, al);
         } else {
@@ -899,7 +899,7 @@ public class BinaryTree {
             return;
         }
         if (node.left == null && node.right == null) {
-            al.add(node.val);
+            al.add(node.data);
         }
         boundaryTraversalLeaf(node.left, al);
         boundaryTraversalLeaf(node.right, al);
@@ -914,14 +914,14 @@ public class BinaryTree {
         } else {
             boundaryTraversalRight(node.left, al);
         }
-        al.add(node.val);
+        al.add(node.data);
     }
 
     ArrayList<Integer> boundaryTraversal(Node node) {
         // code here
         ArrayList<Integer> al = new ArrayList<>();
         if (!(node.left == null && node.right == null)) {
-            al.add(node.val);
+            al.add(node.data);
         }
         boundaryTraversalLeft(node.left, al);
         boundaryTraversalLeaf(node, al);
@@ -931,7 +931,7 @@ public class BinaryTree {
 
     int findMaxSum(Node node) {
         // your code goes here
-        int[] res = { node.val };
+        int[] res = { node.data };
         findMaxSumUtil(node, res);
         return res[0];
     }
@@ -942,16 +942,16 @@ public class BinaryTree {
         }
         int l = Math.max(0, findMaxSumUtil(root.left, res));
         int r = Math.max(0, findMaxSumUtil(root.right, res));
-        res[0] = Math.max(res[0], l + r + root.val);
+        res[0] = Math.max(res[0], l + r + root.data);
         System.out.println(res[0] + "," + r + "," + l);
-        return root.val + Math.max(l, r);
+        return root.data + Math.max(l, r);
     }
 
     private void solve(Node root, int k, int currSum, HashMap<Integer, Integer> prefixSum, int[] count) {
         if (root == null)
             return;
 
-        currSum += root.val;
+        currSum += root.data;
 
         if (currSum == k)
             count[0]++;
@@ -990,7 +990,7 @@ public class BinaryTree {
         kthSmallestUtil(root.left, count, k);
         count[0]++;
         if (count[0] == k) {
-            count[1] = root.val;
+            count[1] = root.data;
             return;
         }
         kthSmallestUtil(root.right, count, k);
@@ -1005,7 +1005,7 @@ public class BinaryTree {
         if (root == null || current == null) {
             return false;
         }
-        if (findNode(root, current, target - current.val)) {
+        if (findNode(root, current, target - current.data)) {
             return true;
         }
         return helper(root, current.left, target)
@@ -1016,9 +1016,9 @@ public class BinaryTree {
         if (root == null || root == current) {
             return false;
         }
-        if (root.val == target) {
+        if (root.data == target) {
             return true;
-        } else if (root.val > target) {
+        } else if (root.data > target) {
             return findNode(root.left, current, target);
         } else {
             return findNode(root.right, current, target);
@@ -1030,9 +1030,9 @@ public class BinaryTree {
     void correctBST(Node root) {
         prevs = first = second = null;
         solve(root);
-        int temp = first.val;
-        first.val = second.val;
-        second.val = temp;
+        int temp = first.data;
+        first.data = second.data;
+        second.data = temp;
     }
 
     void solve(Node root) {
@@ -1041,12 +1041,12 @@ public class BinaryTree {
         solve(root.left);
         if (prev != null) {
             if (first == null) {
-                if (root.val < prevs.val) {
+                if (root.data < prevs.data) {
                     first = prevs;
                     second = root;
                 }
             } else {
-                if (root.val < prevs.val)
+                if (root.data < prevs.data)
                     second = root;
             }
         }
@@ -1059,10 +1059,10 @@ public class BinaryTree {
         if (root == null) {
             return null;
         }
-        if (root.val > n1.val && root.val > n2.val) {
+        if (root.data > n1.data && root.data > n2.data) {
             return LCA(root.left, n1, n2);
         }
-        if (root.val < n1.val && root.val < n2.val) {
+        if (root.data < n1.data && root.data < n2.data) {
             return LCA(root.right, n1, n2);
         }
         return root;
@@ -1080,7 +1080,7 @@ public class BinaryTree {
             al.add(-1);
             return;
         }
-        al.add(root.val);
+        al.add(root.data);
         serializeUtil(root.left, al);
         serializeUtil(root.right, al);
     }
@@ -1088,46 +1088,67 @@ public class BinaryTree {
     // Function to deserialize a list and construct the tree.
     public Node deSerialize(ArrayList<Integer> arr) {
         // code here'
-        int[] idx=new int[]{0};
-        return deSerializeUtil(arr,idx );
+        int[] idx = new int[] { 0 };
+        return deSerializeUtil(arr, idx);
 
     }
 
     private Node deSerializeUtil(ArrayList<Integer> al, int[] idx) {
-        if(al.get(idx[0])==-1){
+        if (al.get(idx[0]) == -1) {
             idx[0]++;
             return null;
         }
-        Node newNode=new Node(al.get(idx[0]));
+        Node newNode = new Node(al.get(idx[0]));
         idx[0]++;
-        newNode.left=deSerializeUtil(al, idx);
-        newNode.right=deSerializeUtil(al, idx);
+        newNode.left = deSerializeUtil(al, idx);
+        newNode.right = deSerializeUtil(al, idx);
         return newNode;
     }
+
     public TreeNode lcaDeepestLeaves(TreeNode root) {
         return lcaDeepestLeavesHelper(root);
     }
 
     private TreeNode lcaDeepestLeavesHelper(TreeNode root) {
-        if(root==null){
+        if (root == null) {
             return null;
         }
-        int lheight=height(root.left);
-        int rheight=height(root.right);
-        if(lheight==rheight){
+        int lheight = height(root.left);
+        int rheight = height(root.right);
+        if (lheight == rheight) {
             return root;
         }
-        if(lheight>rheight){
+        if (lheight > rheight) {
             return lcaDeepestLeavesHelper(root.left);
-        }else{
-           return  lcaDeepestLeaves(root.right);
+        } else {
+            return lcaDeepestLeaves(root.right);
         }
     }
 
     private int height(TreeNode root) {
-        if(root==null){
+        if (root == null) {
             return 0;
         }
-        return 1+Math.max(height(root.left),height(root.right));
+        return 1 + Math.max(height(root.left), height(root.right));
+    }
+
+
+    int maxPathSum(Node root) {
+        int max[] ={ Integer.MIN_VALUE};
+        int res = maxPathSum(root, max);
+        if (root.left == null || root.right == null) {
+            return Math.max(max[0], res);
+        }
+        return max[0];
+
+    }
+
+    static int maxPathSum(Node node, int max[]) {
+        if (node == null)
+            return 0;
+        int left = Math.max(0,maxPathSum(node.left, max));
+        int right =Math.max(0, maxPathSum(node.right, max));
+        max[0] = (Math.max(left + right + node.data, max[0]));
+        return Math.max(left,right) + node.data;
     }
 }
