@@ -12,7 +12,7 @@ public class AlienDictionary {
     }
     public static String findOrder(String[] dict, int n, int k) {
         HashSet<Character> hs= new HashSet<Character>();
-        ArrayList<Character> graph=new ArrayList<edge>();
+        ArrayList<Character> graph=new ArrayList<>();
     }
     public static void creatGraph(ArrayList<edge> graph,String[] dict,int n){
         for (int i = 1; i < n-1; i++) {
