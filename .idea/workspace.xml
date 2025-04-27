@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3f4ed0f3-c402-4600-94f9-9b679f40eb48" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/user-java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MajorityElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/MajorityElement.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "sakshirautela"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/sakshirautela/user-java.git",
+    "accountId": "02309208-220c-44ed-9f11-57e61a37ad40"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2wIpVkTNAjP8Gj6LZBN57OFFmV5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AbsoluteLongestSubarrayWithDiffLimit.executor": "Run",
+    "Application.AddById.executor": "Run",
+    "Application.CountSeniors.executor": "Run",
+    "Application.WidestVerticalAreaBetweenTwoPointsContainingNoPoints.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "twentyFourApril",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/HP/Desktop/javaAdvanced/user-java"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="WidestVerticalAreaBetweenTwoPointsContainingNoPoints" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WidestVerticalAreaBetweenTwoPointsContainingNoPoints" />
+      <module name="user-java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.WidestVerticalAreaBetweenTwoPointsContainingNoPoints" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f4ed0f3-c402-4600-94f9-9b679f40eb48" name="Changes" comment="" />
+      <created>1745738967538</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745738967538</updated>
+    </task>
+    <servers />
+  </component>
+</project>
