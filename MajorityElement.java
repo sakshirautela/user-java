@@ -1,27 +1,22 @@
-import java.util.HashSet;
-class RandomizedSet {
-    
-    public RandomizedSet() {
-        
+import java.util.HashMap;
+
+public class MajorityElement {
+    public static void main(String[] args) {
+        System.out.println(majorityElement(new int[] {}));
     }
-    
-    public boolean insert(int val) {
-        
-    }
-    
-    public boolean remove(int val) {
-        
-    }
-    
-    public int getRandom() {
-        
+
+    static int majorityElement(int arr[]) {
+        // code here
+        int n=arr.length/2;
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        for(int i:arr){
+            hm.put(i,hm.getOrDefault(i,0)+1);
+        }
+        for(int key:hm.keySet()){
+            if(hm.get(key)>n){
+                return key;
+            }
+        }
+        return -1;
     }
 }
-
-/**
- * Your RandomizedSet object will be instantiated and called as such:
- * RandomizedSet obj = new RandomizedSet();
- * boolean param_1 = obj.insert(val);
- * boolean param_2 = obj.remove(val);
- * int param_3 = obj.getRandom();
- */
