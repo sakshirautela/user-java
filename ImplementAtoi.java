@@ -1,5 +1,3 @@
-package com.learn.java.problemsolving;
-
 public class ImplementAtoi {
     public static int myAtoi(String s) {
         // Your code here

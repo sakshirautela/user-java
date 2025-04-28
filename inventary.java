@@ -1,10 +1,8 @@
-package com.learn.java.problemsolving;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class inventary {
+public class Inventary {
     public static void main(String args[]){
         Scanner obj= new Scanner(System.in);
         ArrayList<String> itmlist= new ArrayList();

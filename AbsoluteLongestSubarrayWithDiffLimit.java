@@ -1,9 +1,7 @@
-package com.learn.java.problemsolving;
-
 public class AbsoluteLongestSubarrayWithDiffLimit {
     public static int longestSubarray(int[] nums, int limit) {
         // int left=0;
-        // int right=0;
+        / nt right=0;
         // int maxel=Integer.MIN_VALUE;
         // int minel=Integer.MAX_VALUE;
         // int result=0;

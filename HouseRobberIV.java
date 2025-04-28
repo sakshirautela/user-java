@@ -1,5 +1,3 @@
-package com.learn.java.problemsolving;
-
 import java.util.Arrays;
 
 public class HouseRobberIV {

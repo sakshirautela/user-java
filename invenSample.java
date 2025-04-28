@@ -1,5 +1,3 @@
-package com.learn.java.problemsolving;
-
 class Product {
     void fun(){
         System.out.println("cxab");
@@ -16,7 +14,7 @@ class Product {
 
 }
 
-public class invenSample extends Product  {
+public class InvenSample extends Product  {
     public void fun(){
         int sum=90;
         System.out.println(sum);
@@ -25,7 +23,7 @@ public class invenSample extends Product  {
 
     public static void main(String args[]) {
         //a = 10;
-        invenSample a=new invenSample();
+        InvenSample a=new InvenSample();
         a.fun();
         String word = "Flag";
         int count1 = 0;

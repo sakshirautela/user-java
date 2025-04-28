@@ -1,5 +1,3 @@
-package com.learn.java.problemsolving;
-
 public class ImplementTriePrefixTree {
     // Trie Node definition
     static class Node {

@@ -1,5 +1,3 @@
-package com.learn.java.problemsolving;
-
 class Head{
     public void function(){
         System.out.println("hello");

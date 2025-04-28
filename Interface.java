@@ -1,5 +1,3 @@
-package com.learn.java.problemsolving;
-
 abstract class  unique{
     abstract protected void fun();
     void fun2(){

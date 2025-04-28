@@ -1,5 +1,3 @@
-package com.learn.java.problemsolving;
-
 public class IncreasingTripletSubsequence {
     public static boolean increasingTriplet(int[] nums) {
         int second=Integer.MAX_VALUE;

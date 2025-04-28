@@ -1,6 +1,4 @@
-package com.learn.java.problemsolving;
-
-public class intPermutation {
+public class IntPermutation {
         public static  String getPermutation(int n, int k) {
             String a=str(n);
             return permute(a, "", k);

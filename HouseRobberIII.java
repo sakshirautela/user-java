@@ -1,5 +1,3 @@
-package com.learn.java.problemsolving;//  Definition for a binary tree node.
-
 import java.util.Queue;
 import java.util.LinkedList;
 
