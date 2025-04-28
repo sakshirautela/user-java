@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SearchinRotatedSortedArray {
     public static void main(String[] args) {
         System.out.println(search(new int[]{},12));

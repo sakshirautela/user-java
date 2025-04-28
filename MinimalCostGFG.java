@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimalCostGFG {
     public static int minimizeCost(int k, int arr[]) {
         // code here

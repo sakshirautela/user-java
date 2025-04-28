@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LongestNiceSubarray {
     public int longestNiceSubarray(int[] nums) {
         int l = 0, usedBits = 0, maxLength = 0;

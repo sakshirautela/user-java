@@ -1,4 +1,4 @@
-
+package com.learn.java.problemsolving;
 
 public class MaxScoreSplitArray {
     public static int maxScore(String s) {

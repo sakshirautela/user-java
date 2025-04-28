@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinFallingPathSum {
     public int minFallingPathSum(int[][] matrix) {
         int n=matrix.length;

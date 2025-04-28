@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;

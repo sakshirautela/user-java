@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class RoofTopGFG {
     // Function to find maximum number of consecutive steps
     // to gain an increase in altitude with each step.

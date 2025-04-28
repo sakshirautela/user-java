@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class KthMissingPositiveNumberinaSortedArray {
     public static void main(String[] args) {
         System.out.println(kthMissing(new int[]{2, 3, 4, 7, 11},5));

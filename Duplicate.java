@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Duplicate {
     public static void main(String rags[]){
         int[] nums={1,2,3,1};

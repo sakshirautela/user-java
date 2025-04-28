@@ -1,4 +1,6 @@
-//wrong code 
+package com.learn.java.problemsolving;
+
+//wrong code
 class LongestPalindrome {
     public static int longestPalindrome(String s) {
         String res=null;

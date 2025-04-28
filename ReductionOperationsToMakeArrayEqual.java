@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class ReductionOperationsToMakeArrayEqual {
     public static int reductionOperations(int[] nums) {

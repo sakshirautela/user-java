@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class AddSpacingToAStrings {
     public static void main(String[] args) {
         System.out.println(addSpaces("spacing", new int[] { 0, 1, 2, 3, 4, 5, 6 }));

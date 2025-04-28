@@ -1,4 +1,9 @@
-class Solution {
+package com.learn.java.problemsolving;
+
+public class LetterTilePossibilities {
+    public static void main(String[] args) {
+
+    }
     public int numTilePossibilities(String tiles) {
         int[] freq = new int[26]; 
         for (char ch : tiles.toCharArray()) {

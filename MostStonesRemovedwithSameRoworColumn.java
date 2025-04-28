@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MostStonesRemovedwithSameRoworColumn {
     public int numOfIslands = 0;
     public int removeStones(int[][] stones) {

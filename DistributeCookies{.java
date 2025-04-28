@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class DistributeCookies {
     public static int distributeCookies(int[] cookies, int k) {
         int n=cookies.length;

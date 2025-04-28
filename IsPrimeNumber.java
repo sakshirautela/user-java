@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class IsPrimeNumber {
     public static boolean isPrime(int A) {
         for(int i=2;i<=A/2;i++){

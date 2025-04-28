@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ConvertDateToBinary {
     public static String convertDateToBinary(String date) {
         String[] arr=date.split("-");

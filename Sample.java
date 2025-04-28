@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class AnimalEat {
    void eat(){
       System.err.println("super");

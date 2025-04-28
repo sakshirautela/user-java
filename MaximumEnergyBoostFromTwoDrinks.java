@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumEnergyBoostFromTwoDrinks {
     public static long maxEnergyBoost(int[] energyDrinkA, int[] energyDrinkB) {
     }

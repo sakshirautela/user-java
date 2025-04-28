@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumAddtoMakeParenthesesValid {
     public static int minAddToMakeValid(String s) {
         if (s.length() == 0) {

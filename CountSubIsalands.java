@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountSubIsalands {
         int n, m;
         int[][] isValid;

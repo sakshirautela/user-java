@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class AllocateMinimumPages {
     public static void main(String[] args) {
         System.out.println(findPages(new int[]{},3));

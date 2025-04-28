@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ReverseWords {
     public static String reverseWords(String s) {
         String sample = s.trim();

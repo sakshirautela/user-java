@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 interface ITest{
     void print1();
 }
@@ -9,8 +11,8 @@ public class TestInterface   {
 
     // }
     public static void main(String args[]){
-         Test n=new Test();
-         Test n1=new Test();
+         CTest n=new CTest();
+         CTest n1=new CTest();
          n1.name="vipin";
          n.name="xys";
          n.printname();
@@ -22,7 +24,7 @@ public class TestInterface   {
         // obj.print1();
     }
 }
-class Test implements ITest,ITest2  {
+class CTest implements ITest,ITest2  {
     public String name ="";
     public void print1(){
         System.out.println("print 1");

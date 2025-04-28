@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class WinnerteamGFG {
     public static int winnerTeam(int N, int[] X, int[] Y, int[] Z) {
         // Initialize indices

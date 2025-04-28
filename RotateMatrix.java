@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class RotateMatrix {
     public static void rotateMatrix(int[][] matrix) {
         int n=matrix.length;

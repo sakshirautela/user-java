@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 public class PriorityQueueJCF {

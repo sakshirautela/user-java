@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PartitionEqualSubsetSumleetcode {
     public static void main(String[] args) {
         System.out.println(canPartition(new int[] { 14, 9, 8, 4, 3, 2 }));

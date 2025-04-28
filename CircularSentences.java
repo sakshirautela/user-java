@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CircularSentences {
     public static boolean isCircularSentence(String sentence) {
         String words[] = sentence.split(" ");

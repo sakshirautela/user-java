@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class WordSeachGFG{
     static public boolean isWordExist(char[][] grid, String word) {
         int m = grid.length;

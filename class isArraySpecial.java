@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class isArraySpecial {
     public boolean[] isArraySpecial(int[] nums, int[][] queries) {
         int n = nums.length;

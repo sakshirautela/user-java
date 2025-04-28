@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class JumpingGame {
     public static long[] jumpGame(int n, int[] d, int[] c) {
         long[] res = new long[n];

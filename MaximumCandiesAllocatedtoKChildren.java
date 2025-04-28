@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumCandiesAllocatedtoKChildren {
     public boolean checkvalid(int[] candie, int val, long m) {
         long count = 0;

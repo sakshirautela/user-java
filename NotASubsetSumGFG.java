@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class NotASubsetSumGFG {
     public static long findSmallest(int[] arr) {
         // Your code goes here

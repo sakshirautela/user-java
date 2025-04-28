@@ -4,6 +4,9 @@ import java.util.HashSet;
 import java.util.List;
 
 public class WordBreakII {
+    public static void main(String[] args) {
+
+    }
     static List<String> li;
     static StringBuilder sb;
     public List<String> wordBreak(String s, List<String> wordDict) {

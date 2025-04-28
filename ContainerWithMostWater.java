@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class ContainerWithMostWater {
     public static int maxArea(int[] height) {
       int max = 0;

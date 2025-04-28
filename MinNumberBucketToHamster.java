@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinNumberBucketToHamster {
     public static int minimumBuckets(String hamsters) {
         int count = 0;

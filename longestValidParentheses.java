@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class longestValidParentheses {
     static int capacity = 10;
     int top = -1;

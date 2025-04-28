@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class MaximumElementAfterDecrementingAndRearranging {
     public static int maximumElementAfterDecrementingAndRearranging(int[] arr) {

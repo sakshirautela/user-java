@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CounttheNumberofPowerfulIntegers {
     public static void main(String[] args) {
         System.out.println(numberOfPowerfulInt(5,3,2,""));

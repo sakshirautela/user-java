@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LongestSubarrayWithMaximumBitwiseAND {
     public static void main(String[] args) {
         int[] arr={1,2,3,3,2,2};

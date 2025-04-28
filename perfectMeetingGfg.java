@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class perfectMeetingGfg {
     public static int firsthour(int n, int[][] arr) {

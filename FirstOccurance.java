@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class FirstOccurance {
     public static int strStr(String haystack, String needle) {
         

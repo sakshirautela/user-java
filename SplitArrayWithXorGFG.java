@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SplitArrayWithXorGFG {
     public static int countgroup(int arr[]) {
         // Complete the function

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.Scanner;
 
 //create ATMExample class to implement the ATM functionality  

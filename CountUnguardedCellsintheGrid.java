@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountUnguardedCellsintheGrid {
     public static void main(String args[]) {
         System.out.println(countUnguarded2(4, 6, new int[][] { { 0, 0 }, { 1, 1 } }, new int[][] { { 0, 0 }, { 1, 1 } }));

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SecondLargestElement {
     public static int getSecondLargest(int[] arr) {
         // Code Here

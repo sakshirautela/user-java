@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class Test2
 {
 public static void main (String args[])

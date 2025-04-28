@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.PriorityQueue;
 public class SlidingWindowMaximum {
     static class pairs implements Comparable<pairs> {

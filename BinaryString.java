@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class BinaryString {
     public static void main(String[] args) {
         binaryString(3,"",0);

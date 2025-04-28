@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SpiralMatrix{
     void spiralMatrix(int[][] matrix){
         int startCol=0;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CheckifOneStringSwapCanMakeStringsEqual {
     public static void main(String arhs[]) {
         System.out.println(areAlmostEqual1("", ""));

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import javax.swing.*;
 import java.awt.*;
 

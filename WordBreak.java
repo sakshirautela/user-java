@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class WordBreak {
     public static boolean wordBreak(String s, String[] wordDict) {

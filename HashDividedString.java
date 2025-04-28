@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class HashDividedString {
     public static String stringHash(String s, int k) {
         StringBuilder result = new StringBuilder();

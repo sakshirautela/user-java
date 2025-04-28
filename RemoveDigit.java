@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 //2259. Remove Digit From Number to Maximize Result
 public class RemoveDigit{
     public static void main(String[] args) {

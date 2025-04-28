@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FacingTheSun {
     // Returns count buildings that can see sunlight
     public static int countBuildings(int[] height) {

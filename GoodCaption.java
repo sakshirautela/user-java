@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class GoodCaption {
     public static String makeGoodCaption(String caption) {
         int n = caption.length();

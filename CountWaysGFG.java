@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountWaysGFG {
     public static void main(String[] args) {
         System.out.println(countWays(5));

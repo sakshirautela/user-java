@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumSubarrayWithEqualProducts {
     public static void main(String[] args) {
         System.out.println(maxLength(new int[] {1,2,1,2,1,1,1}));

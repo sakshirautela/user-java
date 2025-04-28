@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountingSort {
     public void countSort(int[] nums){
         int largest=Integer.MIN_VALUE;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PartitionArrayAccordingtoGivenPivot {
     public static void main(String[] args) {
         System.out.println(pivotArray(new int[] {}, 10));

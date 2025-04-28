@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MakeStringaSubsequenceUsingCyclicIncrements {
     public static boolean canMakeSubsequence(String str1, String str2) {
         int i = 0, j = 0, m = str1.length(), n = str2.length();

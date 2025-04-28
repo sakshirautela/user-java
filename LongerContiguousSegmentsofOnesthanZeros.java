@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LongerContiguousSegmentsofOnesthanZeros {
     public static void main(String[] args) {
         System.out.println(checkZeroOnes("111000"));

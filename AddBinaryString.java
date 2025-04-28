@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class AddBinaryString {
     public static String addBinary(String s1, String s2) {
             // code here

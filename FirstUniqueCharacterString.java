@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FirstUniqueCharacterString {
     public static int firstUniqChar(String s) {
         int idx=Integer.MAX_VALUE;

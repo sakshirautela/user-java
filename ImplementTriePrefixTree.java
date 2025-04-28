@@ -1,118 +1,71 @@
-public class ImplementTriePrefixTree {
-    static class Node{
-        Node child[];
-        boolean eow=false;
-        public Node(){
-            child=new Node[26];
-        }
-    }
-    Node trie;
-    public ImplementTriePrefixTree() {
-        trie=new Node();
-    }
-    
-    public void insert(String word) {
-        Node curr=trie;
-        int n=word.length();
-        for (int i = 0; i < n; i++) {
-            int idx=word.charAt(i)-'a';
-            if(curr.child[idx]==null){
-                curr.child[idx]=new Node();
-            }
-            curr=curr.child[idx];
-        }
-        curr.eow=true;
-    }
-    
-    public boolean search(String word) {
-        Node curr=trie;
-        int n=word.length();
-        for (int i = 0; i < n; i++) {
-            int idx=word.charAt(i)-'a';
-            if(curr.child[idx]==null){
-                return false;
-            }
-            curr=curr.child[idx];
-        }
-        return curr.eow;
-    }
-    
-    public boolean startsWith(String prefix) {
-        Node curr=trie;
-        int n=prefix.length();
-        for (int i = 0; i < n; i++) {
-            int idx=prefix.charAt(i)-'a';
-            if(curr.child[idx]==null){
-                return false;
-            }
-            curr=curr.child[idx];
-        }
-        return true;
-    }
-}
-class Trie {
-    Node root;
+package com.learn.java.problemsolving;
 
-    public Trie() {
+public class ImplementTriePrefixTree {
+    // Trie Node definition
+    static class Node {
+        Node[] children;
+        boolean isEndOfWord;
+
+        public Node() {
+            children = new Node[26];  // Only lowercase English letters, 26 children
+            isEndOfWord = false;
+        }
+    }
+
+    private Node root;  // Root node of the Trie
+
+    // Constructor to initialize the root of the Trie
+    public ImplementTriePrefixTree() {
         root = new Node();
     }
-    
+
+    // Insert a word into the Trie
     public void insert(String word) {
-        root.insert(word, 0);
-    }
-    
-    public boolean search(String word) {
-        return root.search(word, 0);
-    }
-    
-    public boolean startsWith(String prefix) {
-        return root.startsWith(prefix, 0);
-    }
-
-    class Node {
-        Node[] nodes;
-        boolean isEnd;
-
-        Node() {
-            nodes = new Node[26];
-        }
-
-        private void insert(String word, int idx) {
-            if (idx >= word.length()) return;
-            int i = word.charAt(idx) - 'a';
-            if (nodes[i] == null) {
-                nodes[i] = new Node();
+        Node current = root;  // Start at the root node
+        for (int i = 0; i < word.length(); i++) {
+            int idx = word.charAt(i) - 'a';  // Find index for the character (0 for 'a', 1 for 'b', ...)
+            if (current.children[idx] == null) {  // If there's no child at that index, create a new node
+                current.children[idx] = new Node();
             }
-
-            if (idx == word.length()-1) nodes[i].isEnd = true;
-            nodes[i].insert(word, idx+1);
+            current = current.children[idx];  // Move to the next node
         }
+        current.isEndOfWord = true;  // Mark the end of the word
+    }
 
-        private boolean search(String word, int idx) {
-            if (idx >= word.length()) return false;
-            Node node = nodes[word.charAt(idx) - 'a'];
-            if (node == null) return false;
-            if (idx == word.length() - 1 && node.isEnd) return true;
-
-            return node.search(word, idx+1);
-
+    // Search for a word in the Trie
+    public boolean search(String word) {
+        Node current = root;
+        for (int i = 0; i < word.length(); i++) {
+            int idx = word.charAt(i) - 'a';  // Find index for the character
+            if (current.children[idx] == null) {  // If a child is missing, the word isn't in the Trie
+                return false;
+            }
+            current = current.children[idx];
         }
+        return current.isEndOfWord;  // Check if the current node marks the end of the word
+    }
 
-        private boolean startsWith(String prefix, int idx) {
-            if (idx >= prefix.length()) return false;
-            Node node = nodes[prefix.charAt(idx) - 'a'];
-            if (node == null) return false;
-            if (idx == prefix.length() - 1) return true;
-
-            return node.startsWith(prefix, idx+1);
+    // Check if there is any word in the Trie that starts with the given prefix
+    public boolean startsWith(String prefix) {
+        Node current = root;
+        for (int i = 0; i < prefix.length(); i++) {
+            int idx = prefix.charAt(i) - 'a';  // Find index for the character
+            if (current.children[idx] == null) {  // If a child is missing, no words with the prefix exist
+                return false;
+            }
+            current = current.children[idx];
         }
+        return true;  // If all characters of the prefix exist, return true
+    }
+
+    // Main method for testing the Trie
+    public static void main(String[] args) {
+        ImplementTriePrefixTree trie = new ImplementTriePrefixTree();
+        trie.insert("apple");
+        System.out.println(trie.search("apple"));   // Returns true
+        System.out.println(trie.search("app"));     // Returns false
+        System.out.println(trie.startsWith("app")); // Returns true
+        trie.insert("app");
+        System.out.println(trie.search("app"));     // Returns true
     }
 }
-
-/**
- * Your Trie object will be instantiated and called as such:
- * Trie obj = new Trie();
- * obj.insert(word);
- * boolean param_2 = obj.search(word);
- * boolean param_3 = obj.startsWith(prefix);
- */

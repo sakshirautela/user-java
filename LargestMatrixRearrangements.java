@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class LargestMatrixRearrangements {
     public static void largestSubmatrix(int[][] matrix) {

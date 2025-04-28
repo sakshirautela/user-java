@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class nQueens {
     public static void main(String[] args) {
         int n = 5;

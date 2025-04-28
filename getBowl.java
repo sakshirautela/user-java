@@ -1,4 +1,6 @@
-import java.util.*; 
+package com.learn.java.problemsolving;
+
+import java.util.*;
 
 public class getBowl {
     HashMap<String, Integer> players;
@@ -13,9 +15,6 @@ public class getBowl {
     public void getWinner() {
         System.out.println(players.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get().getKey());
     }
-}
-
- class Program {
     public static void main(String[ ] args) {
         Bowling game = new Bowling();
         Scanner sc = new Scanner(System.in);

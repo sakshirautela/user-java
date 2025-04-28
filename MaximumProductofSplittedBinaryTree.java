@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumProductofSplittedBinaryTree {
     static class TreeNode {
         int val;

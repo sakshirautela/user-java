@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SumOfStringAfterDigits {
     public static int getLucky(String s, int k) {
         int result = 0;

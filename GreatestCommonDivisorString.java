@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class  GreatestCommonDivisorString{
     public static void main(String ars[]){
         System.out.println(gcdOfStrings("ABCABC","ABC"));

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ReverseStringNotWords {
     // Function to reverse words in a given string.
     static String reverseWords(String str) {

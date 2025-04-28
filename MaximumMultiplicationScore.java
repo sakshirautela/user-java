@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumMultiplicationScore {
     public static long maxScore(int[] a, int[] b) {
         long result=0;

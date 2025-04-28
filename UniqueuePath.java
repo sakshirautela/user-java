@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class UniqueuePath {
     public static int uniquePaths(int[][] obstacleGrid) {
         int n=obstacleGrid.length;

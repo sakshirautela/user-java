@@ -1,4 +1,13 @@
-class Solution {
+package com.learn.java.problemsolving;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+
+public class ConstructStringWithRepeatLimit {
+    public static void main(String[] args) {
+
+    }
 
     public String repeatLimitedString(String s, int repeatLimit) {
         Map<Character, Integer> freq = new HashMap<>();

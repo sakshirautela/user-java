@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class OperationsOnNumbersGFG {
     public static long minOps(long a, long b) {
         // code here

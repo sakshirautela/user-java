@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class FindtheKthCharacterinStringGameII {
     public static char kthCharacter(int k, int[] operations) {

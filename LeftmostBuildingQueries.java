@@ -1,4 +1,14 @@
-class Solution {
+package com.learn.java.problemsolving;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
+
+public class LeftmostBuildingQueries {
+    public static void main(String[] args) {
+
+    }
 
     public int[] leftmostBuildingQueries(int[] heights, int[][] queries) {
         List<List<List<Integer>>> storeQueries = new ArrayList<>(

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class QueueEx {
     static int capacity=10;
     static int end=-1;

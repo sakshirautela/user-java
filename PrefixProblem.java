@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PrefixProblem {
     static class Node {
         Node child[] = new Node[26];

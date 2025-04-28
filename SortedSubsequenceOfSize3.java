@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class SortedSubsequenceOfSize3 {
     public static List<Integer> find3Numbers(int[] arr) {

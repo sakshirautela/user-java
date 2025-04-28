@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ConstructTreefromInorderPreorder {
     static class Node {
         int data;

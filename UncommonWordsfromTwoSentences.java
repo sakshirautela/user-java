@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class UncommonWordsfromTwoSentences {
     public static String[] uncommonFromSentences(String s1, String s2) {

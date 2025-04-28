@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class OutOffBoundaryPaths {
     Integer[][][] dp;
     int mod=1000000007;

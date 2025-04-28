@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class GenericTest1 {
     public static <E> void printArray(E[] array){
         for ( E obj : array) {

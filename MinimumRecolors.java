@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumRecolors {
 
     public int minimumRecolors(String blocks, int k) {

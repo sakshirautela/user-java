@@ -1,5 +1,10 @@
+package com.learn.java.problemsolving;
+
 public class PathWithMaximumProbabily{
-    public double maxProbability(int n, int[][] edges, double[] succProb, int start_node, int end_node) {
-        
-    }
+//    public double maxProbability(int n, int[][] edges, double[] succProb, int start_node, int end_node) {
+//
+//    }
+public static void main(String[] args) {
+
+}
 }

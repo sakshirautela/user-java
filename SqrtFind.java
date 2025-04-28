@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class SqrtFind {
     public static long mySqrt(int n) {
         long low = 0;

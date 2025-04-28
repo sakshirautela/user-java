@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class NumberOfWaysToDivideCoridor {
     static final int mod=100000007;
     public static int numberOfWays(String corridor) {

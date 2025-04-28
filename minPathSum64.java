@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class minPathSum64 {
     public static void main(String[] args) {
         int[][] grid = { { 1, 2, 3 }, { 4, 5, 6 } };

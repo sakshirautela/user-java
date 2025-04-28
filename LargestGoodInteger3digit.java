@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LargestGoodInteger3digit {
         public static boolean isTrue(String str){
         for(int i=0;i<str.length()-1;i++){

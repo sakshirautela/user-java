@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class BeyoundIntegerFactorial {
     public static void main(String[] args){
         int num[]={1,2,3};

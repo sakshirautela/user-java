@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class uniqueElement {
         public static void main(String ...args) {
         int[] nums={};

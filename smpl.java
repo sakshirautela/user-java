@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class smpl {
     public static void main(String[] args){
     int[] value;

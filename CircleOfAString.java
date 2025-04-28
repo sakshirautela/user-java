@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.ArrayList;
 public class CircleOfAString {
     public static int isCircle(String arr[]) {

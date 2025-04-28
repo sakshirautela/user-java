@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ContiguousArrays {
     public int findMaxLength(int[] nums) {
         int n=nums.length;

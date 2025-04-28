@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class InterestingStringPuzzele {
     public static char stringPuzzle(String init, long ind) {
         // code here

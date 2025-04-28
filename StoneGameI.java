@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class StoneGameI {
     public static boolean stoneGame(int[] piles) {
         int i=0;

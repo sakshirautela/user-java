@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class AlternatingGroupsII {
 
     public int numberOfAlternatingGroups(int[] colors, int k) {

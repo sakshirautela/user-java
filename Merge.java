@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Merge {
     public static void merge(int[] array,int start,int mid,int end){
         int idx1=start;

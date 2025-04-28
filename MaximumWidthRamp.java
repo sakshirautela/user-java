@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumWidthRamp {
     public static int maxWidthRamp(int[] nums) {
         int result = 0;

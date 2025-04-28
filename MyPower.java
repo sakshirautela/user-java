@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MyPower {
     public static  double myPow(double x,long n) {
         double pow;

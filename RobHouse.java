@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class RobHouse {
     public static int rob(int[] nums) {
         int n=nums.length;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class RestoreArrayFromAdjencyMatrix {
     public int[] restoreArray(int[][] adjacentPairs) {

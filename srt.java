@@ -1,72 +1,36 @@
-import java.util.ArrayList;
-import java.util.List;
+package com.learn.java.problemsolving;
 
 public class srt {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String num1 = "12";
-
         String num2 = "12";
-        int[] n1 = new int[num1.length()];
-        for (int i = 0; i < num1.length(); i++) {
-            n1[i] = (num1.charAt(i) - '0');
+
+        if (num1.equals("0") || num2.equals("0")) {
+            System.out.println("0");
+            return;
         }
-        int[] n2 = new int[num2.length()];
-        ;
-        for (int i = 0; i < num2.length(); i++) {
-            n2[i] = (num2.charAt(i) - '0');
-        }
-        int k = 1;
-        int sum = 0;
-        String result = "";
-        int carry = 0;
-        for (int i = n2.length - 1; i >= 0; i--) {
-            for (int j = n1.length - 1; j >= 0; j--) {
-                int num = (n1[j] * n2[i]);
-                if (carry != 0) {
-                    num = (num) + carry;
-                }
 
-                carry = num / 10;
-                // k = k * 10;
-                // c=num%10;
-                if (i == n2.length - 1) {
-                    result = String.valueOf(num) + result;
-                } else {
+        int[] result = new int[num1.length() + num2.length()];
 
-                    if (carry != 0) {
-                        int yy = 0;
-                        if (result.charAt(i) != ' ')
-                            yy = (result.charAt(i) - '0') + carry + num;
+        for (int i = num1.length() - 1; i >= 0; i--) {
+            int digit1 = num1.charAt(i) - '0';
+            for (int j = num2.length() - 1; j >= 0; j--) {
+                int digit2 = num2.charAt(j) - '0';
+                int mul = digit1 * digit2;
+                int sum = mul + result[i + j + 1];
 
-                        else
-                            result = String.valueOf(num) + result;
-
-                    } else
-
-                    {
-                        int yy = 0;
-                        if (result.charAt(i) != ' ')
-                            yy = (result.charAt(i) - '0') + carry + num;
-                            result.valueOf(i) =(result.charAt(i) - '0')1
-                        else
-                            result = String.valueOf(num) + result;
-
-                    }
-
-                }
-
+                result[i + j + 1] = sum % 10; // place current digit
+                result[i + j] += sum / 10;    // carry to previous place
             }
-
-            // System.out.println(mul);
         }
-        System.out.println(result);
-    }
 
-    public static int covertion(String array) {
-        int digit = 0;
-        for (int i = 0; i < array.length(); i++) {
-            digit = (array.charAt(i) - '0');
+        StringBuilder sb = new StringBuilder();
+        for (int num : result) {
+            // skip leading zeroes
+            if (sb.length() == 0 && num == 0) continue;
+            sb.append(num);
         }
-        return digit;
+
+        System.out.println(sb.toString());
     }
 }

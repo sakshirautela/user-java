@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class DistanceTraveled {
     public static int distanceTraveled(int mainTank, int additionalTank) {
       int dist=0;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class MultiplyString {
     public static String multiply(String num1, String num2) {

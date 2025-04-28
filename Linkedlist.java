@@ -1,6 +1,9 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 
-class ListNode {
+public class Linkedlist {
+ static class ListNode {
     int data;
     ListNode next;
 
@@ -10,7 +13,7 @@ class ListNode {
     }
 }
 
-class TreeNode {
+static class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
@@ -22,10 +25,9 @@ class TreeNode {
     }
 }
 
-public class Linkedlist {
     static class Node {
         int data;
-        Linkedlist.Node next;
+        Node next;
 
         Node(int data) {
             this.data = data;
@@ -854,5 +856,28 @@ public class Linkedlist {
             return;
         quickSort(p, mid);
         quickSort(mid, end);
+    }
+    public ListNode swapNodes(ListNode head, int k) {
+        ListNode first = head, second = head, fast = head;
+
+        // Move fast pointer k-1 steps ahead to reach k-th node
+        for (int i = 1; i < k; i++) {
+            fast = fast.next;
+        }
+
+        first = fast; // first points to k-th node
+
+        // Now move fast to end, and move second with it
+        while (fast.next != null) {
+            fast = fast.next;
+            second = second.next;
+        }
+
+        // swap values
+        int temp = first.data;
+        first.data = second.data;
+        second.data = temp;
+
+        return head;
     }
 }

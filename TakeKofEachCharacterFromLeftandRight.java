@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TakeKofEachCharacterFromLeftandRight {
     public static int takeCharacters(String s, int k) {
         int[] count = new int[3];

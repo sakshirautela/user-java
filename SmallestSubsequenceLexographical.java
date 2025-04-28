@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class SmallestSubsequenceLexographical {
     public static String smallestSubsequence(String s) {

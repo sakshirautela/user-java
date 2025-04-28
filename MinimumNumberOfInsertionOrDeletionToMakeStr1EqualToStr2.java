@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumNumberOfInsertionOrDeletionToMakeStr1EqualToStr2
 {
 	public static int minOperations(String str1, String str2) 

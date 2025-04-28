@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class NumberOfIslands {
     public static int numIslands(String[][] grid) {
         int m=grid.length;

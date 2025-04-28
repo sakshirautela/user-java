@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class permutation {
     public static void main(String[] args) {
         permute("123", "");

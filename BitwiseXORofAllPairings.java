@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class BitwiseXORofAllPairings {
     public static void main(String[] args) {
         System.out.println(xorAllNums(new int[]{2,1,3},new int[]{10,2,5,0}));

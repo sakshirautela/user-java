@@ -1,4 +1,6 @@
-public class j { 
+package com.learn.java.problemsolving;
+
+public class j {
 	static boolean b1, b2; 
 	public static void main(String [] args) { 
 		int x = 0; 

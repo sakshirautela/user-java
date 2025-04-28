@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MoveAllZeroToEnd {
     static void pushZerosToEnd(int[] arr) {
         // code here

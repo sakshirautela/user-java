@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ZeroArrayTransformationII {
     public static void main(String[] args) {
         System.out.println(minZeroArray(new int[] { 2 }, new int[][] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } }));

@@ -1,4 +1,4 @@
-// Java code for Longest String Chain
+package com.learn.java.problemsolving;// Java code for Longest String Chain
 // using DP + Hashing
 import java.util.Arrays;
 import java.util.HashMap;

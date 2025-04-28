@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class AverageWaitingTime {
     public static double averageWaitingTime(int[][] customers) {
         double wating=0;

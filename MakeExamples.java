@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MakeExamples {
     public static void main(String[] args) {
         byte x=127;

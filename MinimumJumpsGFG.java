@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumJumpsGFG {
 
     public static void main(String[] args) {

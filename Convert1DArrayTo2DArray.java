@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.Arrays;
 public class Convert1DArrayTo2DArray {
     public static int[][] construct2DArray(int[] original, int m, int n) {

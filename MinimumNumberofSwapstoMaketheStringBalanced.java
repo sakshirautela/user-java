@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumNumberofSwapstoMaketheStringBalanced {
     public static int minSwaps(String s) {
         int res=0;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SubArrayswithEqualNumberofOccurences {
 
     static int sameOccurrence(int arr[], int x, int y) {

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Countjumps {
     public static void main(String ...args){
             int[] nums={2,3,0,1,4};

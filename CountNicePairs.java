@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class CountNicePairs {
     public static int countNicePairs(int[] nums) {

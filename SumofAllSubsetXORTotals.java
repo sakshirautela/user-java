@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SumofAllSubsetXORTotals {
     public static void main(String[] args) {
         System.out.println(subsetXORSum(new int[]{5,1,6}));

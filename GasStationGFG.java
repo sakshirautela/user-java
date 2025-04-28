@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class GasStationGFG {
     public static void main(String[] args) {
         System.out.println(startStation(new int[] {}, new int[] {}));

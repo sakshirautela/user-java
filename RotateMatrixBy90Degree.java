@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class RotateMatrixBy90Degree {
     static void rotate(int mat[][]) {
         // Code Here

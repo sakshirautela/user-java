@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class numinstring {
     public static void main(String[] args) {
         String array[]={"zero","one","two","three","four","five","six"};

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FinalValueAfterPerformingOperations {
     public static void main(String[] args) {
         System.out.println(finalValueAfterOperations(new String[] { "--X", "X++", "X++" }));

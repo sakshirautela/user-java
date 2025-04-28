@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindTheKeyOfThreeNumbers {
         public static int generateKey(int num1, int num2, int num3) {
             int res = 0;

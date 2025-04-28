@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PivoteIndex {
     public static void main(String args[]) {
         int[] nums={1,3};

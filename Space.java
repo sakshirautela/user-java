@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Space {
     public static void main(String args[]){
         String str="Vpin kumar Bhandari";

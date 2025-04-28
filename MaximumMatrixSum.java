@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumMatrixSum {
     public static long maxMatrixSum(int[][] matrix) {
         int len = matrix.length;

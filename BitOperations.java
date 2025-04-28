@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class BitOperations {
     static public void EvenOdd(int n){
         if((n & 1)==0){

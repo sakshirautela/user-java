@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class AddDigits {
     public static int addDigits(int num) {
         int res=num;

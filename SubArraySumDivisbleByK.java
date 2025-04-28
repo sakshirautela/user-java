@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SubArraySumDivisbleByK {
     public static int subarraysDivByK(int[] nums, int k) {
         int res=0;

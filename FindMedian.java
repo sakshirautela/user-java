@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.Arrays;
 public class FindMedian {
     public static int[] findMedian(int[] arr, int n) {

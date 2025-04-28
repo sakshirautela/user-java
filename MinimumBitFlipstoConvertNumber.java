@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumBitFlipstoConvertNumber {
     public static int  minBitFlips(int start, int goal) {
         start=start^goal;

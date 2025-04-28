@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class MaxProfitAssignmentWork {
     public static int maxProfitAssignment(int[] difficulty, int[] profit, int[] worker) {
         int res = 0;

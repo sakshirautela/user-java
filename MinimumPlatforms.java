@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumPlatforms {
     public static void main(String[] args) {
         System.out.println(findPlatform(new int[]{},new int[]{}));

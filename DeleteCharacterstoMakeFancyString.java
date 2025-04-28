@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class DeleteCharacterstoMakeFancyString {
     public static String makeFancyString(String s) {
         int n = s.length();

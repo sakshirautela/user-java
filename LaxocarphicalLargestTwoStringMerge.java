@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LaxocarphicalLargestTwoStringMerge {
     public static String largestMerge(String s, String t) {
         String merge="";

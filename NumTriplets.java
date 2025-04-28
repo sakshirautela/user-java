@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 class NumTriplets {
     public static int helper(int[] nums1, int[] nums2) {

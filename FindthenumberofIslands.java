@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindthenumberofIslands {
     public static void main(String[] args) {
         

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class GarbageCollection {
     public static int garbageCollection(String[] garbage, int[] travel) {
         int m=0,p=0,g=0;

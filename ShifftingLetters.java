@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ShifftingLetters {
     public static void main(String[] args) {
         System.out.println(shiftingLetters("abc", new int[] { 3 ,5,9}));

@@ -1,8 +1,13 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 import java.util.stream.Collectors;
 public class MinimumOperationstoExceedThresholdValueII {
+    public static void main(String[] args) {
 
-    public int minOperations(int[] nums, int k) {
+    }
+
+    public int minOperations2(int[] nums, int k) {
         PriorityQueue<Long> minHeap = new PriorityQueue<Long>(
             Arrays.stream(nums)
                 .mapToLong(i -> (long) i)
@@ -20,8 +25,6 @@ public class MinimumOperationstoExceedThresholdValueII {
         }
         return numOperations;
     }
-}
-class Solution {
     public int minOperations(int[] nums, int k) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         for(int num:nums){

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FlippingAnImage {
     public static int[][] flipAndInvertImage(int[][] image) {
         int len=image[0].length;

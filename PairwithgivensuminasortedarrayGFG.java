@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PairwithgivensuminasortedarrayGFG {
     public static void main(String[] args) {
         System.out.println(countPairs(new int[] { -1, 1, 5, 5, 7 }, 6));

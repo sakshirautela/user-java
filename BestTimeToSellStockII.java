@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class BestTimeToSellStockII {
 
     public int maxProfit(int[] prices) {

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.* ;
 import java.io.*; 
 public class MaxSubSumKConcat {

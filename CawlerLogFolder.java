@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CawlerLogFolder {
     public static int minOperations(String[] logs) {
         int changes = 0;

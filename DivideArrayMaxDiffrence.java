@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class DivideArrayMaxDiffrence {
     public static int[][] divideArray(int[] nums, int k) {

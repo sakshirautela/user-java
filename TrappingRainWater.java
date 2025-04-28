@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TrappingRainWater {
     // public void maxLeft(int[] bar){
     //     int[] maxArray= new int[bar.length];

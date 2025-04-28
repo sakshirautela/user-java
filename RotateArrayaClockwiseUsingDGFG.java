@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class RotateArrayaClockwiseUsingDGFG {
     // Function to rotate an array by d elements in counter-clockwise direction.
     static void rotateArr(int arr[], int d) {

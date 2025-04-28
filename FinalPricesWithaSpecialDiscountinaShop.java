@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FinalPricesWithaSpecialDiscountinaShop {
     public static void main(String[] args) {
         int[] res = finalPrices(new int[] {});

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class MinSubArrayLen {
     public static int minSubArrayLen(int target, int[] nums) {
         int sum = 0;

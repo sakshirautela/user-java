@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class PridictorialNumber {
     static long countPeriodicalNumbers(long n) {

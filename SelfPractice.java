@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class exam{
     public String name;
     public String surename;
@@ -7,7 +9,7 @@ class exam{
 public class SelfPractice {
     public static void main(String[] args) {
         exam a =new exam();
-        sample b=new sample();
+        sample2 b=new sample2();
         a.name="Sakshi";
         System.out.println(a.name);
         a.age=19;
@@ -31,7 +33,7 @@ public class SelfPractice {
 
     }
 }
-class sample{
+class sample2{
     void method2(exam e){
         e.name="Vipin";
         e.surename="Bhandari";

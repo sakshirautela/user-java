@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinCostToPaintRope {
     public static int minCost(String colors, int[] neededTime) {
         int cost = 0;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LargestPairSumGFG {
     public static int pairsum(int[] arr) {
         // code here

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SeparateBlackAndWhiteBalls {
     public static long minimumSteps(String s) {
         int whitePosition = 0;

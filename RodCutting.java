@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class RodCutting {
     public static void main(String[] args) {
         int length[]={1,2,3,4,5,6,7,8};

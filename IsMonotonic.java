@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class IsMonotonic {
     public static boolean isMonotonic(int[] nums) {
         if(nums.length==1){

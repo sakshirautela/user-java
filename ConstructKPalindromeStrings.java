@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ConstructKPalindromeStrings {
     public static void main(String[] args) {
         System.out.println(canConstruct("", 5));

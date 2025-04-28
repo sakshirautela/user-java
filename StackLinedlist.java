@@ -1,42 +1,51 @@
-class Node{
-    Object data;
-    Node next;
-    Node(Object data){
-        this.data=data;
-        this.next=null;
-    }
-}
+package com.learn.java.problemsolving;
+
 
 public class StackLinedlist {
-    static Node head;
-    Object push(Object data){
-        Node node =new Node(data);
-        if(isEmpty()){
-            head=node;
+    static class Node {
+        Object data;
+        Node next;
+
+        Node(Object data) {
+            this.data = data;
+            this.next = null;
         }
-        node.next=head;
-        head=node;
+    }
+
+    static Node head;
+
+    Object push(Object data) {
+        Node node = new Node(data);
+        if (isEmpty()) {
+            head = node;
+        }
+        node.next = head;
+        head = node;
         return head.data;
-        
-    
+
+
     }
-    boolean isEmpty(){
-        return head==null;
+
+    boolean isEmpty() {
+        return head == null;
     }
-    Object pop(){
-        if(isEmpty()){
+
+    Object pop() {
+        if (isEmpty()) {
             System.out.println("empty");
         }
-        Node temp=head;
-        head=head.next;
+        Node temp = head;
+        head = head.next;
         return temp.data;
-    
+
     }
-    Object top(){
-        return head.data; 
+
+    Object top() {
+        return head.data;
     }
-    public static void main(String args[]){
-        StackLinedlist  st=new StackLinedlist();
+
+    public static void main(String args[]) {
+        StackLinedlist st = new StackLinedlist();
         //Node node =new Node("sakshi");
         System.out.println(st.isEmpty());
 

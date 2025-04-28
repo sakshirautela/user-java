@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SudokuSolver {
     public static void main(String[] args) {
         int[][] sudoku = {{1,0,0,0,0,0,0,0,0}, { 1, 0, 0, 0, 0, 0, 0, 0, 0 },

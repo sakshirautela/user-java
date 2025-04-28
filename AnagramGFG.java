@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class AnagramGFG {
     public static boolean areAnagrams(String s1, String s2) {
         // Your code here

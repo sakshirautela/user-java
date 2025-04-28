@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class StringCompression {
     public static String compress(String str){
         // if(str.length()==0){

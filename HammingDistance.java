@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class HammingDistance {
     public static int hammingDistance(int x, int y) {
         String a=Integer.toBinaryString(x);

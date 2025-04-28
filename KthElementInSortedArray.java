@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class KthElementInSortedArray {
     public static long kthElement(int k, int arr1[], int arr2[]) {
         // code here

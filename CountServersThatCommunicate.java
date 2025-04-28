@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountServersThatCommunicate {
     public static void main(String args[]) {
         System.out.println(countServers(new int[][] { {} }));
