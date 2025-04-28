@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class RotatingTheBox {
     public static char[][] rotateTheBox(char[][] box) {
         int m = box.length;

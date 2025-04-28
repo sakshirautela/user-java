@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class ArraySign {
     public static int arraySign(int[] nums) {
         int mul=1;

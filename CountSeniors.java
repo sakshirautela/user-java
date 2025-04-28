@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class CountSeniors {
     public static int countSeniors(String[] details) {
         String ans="";

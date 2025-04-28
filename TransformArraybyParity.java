@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TransformArraybyParity {
     public static void main(String[] args) {
         int[] res=transformArray(new int[]{4,3,2,1});

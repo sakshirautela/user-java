@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PeakElement {
     public int peakElement(int[] arr, int n) {
         // add code here.

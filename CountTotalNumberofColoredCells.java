@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountTotalNumberofColoredCells {
     public static void main(String[] args) {
         System.out.println(coloredCells(4));

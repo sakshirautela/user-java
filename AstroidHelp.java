@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Stack;
@@ -51,9 +53,7 @@ public class AstroidHelp {
         }
         return result;
     }
-}
-class Solution {
-    public int[] asteroidCollision(int[] asteroids) {
+    public int[] asteroidCollision2(int[] asteroids) {
         Deque<Integer> stack = new ArrayDeque<>();
         for (int asteroid : asteroids) {
             if (asteroid > 0) {

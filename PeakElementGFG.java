@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PeakElementGFG {
     public static void main(String args[]) {
         System.out.println(peakElement(new int[] {}));

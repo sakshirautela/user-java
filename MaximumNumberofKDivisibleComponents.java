@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,13 +30,13 @@ public class MaximumNumberofKDivisibleComponents {
         return componentCount[0];
     }
 
-    private int dfs(
-        int currentNode,
-        int parentNode,
-        List<Integer>[] adjList,
-        int[] nodeValues,
-        int k,
-        int[] componentCount
+    private static int dfs(
+            int currentNode,
+            int parentNode,
+            List<Integer>[] adjList,
+            int[] nodeValues,
+            int k,
+            int[] componentCount
     ) {
         int sum = 0;
         for (int neighborNode : adjList[currentNode]) {

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class GetSubarrayBeauty {
     public int[] getSubarrayBeauty(int[] nums, int k, int x) {
         int[] f = new int[201];

@@ -1,6 +1,11 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 
 public class MaximumAveragePassRatio {
+    public static void main(String[] args) {
+
+    }
 
     public double maxAverageRatio(int[][] classes, int extraStudents) {
         // Lambda to calculate the gain of adding an extra student
@@ -48,7 +53,8 @@ public class MaximumAveragePassRatio {
             (double) passes / totalStudents
         );
     }
-}class Solution {
+}
+/*class Solution {
     public double maxAverageRatio(int[][] classes, int extraStudents) {
         PriorityQueue<ClassRecord> pq = new PriorityQueue<>(new Compare());
         
@@ -101,4 +107,4 @@ class Compare implements Comparator<ClassRecord>{
         else
             return 0;
     }
-}
+}*/

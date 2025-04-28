@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumStepsToTargetCoordinates {
     public static void main(String[] args) {
         System.out.println(minOperations(3,2));

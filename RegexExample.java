@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.regex.*;
 public class RegexExample {
     static String ptr="^a.*a$|^b.*b$|^a$|^b$";

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class EdirDistanceGFG {
     public static void main(String[] args) {
         System.out.println(editDistance2("geek", "geesk"));

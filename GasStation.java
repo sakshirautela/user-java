@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class GasStation {
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int position = 0, sum = 0, total = 0;

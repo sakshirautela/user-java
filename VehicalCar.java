@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class VehicalCar {
     {
         System.out.println("Non static block invoked");

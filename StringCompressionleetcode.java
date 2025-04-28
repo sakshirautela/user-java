@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class StringCompressionleetcode {
     public static int compress(char[] chars) {
         if (chars.length == 1) {

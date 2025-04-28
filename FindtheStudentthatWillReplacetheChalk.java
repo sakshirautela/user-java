@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindtheStudentthatWillReplacetheChalk {
     public int chalkReplacer2(int[] chalk, int k) {
         return getChalkReplacer(chalk, k);

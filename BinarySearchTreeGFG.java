@@ -15,7 +15,7 @@ public class BinarySearchTreeGFG {
     
     public static void main(String[] args) {
         Node root = null;  
-        int[] values = {97, 46, 37, 12, 3, 7, 31, 2, 4}; 
+        int[] values = {11, 1, 2}; 
         
         root = createBinaryTree(values);
         
@@ -25,6 +25,7 @@ public class BinarySearchTreeGFG {
         printPreOrder(root);
         System.out.println("In-order traversal of BST:");
         printPostOrder(root);
+        System.out.println(getMaxSum(root));
     }
     
     private static Node createBinaryTree(int[] values) {
@@ -109,10 +110,29 @@ public class BinarySearchTreeGFG {
         }
         return (isCompletetree(tree.left, 2*index+1, nodes) && isCompletetree(tree.right, 2*index+2, nodes));
     }
-    public static Node deleteNode(Node root, int X) {
-        // code here.
-        if(root.data==X){
+    // public static Node deleteNode(Node root, int X) {
+    //     // code here.
+    //     if(root.data==X){
 
+    //     }
+    // }
+    public static int getMaxSum(Node root) {
+        // code here
+        if(root==null){
+            return 0;
         }
+        int[] arr=getMaxSumUtil(root,new int[]{0,0});
+        return Math.max(arr[0],arr[1]);
+    }
+
+    private static int[] getMaxSumUtil(Node root, int[] arr) {
+        if(root==null){
+            return new int[]{0,0} ;
+        }
+        int[] left=getMaxSumUtil(root.left, arr);
+        int[] right=getMaxSumUtil(root.right, arr);
+        int include = root.data + left[1] + right[1];
+        int exclude = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        return new int[]{include,exclude};
     }
 }

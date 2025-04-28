@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FloodFillAlgo {
     public static void helper(int[][] image,int sc,int sr,int color,boolean[][] visit,int orgCol){
         if(sc <0 || sr<0 || sc>=image[0].length || sr>=image.length || visit[sr][sc] || image[sr][sc]!=orgCol){

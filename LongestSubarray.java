@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class LongestSubarray {
     public static int longestSubarray(int[] nums) {
         int[] left = new int[nums.length];

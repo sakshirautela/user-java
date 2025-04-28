@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class IsPathCrossing {
     public static boolean isPathCrossing(String path) {

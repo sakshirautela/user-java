@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumOneBitOperationsIntegerToZero {
     public static int minimumOneBitOperations(int n) {
         

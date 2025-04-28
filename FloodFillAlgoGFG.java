@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FloodFillAlgoGFG {
     public static void main(String[] args) {
         int[][] res = floodFill(new int[][] { {} }, 2, 3, 4);

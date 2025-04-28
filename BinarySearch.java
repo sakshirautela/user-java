@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class BinarySearch {
     public static void main(String args[]){
         int[] array={23,34,21,45,34};

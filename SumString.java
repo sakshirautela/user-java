@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SumString {
     public static void main(String[] args) {
         String num1="11";

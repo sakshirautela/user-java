@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ProductExceptSelf {
     public static long[] productExceptSelf(int nums[]) {
         // code here

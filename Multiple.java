@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Multiple{
     public static int[] reacuring(int[] array){
         int[] result=new int[10];

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindtheLengthoftheLongestCommonPrefix {
     public static int longestCommonPrefix(int[] arr1, int[] arr2) {
         if(arr1.length==0 || arr2.length==0){

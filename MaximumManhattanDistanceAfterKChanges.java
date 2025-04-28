@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumManhattanDistanceAfterKChanges {
     public static void main(String[] args) {
         System.out.println(maxDistance("NWSE", 1));

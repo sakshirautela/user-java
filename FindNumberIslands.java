@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindNumberIslands {
     public static int numIslands(char[][] grid) {
         // Code here

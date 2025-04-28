@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class NumberofWaystoSplitArray {
     public static void main(String args[]) {
         System.out.println(waysToSplitArray(new int[] {}));

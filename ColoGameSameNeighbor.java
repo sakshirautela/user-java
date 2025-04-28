@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class ColoGameSameNeighbor {
     public static boolean winnerOfGame(String colors) {
         int acount = 0, bcount = 0, a = 0, b = 0;

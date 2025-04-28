@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class MaxDifferenceGFG {
     public static long fndMax(int n, int m, int[] arr1, int[] arr2) {

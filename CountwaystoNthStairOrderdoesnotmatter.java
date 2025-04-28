@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountwaystoNthStairOrderdoesnotmatter {
     public static int nthStair(int n) {
         // Code here

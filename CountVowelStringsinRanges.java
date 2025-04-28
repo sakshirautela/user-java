@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountVowelStringsinRanges {
     public static void main(String args[]) {
         int[] res = vowelStrings(new String[] {}, new int[][] { {} });

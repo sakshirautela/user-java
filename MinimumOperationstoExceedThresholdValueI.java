@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumOperationstoExceedThresholdValueI {
     public static void main(String[] args) {
         System.out.println(minOperations(new int[]{},3));

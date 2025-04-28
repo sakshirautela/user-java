@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class NumberOfNiceSubarrays {
     public static int numberOfSubarrays(int[] nums, int k) {
         int left=0;

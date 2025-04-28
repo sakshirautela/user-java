@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumDistanceInArray {
     public static int maxDistance(int[][] arrays) {
         int dist=0;

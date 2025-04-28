@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TowerOfHannoi {
     public static void tower(int n,int source,int tempHolding,int destination){
         if(n>0){

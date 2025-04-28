@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ValidateSudoku {
     public static boolean isValidSudoku(String[][] board) {
         int n=board.length;

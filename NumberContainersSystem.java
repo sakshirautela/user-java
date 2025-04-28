@@ -1,16 +1,20 @@
-public class NumberContainersSystem {
+package com.learn.java.problemsolving;
 
-    public NumberContainersSystem() {
-        
+public class NumberContainersSystem {
+    public static void main(String[] args) {
+
     }
-    
-    public void change(int index, int number) {
-        
-    }
-    
-    public int find(int number) {
-        
-    }
+//    public NumberContainersSystem() {
+//
+//    }
+//
+//    public void change(int index, int number) {
+//
+//    }
+//
+//    public int find(int number) {
+//
+//    }
 }
 
 /**

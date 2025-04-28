@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class removeDuplicates {
     public static  String removeDuplicate(String s) {
         boolean[] map = new boolean[26];

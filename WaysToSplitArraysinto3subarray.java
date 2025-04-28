@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class WaysToSplitArraysinto3subarray {
     public static int waysToSplit(int[] nums) {
         int count=0;

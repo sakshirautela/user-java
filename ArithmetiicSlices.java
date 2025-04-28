@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ArithmetiicSlices {
     public int numberOfArithmeticSlices(int[] nums) {
         int n=nums.length;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class subArrayCount {
     public static void main(String[] args) {
         int[] array={1,2,0,0,8,0,0};

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumIncrementToMakeArraysUnique {
     public static int minIncrementForUnique(int[] nums) {
         int maxEl=0;

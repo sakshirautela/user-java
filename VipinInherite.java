@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class A{
     public void method() {
         System.out.println("hello");

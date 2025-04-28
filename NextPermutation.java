@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class NextPermutation {
     public static void nextPermutation(int[] nums) {
         int n=nums.length;

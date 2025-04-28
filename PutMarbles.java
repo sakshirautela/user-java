@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class PutMarbles {
     public static long putMarbles(int[] weights, int k) {
         return getMax(weights,k);

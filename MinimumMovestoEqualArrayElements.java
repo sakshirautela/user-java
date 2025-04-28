@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumMovestoEqualArrayElements {
     public static void main(String[] args) {
         System.out.println(minMoves(new int[] { 1, 2, 3 }));

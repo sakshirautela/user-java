@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class Node{
     Object data;
     int priority;

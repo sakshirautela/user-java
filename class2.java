@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.ArrayList;
 public class class2 {
     public String fname;

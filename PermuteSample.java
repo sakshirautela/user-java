@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PermuteSample {
     public static void main(String[] args) {
         getPermutation("abc","");

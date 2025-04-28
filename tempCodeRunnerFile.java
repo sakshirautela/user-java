@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class Happy {
     public static boolean isHappy(int n) {
         if(n==1){

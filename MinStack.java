@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class MinStack {
     static int top=-1;
     int n=10;

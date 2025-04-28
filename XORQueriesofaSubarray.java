@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class XORQueriesofaSubarray {
     public static int[] xorQueries(int[] arr, int[][] queries) {
         int n = queries.length;

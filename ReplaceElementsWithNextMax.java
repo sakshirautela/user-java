@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ReplaceElementsWithNextMax{
     public static int[] replaceElements(int[] arr) {
         int max=-1;

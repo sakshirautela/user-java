@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class NimGame {
     public boolean canWinNim(int n) {
         if(n<=0){

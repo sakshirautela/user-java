@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumNumberofChangestoMakeBinaryStringBeautiful {
     public static int minChanges(String s) {
         // Initialize with first character of string

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class CountSymmetricIntegers {
     public static int countSymmetricIntegers(int low, int high) {
         int count = 0;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class WinnerBowlingGame {
     public static void main(String[] args) {
         int res[]={ 10,4,0,2};

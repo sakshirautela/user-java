@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Search2DMatrix {
     public static boolean searchMatrix(int[][] matrix, int target) {
         for (int i = 0; i < matrix.length; i++) {

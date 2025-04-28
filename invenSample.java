@@ -1,4 +1,6 @@
- class Product {
+package com.learn.java.problemsolving;
+
+class Product {
     void fun(){
         System.out.println("cxab");
     }

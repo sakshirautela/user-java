@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class StringCompressionIII {
     public static String compressedString(String word) {
         int i = 0;

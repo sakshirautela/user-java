@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class removeAdjustantduplicates {
     public static String removeAdjustant(String s){
         String result="";

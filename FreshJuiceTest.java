@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class FreshJuice {
     enum FreshJuiceSize{ SMALL, MEDIUM, LARGE }
     FreshJuiceSize size;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SmoothDescentPeriodsStock {
     public static long getDescentPeriods(int[] prices) {
         long result = 1;

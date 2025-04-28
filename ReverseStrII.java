@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class ReverseStrII {
     public static String reverseStr(String s, int k) {
         char[] c=s.toCharArray();

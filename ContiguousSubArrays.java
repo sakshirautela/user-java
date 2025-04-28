@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ContiguousSubArrays {
     public static void main(String[] args) {
         System.out.println(continuousSubarrays(new int[] {31,30,31,32}));

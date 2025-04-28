@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LongestWordWithAllPrefix {
     static class Node {
         Node[] children = new Node[26];

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ExcelSheetColumnNumber {
     public static int titleToNumber(String columnTitle) {
         int res=0;

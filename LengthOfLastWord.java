@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class LengthOfLastWord {
     public static int lengthOfLastWord(String s) {
         String res=s.trim();

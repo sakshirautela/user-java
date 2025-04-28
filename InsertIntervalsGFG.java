@@ -1,8 +1,10 @@
+package com.learn.java.problemsolving;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Solution {
+public class InsertIntervalsGFG {
     static ArrayList<int[]> insertInterval(int[][] inter, int[] newInterval) {
         // code here
         int[][] newInter = new int[inter.length+1][2];

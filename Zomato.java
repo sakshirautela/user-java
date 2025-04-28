@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 class Food implements Comparable<Food>{
     String food;

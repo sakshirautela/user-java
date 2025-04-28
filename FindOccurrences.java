@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class FindOccurrences {
     public static int strStr(String haystack, String needle) {
         if(haystack.equals(needle)){

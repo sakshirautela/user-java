@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class  Demo{
     int data;
     private Demo(){

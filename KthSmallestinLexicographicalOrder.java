@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class KthSmallestinLexicographicalOrder {
     public static int findKthNumber(int n, int k) {
         int currentNumber = 1;

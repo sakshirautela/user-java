@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumTimetoRepairCars {
     public static void main(String[] args) {
         System.out.println(repairCars(new int[] {}, 5));

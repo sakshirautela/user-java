@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class MaxProduct2 {
     public static int maxProduct(int[] nums) {
         int product = 1;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class RotateMatrixNightyDegree {
     public static void rotate(int[][] matrix) {

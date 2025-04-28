@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SumOfElementOfMiddleElementOfTwoSortedArray {
     public static int SumofMiddleElements(int[] arr1, int[] arr2) {
         // code here

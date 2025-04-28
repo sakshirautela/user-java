@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ApplyOperationstoanArray {
     public static void main(String[] args) {
         int[] res = applyOperations(new int[] {});

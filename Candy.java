@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class Candy {
     public static int candy(int[] ratings) {
         int[] res=new int[ratings.length];

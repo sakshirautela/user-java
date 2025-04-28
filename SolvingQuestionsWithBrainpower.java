@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SolvingQuestionsWithBrainpower {
     public static void main(String[] args) {
         System.out.println(mostPoints(new int[][] { {} }));

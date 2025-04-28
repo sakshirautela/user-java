@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaxChunksToMakeSorted {
     public static void main(String[] args) {
         System.out.println(maxChunksToSorted(new int[] {}));

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LemonadeChange {
     public static boolean lemonadeChange(int[] bills) {
         int fiveDoller=0;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TargetSumSubset {
     public static void main(String[] args) {
         int nums[]={4,2,7,1,3};

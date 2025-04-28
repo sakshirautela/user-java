@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SetColorDNF {
     public void sortColors(int[] nums) {
         int mid=0;

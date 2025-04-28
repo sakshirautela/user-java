@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumValueofanOrderedTripletI {
     public static void main(String[] args) {
         System.out.println(maximumTripletValue(new int[] {}));

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinNumberOfDaysToDisconnectTheIsland{
     public static int minDays(int[][] grid) {
         if(countIsland(grid)!=1){

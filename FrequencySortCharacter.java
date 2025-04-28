@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class FrequencySortCharacter {
     static class Data implements Comparable<Data>{

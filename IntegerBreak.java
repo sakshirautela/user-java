@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class IntegerBreak {
     public static int integerBreak(int n) {
         if(n<=3){

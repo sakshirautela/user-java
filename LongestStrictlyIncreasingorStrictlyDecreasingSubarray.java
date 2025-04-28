@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LongestStrictlyIncreasingorStrictlyDecreasingSubarray {
     public static void main(String[] args) {
         System.out.println(longestMonotonicSubarray(new int[] { 1, 2, 3 }));

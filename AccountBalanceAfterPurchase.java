@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class AccountBalanceAfterPurchase {
     public static int accountBalanceAfterPurchase(int purchaseAmount) {
         int roundAmt=0;

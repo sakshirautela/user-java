@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class GoodSubstringGFG {
     public static long cntGood(String s) {
         long res = 0;

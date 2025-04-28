@@ -1,4 +1,6 @@
-class Solution {
+package com.learn.java.problemsolving;
+
+public class MinimumSubarrayLength {
 
     public int minimumSubarrayLength(int[] nums, int k) {
         int minLength = Integer.MAX_VALUE;

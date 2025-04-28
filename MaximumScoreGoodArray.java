@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumScoreGoodArray {
     public static int maximumScore(int[] nums, int k) {
         int l=k;

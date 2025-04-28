@@ -1,4 +1,7 @@
-class Solution {
+package com.learn.java.problemsolving;
+
+public class RotateString {
+
 
     public static boolean rotateString(String s, String goal) {
             if (s.length() != goal.length()) return false;

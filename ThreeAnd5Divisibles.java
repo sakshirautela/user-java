@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class ThreeAnd5Divisibles {
     public static void main(String[] args)  {

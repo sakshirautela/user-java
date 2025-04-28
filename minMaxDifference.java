@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class minMaxDifference {
     public static void main(String[] args) {
         int num =  11891;

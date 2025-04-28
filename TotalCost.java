@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TotalCost {
     static int totalCount(int k, int[] arr) {
         // code here

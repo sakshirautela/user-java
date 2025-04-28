@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Array {
     public static void main(String[] args) {
         int[] arr=new int[6];

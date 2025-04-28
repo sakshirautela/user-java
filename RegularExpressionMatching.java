@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class RegularExpressionMatching {
     public static void main(String[] args) {
         String s = "aa";
@@ -27,10 +29,8 @@ public class RegularExpressionMatching {
         return false;
     }
 
-}
 
-class Solution {
-    public boolean isMatch(String s, String p) {
+    public boolean isMatch2(String s, String p) {
         final int m = s.length();
         final int n = p.length();
         // dp[i][j] := true if s[0..i) matches p[0..j)

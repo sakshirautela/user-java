@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumStringLengthAfterRemovingSubstrings {
     public static int minLength(String s) {
         // Continue processing while "AB" or "CD" substrings exist

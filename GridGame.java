@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class GridGame {
     public static void main(String[] args) {
         System.out.println(gridGame(new int[][] { { 2, 5, 4 }, { 1, 5, 1 } }));

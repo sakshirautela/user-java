@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SpiralCreate {
     static int[][] createMatrix(int n){
         int[][] matrix = new int[n][n];

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumDifferencebyRemappingaDigit {
     public static int minMaxDifference(int num) {
         String a = Integer.toString(num);

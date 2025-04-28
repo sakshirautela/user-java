@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountVowelSubstrings {
     public static void main(String args[]) {
         String word="aeiouu";

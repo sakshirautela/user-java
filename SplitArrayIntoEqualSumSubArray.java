@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SplitArrayIntoEqualSumSubArray {
     public static boolean canSplit(int arr[]) {
         // code here

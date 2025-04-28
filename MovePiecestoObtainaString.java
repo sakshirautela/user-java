@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MovePiecestoObtainaString {
 
     public boolean canChange(String start, String target) {

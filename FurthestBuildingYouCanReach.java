@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.PriorityQueue;
 public class FurthestBuildingYouCanReach {
     //public static int furthestBuilding(int[] heights, int bricks, int ladders) {

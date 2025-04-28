@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class DisjointSetDataStructure {
     public static int n = 8;
     public static int[] par = new int[n];

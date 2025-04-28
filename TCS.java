@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TCS {
     public static void main(String...args) {
         int n = args.length - 1;

@@ -1,5 +1,7 @@
-class sample {
-    public static class rrr extends sample {
+package com.learn.java.problemsolving;
+
+class sampleclass {
+    public static class rrr extends sampleclass {
 
     }
 
@@ -12,25 +14,25 @@ class sample {
         System.out.println("cgh");
     }
 
-    private sample() {
+    private sampleclass() {
 
     }
 
-    public static sample getObj() {
+    public static sampleclass getObj() {
 
-        return new sample();
+        return new sampleclass();
     }
 
 }
 
 public class nest {
-    static sample.rrr obj;
+    static sampleclass.rrr obj;
 
     public static void main(String args[]) {
-        obj = new sample.rrr();
+        obj = new sampleclass.rrr();
         obj.uye();
         obj.uye1();
-        sample n=sample.getObj();
+        sampleclass n= sampleclass.getObj();
         n.uye();
         n.uye1();
     }

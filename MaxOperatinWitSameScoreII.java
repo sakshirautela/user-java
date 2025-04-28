@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaxOperatinWitSameScoreII {
     public static int maxOperations(int[] nums) {
         int sum=nums[0]+nums[1];

@@ -1,31 +1,19 @@
-//{ Driver Code Starts
+package com.learn.java.problemsolving;//{ Driver Code Starts
 //Initial Template for Java
 
 
-import java.util.*;
-class GfG
-{
-    public static void main(String args[])
-        {
-            Scanner sc = new Scanner(System.in);
-            int t = sc.nextInt();
-            while(t-->0)
-                {
-                    int n = sc.nextInt();
-                    Solution ob = new Solution();
-                    System.out.println(ob.countFriendsPairings(n));
-                }
-        }
-}    
 // } Driver Code Ends
 
 
 //User function Template for Java
 
-class Solution
+public class CountFriendsPairings
 {
-    public int countFriendsPairings(int n) 
-    { 
+    public static void main(String[] args) {
+        
+    }
+    public int countFriendsPairings(int n)
+    {
        //code here
        int i;
        int a[]=new int[n+1];
@@ -41,7 +29,6 @@ class Solution
            }
        }
        return a[i];
-       
+
     }
-}    
- 
+}

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinArrayJumps {
     public static void main(String[] args) {
         int arr[]={ 10 ,15, 20};

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class UglyNumber {
     public static boolean isUgly(int n) {
         if(n>0 && n<=3){

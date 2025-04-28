@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class MinimizetheHeightsI {
     static int minimzeHeight(int n,int k,int[] arr){

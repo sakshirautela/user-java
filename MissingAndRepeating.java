@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MissingAndRepeating {
     static int[] findTwoElement(int arr[]) {
         // code here

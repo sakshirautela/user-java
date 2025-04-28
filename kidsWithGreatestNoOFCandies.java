@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class kidsWithGreatestNoOFCandies {
     public static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {

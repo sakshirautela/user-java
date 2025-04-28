@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ProductArrayPuzzle {
     public static void main(String[] args) {
         int[] res = productExceptSelf(new int[] { 12, 0 });

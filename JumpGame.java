@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class JumpGame {
     public boolean canJump(int[] nums) {
         int next=nums[0],jumps=0;

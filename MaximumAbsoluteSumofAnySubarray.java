@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumAbsoluteSumofAnySubarray {
     public static void main(String[] args) {
         System.out.println(maxAbsoluteSum2(new int[] { 1, -3, 2, 3, -4 }));

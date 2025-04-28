@@ -1,4 +1,9 @@
-class Solution {
+package com.learn.java.problemsolving;
+
+public class ShiftingLettersII {
+    public static void main(String[] args) {
+
+    }
 
     public String shiftingLetters(String s, int[][] shifts) {
         int n = s.length();

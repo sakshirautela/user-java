@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class ZigZagConversion {
     public static String convert(String s, int numRows) {
         char[][] temp=new char[numRows][(s.length()/numRows)*2];//(s.length()/numRows)+2];

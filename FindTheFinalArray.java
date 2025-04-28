@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindTheFinalArray {
     public static long[] finalArray(int n, int[] B) {
         // code her

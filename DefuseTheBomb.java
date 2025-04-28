@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class DefuseTheBomb {
     public static int[] decrypt(int[] code, int k) {
         int n = code.length;

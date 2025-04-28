@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Knapsack01 {
     public static void main(String[] args) {
         int val[]={15,14,10,45,30};

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.PriorityQueue;
 public class TakeGiftsFromtheRichestPile {
     public static void main(String[] args) {

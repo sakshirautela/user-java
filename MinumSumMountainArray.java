@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class MinumSumMountainArray {
     public int minimumSum(int[] nums) {
         int sum=-1;

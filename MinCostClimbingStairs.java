@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class MinCostClimbingStairs {
     public static int minCostClimbingStairs(int[] cost) {
         // int n = cost.length;

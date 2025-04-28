@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LongestCommonPrefixAndSuffixgfg {
     public static int lps(String str) {
         // code here

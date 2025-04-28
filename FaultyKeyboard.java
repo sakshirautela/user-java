@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class FaultyKeyboard {
     public static String finalString(String s) {
         StringBuilder res=new StringBuilder();

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MakeTheStringGoodorGreat {
     public static String makeGood(String s) {
         StringBuilder sb = new StringBuilder(s);

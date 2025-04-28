@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumNumberofIntegerstoChooseFromaRangeI {
     public int maxCount(int[] banned, int n, int maxSum) {
         int sum = 0;

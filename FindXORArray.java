@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindXORArray {
     public static int[] findArray(int[] pref) {
         int[] result = new int[pref.length];

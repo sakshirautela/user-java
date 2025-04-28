@@ -1,4 +1,11 @@
+package com.learn.java.problemsolving;
+
+import java.util.HashMap;
+
 public class MakeSumDivisbleNyP {
+    public static void main(String[] args) {
+
+    }
 
     public int minSubarray(int[] nums, int p) {
         int n = nums.length;

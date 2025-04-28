@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class SetZeroes {
     public static void setZeroes(int[][] matrix) {
         boolean[] row = new boolean[matrix.length];

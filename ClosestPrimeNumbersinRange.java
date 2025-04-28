@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ClosestPrimeNumbersinRange {
     public static void main(String[] args) {
         int res[] = closestPrimes(4, 5);

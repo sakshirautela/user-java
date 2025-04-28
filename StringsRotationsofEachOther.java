@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class StringsRotationsofEachOther {
     public static boolean areRotations(String s1, String s2) {
         // Your code here

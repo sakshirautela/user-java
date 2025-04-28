@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountOfNumbersWhichAreNotSpecials {
     public static int nonSpecialCount(int l, int r) {
         int res=0;

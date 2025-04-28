@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountPrefixandSuffixPairsI {
     public static void main(String args[]){
         System.out.println(countPrefixSuffixPairs(new String[]{}));

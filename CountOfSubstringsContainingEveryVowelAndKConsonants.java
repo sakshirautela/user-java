@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountOfSubstringsContainingEveryVowelAndKConsonants {
 
     public static int countOfSubstrings(String word, int k) {

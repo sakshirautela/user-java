@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TheTwoSneakyNumbersofDigitville {
     public static int[] getSneakyNumbers(int[] nums) {
         int[] freq = new int[100];

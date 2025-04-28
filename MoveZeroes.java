@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MoveZeroes {
     public static void moveZeroes(int[] nums) {
         int ptr=0;

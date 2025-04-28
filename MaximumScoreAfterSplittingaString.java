@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaximumScoreAfterSplittingaString {
     public static void main(String args[]) {
         System.out.println(maxScore("011101"));

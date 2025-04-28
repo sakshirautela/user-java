@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 //{ Driver Code Starts
 public class minimumJumps {
     public static void main(String[] args) {

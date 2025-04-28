@@ -1,3 +1,4 @@
+package com.learn.java.problemsolving;
 
 public class Search {
     /*public static void pivot(int[] result,target){

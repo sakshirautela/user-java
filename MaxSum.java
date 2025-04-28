@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MaxSum {
         public int maxSubArray(int[] nums) {
             int maxNow = nums[0];

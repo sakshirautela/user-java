@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 class Substring {
     public static String reverse(String s){
         String r="";

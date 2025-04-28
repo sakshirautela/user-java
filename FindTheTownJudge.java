@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindTheTownJudge {
     public static int findJudge(int n, int[][] trust) {
         int[] result = new int[n];

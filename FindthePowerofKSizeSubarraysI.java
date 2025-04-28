@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindthePowerofKSizeSubarraysI {
     public static int[] resultsArray(int[] nums, int k) {
         int n = nums.length;

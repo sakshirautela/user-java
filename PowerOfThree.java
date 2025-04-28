@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PowerOfThree {
     public static boolean isPowerOfThree(int n) {
         if(n==1){

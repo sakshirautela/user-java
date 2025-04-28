@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class totalGridWays {
     public static void main(String[] args) {
         //System.out.println(gridWays(0, 0, 3, 2));

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class RectangleCutBySlashes {
     static int[] parent;
     static int[] rank;

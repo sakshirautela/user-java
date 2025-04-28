@@ -1,3 +1,6 @@
+package com.learn.java.problemsolving;
+
+
 class sample {
     static class abc {
         public void print() {
@@ -13,7 +16,6 @@ class sample {
     // }
    
 }
-
 
 public class xys {
     static sample b;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class anonymusArray {
     public static void main(String args[]){
         sum( new int[]{10,20,30,40,50});

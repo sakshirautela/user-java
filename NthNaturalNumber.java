@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class NthNaturalNumber {
     static long findNth(long n) {
         // code here

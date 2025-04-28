@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class MaximumImportanceRoads {
         public static long maximumImportance(int n, int[][] roads) {

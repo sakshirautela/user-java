@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CoinChange {
     public static void main(String[] args) {
         int coins[]={2};

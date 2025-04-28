@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class findPrime {
     public static void main(String[] args) {
         System.out.println(prime(10));

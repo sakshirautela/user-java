@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class KthElementoftwoArrays {
     public static void main(String[] args) {
         System.out.println(kthElement(new int[] {}, new int[] {}, 4));

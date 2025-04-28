@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class ValidateIPAddress {
     public static boolean isValid(String str) {
         // Write your code here

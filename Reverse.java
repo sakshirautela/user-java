@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Reverse {
     public static void reverse(int[] array){
         int n=array.length-1;

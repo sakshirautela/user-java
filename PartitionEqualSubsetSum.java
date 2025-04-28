@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class PartitionEqualSubsetSum {
     public static void main(String[] args) {
         System.out.println(equalPartition(new int[] { 1, 3, 5, 3 }));

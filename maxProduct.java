@@ -1,29 +1,12 @@
-//{ Driver Code Starts
-import java.io.*;
-
-  public class maxProduct {
-
-    public static void main(String[] args) throws Exception {
-        BufferedReader br =
-            new BufferedReader(new InputStreamReader(System.in));
-        int tc = Integer.parseInt(br.readLine());
-        while (tc-- > 0) {
-            int n = Integer.parseInt(br.readLine());
-            int[] arr = new int[n];
-            String[] inputLine = br.readLine().split(" ");
-            for (int i = 0; i < n; i++) {
-                arr[i] = Integer.parseInt(inputLine[i]);
-            }
-
-            System.out.println(new Solution().maxProduct(arr, n));
-        }
-    }
-}
+package com.learn.java.problemsolving;//{ Driver Code Starts
 
 // } Driver Code Ends
 
 
-class Solution {
+public class MaxProduct {
+    public static void main(String[] args) {
+
+    }
     // Function to find maximum product subarray
     long maxProduct(int[] arr, int n) {
         // code here

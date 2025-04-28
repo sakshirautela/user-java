@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class BitwizeOfNumberRange {
     public static int rangeBitwiseAnd(int left, int right) {
         // int res=left;

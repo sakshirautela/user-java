@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class EquilibriumPoint {
     public static int equilibriumPoint(long arr[], int n) {
         if (n == 1) {

@@ -1,5 +1,15 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class SpiralMatrixIV {
+    static class ListNode{
+        int val;
+        ListNode next;
+        public ListNode(int val) {
+            this.val=val;
+            next=null;
+        }
+    }
     public static int[][] spiralMatrix(int m, int n, ListNode head) {
         int[][] matrix=new int[m][n];
         int startCol=0;

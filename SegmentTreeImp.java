@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SegmentTreeImp {
     static int tree[];
     public static void init(int n){

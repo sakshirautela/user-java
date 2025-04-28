@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinCharstoAddforPalindrome {
     public static int minChar(String s) {
         // Write your code here

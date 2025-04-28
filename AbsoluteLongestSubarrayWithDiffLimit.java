@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class AbsoluteLongestSubarrayWithDiffLimit {
     public static int longestSubarray(int[] nums, int limit) {
         // int left=0;

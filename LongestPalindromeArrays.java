@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LongestPalindromeArrays {
     public static void main(String[] args) {
         System.out.println(longestPalindrome(new int[]{3,2}));
@@ -16,9 +18,10 @@ public class LongestPalindromeArrays {
     }
     public static int longestPalindrome(int[] arr) {
         // code here
-        long sum=0;
-        for (int i : arr) {
-            sum+=i;
-        }
+//        long sum=0;
+//        for (int i : arr) {
+//            sum+=i;
+//        }
+        return 0;
     }
 }

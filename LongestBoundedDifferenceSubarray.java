@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.ArrayList;
 import java.util.TreeMap;
 public class LongestBoundedDifferenceSubarray {

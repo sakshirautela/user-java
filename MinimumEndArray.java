@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinimumEndArray {
     public static long minEnd(int n, int x) {
         int res = x;

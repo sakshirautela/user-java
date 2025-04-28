@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class KthEleIn01String {
     public static int kthGrammar(int n,int k){
         if(n==1){

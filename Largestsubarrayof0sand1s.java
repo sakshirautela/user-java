@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.HashMap;
 
 public class Largestsubarrayof0sand1s {

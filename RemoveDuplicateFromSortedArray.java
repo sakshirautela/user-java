@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class RemoveDuplicateFromSortedArray {
     public static int removeDuplicates(int[] nums) {
         int n=nums.length;

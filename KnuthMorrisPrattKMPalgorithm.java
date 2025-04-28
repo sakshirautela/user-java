@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class KnuthMorrisPrattKMPalgorithm {
     public static void main(String[] args) {
         System.out.println(areRotations("abc", "aba"));

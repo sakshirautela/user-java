@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class LongestCommonSubsequence {
     static int lcs(String s1, String s2) {
         // code here

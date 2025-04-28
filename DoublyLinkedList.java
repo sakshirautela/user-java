@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 
 import org.w3c.dom.Node;
@@ -15,8 +17,8 @@ public class DoublyLinkedList {
 
     static class Node2 {
         int data;
-        DoublyLinkedList.Node2 right;
-        DoublyLinkedList.Node2 down;
+        Node2 right;
+        Node2 down;
 
         public Node2(int data) {
             this.data = data;

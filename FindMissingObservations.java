@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindMissingObservations {
     public static int[] missingRolls(int[] rolls, int mean, int n) {
         int sumObserved = 0;

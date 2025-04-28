@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class FindtheKthCharacterinStringGameI {
     public static char kthCharacter(int k) {
         String str="a";

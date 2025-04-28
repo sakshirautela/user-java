@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 abstract class asd{
    static int abc=5;
      void sum(){

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class Happy2 {
     public static boolean isHappy(int n) {
         return valid(n);

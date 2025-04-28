@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class RearrangeElemntArrayBySign {
     public static int[] rearrangeArray(int[] nums) {
         int[] result=new int[nums.length];

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountVowelPermutation {
     public static int countVowelPermutation(int n) {
         int mod=100000007;

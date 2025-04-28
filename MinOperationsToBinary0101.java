@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class MinOperationsToBinary0101 {
     public static int minOperations(String s) {
         int count=0;//checking misplaced 

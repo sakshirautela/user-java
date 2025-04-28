@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TwoSmallestsinEverySubarray {
     public static <Stirng> void main(Stirng args[]){
         

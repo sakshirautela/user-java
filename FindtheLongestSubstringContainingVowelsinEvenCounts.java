@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 import java.util.*;
 public class FindtheLongestSubstringContainingVowelsinEvenCounts {
     public static int findTheLongestSubstring(String s) {

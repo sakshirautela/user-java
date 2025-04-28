@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class CountSubstringThatSatisfyKconstrainstI {
     public static boolean count(int k,String s){
         int one=0;

@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class TheCelebrityProblem {
     public static void main(String[] args) {
         System.out.println(celebrity(new int[][]{{0,0,0},{0,0,0},{0,1,0}}));

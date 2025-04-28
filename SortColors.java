@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class SortColors {
     public static void swap(int[] nums,int a,int b){
         int temp=nums[a];

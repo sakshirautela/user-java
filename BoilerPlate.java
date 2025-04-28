@@ -1,3 +1,5 @@
+package com.learn.java.problemsolving;
+
 public class BoilerPlate {
     public static void main(String[] args) {
         // int a=5;
