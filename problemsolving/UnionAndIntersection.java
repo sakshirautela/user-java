@@ -4,7 +4,7 @@ public class UnionAndIntersection {
     public static void main(String[] args) {
         int arr1[]={7,3,9};
         int arr2[]={6,3,9,2,9,4};
-        HashSet<Integer> nhs=new HashSet();
+        HashSet<Integer> nhs=new HashSet<>();
         for(int i=0;i<arr1.length ;i++){
             nhs.add(arr1[i]);
         }
@@ -12,7 +12,7 @@ public class UnionAndIntersection {
             nhs.add(arr2[i]);
         }
         System.out.println(nhs.size());
-        HashSet<Integer> hs=new HashSet();
+        HashSet<Integer> hs=new HashSet<>();
         for(int i=0;i<arr2.length;i++){
             hs.add(arr2[i]);
         }

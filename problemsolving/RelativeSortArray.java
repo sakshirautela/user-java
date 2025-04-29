@@ -1,7 +1,3 @@
-
-import java.util.Arrays;
-import java.util.HashMap;
-
 public class RelativeSortArray {
     public static int[] relativeSortArray(int[] arr1, int[] arr2) {
         int maxEl=Integer.MIN_VALUE;

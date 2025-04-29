@@ -81,7 +81,7 @@ class Solutiona {
             }
         });
 
-        List<int[]> ans = new ArrayList();
+        List<int[]> ans = new ArrayList<>();
         int[] temp = intervals[0];
         ans.add(temp);
         

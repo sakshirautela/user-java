@@ -2,6 +2,7 @@
 import java.util.Stack;
 
 class BasicCalculator {
+    @SuppressWarnings("unlikely-arg-type")
     public static int calculate(String s) {
         String result = "";        
         String str = "";

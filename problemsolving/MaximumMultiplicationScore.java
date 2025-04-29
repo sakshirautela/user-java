@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class MaximumMultiplicationScore {
     public static long maxScore(int[] a, int[] b) {
         long[][] dp = new long[5][b.length + 1];
@@ -20,7 +18,6 @@ public class MaximumMultiplicationScore {
 
     public long maxScore2(int[] a, int[] b) {
         long ans = Long.MIN_VALUE;
-        int b1 = b[0], b2 = b[1], b3 = b[2];
         long mx3 = (long) -1e11;
         long mx2 = (long) -1e11;
         long mx1 = (long) -1e11;

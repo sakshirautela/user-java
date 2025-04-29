@@ -1,25 +1,42 @@
-
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class SortJumbleNumbers {
     public static int[] sortJumbled(int[] mapping, int[] nums) {
-        HashMap<Integer,Integer> hm=new HashMap();
-        for(int i:nums){
-            hm.put(i,jumbled(i,mapping));
-        }
+        // Create an array of Integer objects to allow sorting with custom comparator
+        Integer[] originalNums = Arrays.stream(nums).boxed().toArray(Integer[]::new);
+
+        // Sort based on jumbled mapping
+        Arrays.sort(originalNums, new Comparator<Integer>() {
+            public int compare(Integer a, Integer b) {
+                return getMappedValue(a, mapping) - getMappedValue(b, mapping);
+            }
+        });
+
+        // Convert back to int[]
+        return Arrays.stream(originalNums).mapToInt(i -> i).toArray();
     }
-    public static int jumbled(int n,int[] mapping){
-        String res="";
-        while(n>0){
-            int rem=n%10;
-            res=('a'+mapping[rem])+res;
+
+    private static int getMappedValue(int num, int[] mapping) {
+        if (num == 0) return mapping[0];
+        int result = 0;
+        int multiplier = 1;
+        while (num > 0) {
+            int digit = num % 10;
+            result += mapping[digit] * multiplier;
+            multiplier *= 10;
+            num /= 10;
         }
-        return Integer.parseInt(res);
+        return result;
     }
-    public static void main(String args[]){
-        int[] res=sortJumbled(new int[]{},new int[]{});
-        for(int i=0;i<res.length;i++){
-            System.out.print(res[i]+" ");
+
+    public static void main(String args[]) {
+        int[] mapping = {2, 1, 4, 8, 6, 3, 0, 9, 7, 5};
+        int[] nums = {990, 332, 981};
+        int[] res = sortJumbled(mapping, nums);
+        for (int n : res) {
+            System.out.print(n + " ");
         }
+        // Example output: 981 990 332
     }
 }

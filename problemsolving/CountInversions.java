@@ -34,7 +34,6 @@ public class CountInversions {
 
     private static long merge(long[] arr, int si, int mid, int ei) {
         long swaps=0;
-        long[] temp=new long[ei-si+1];
         long[] left=Arrays.copyOfRange(arr,ei,mid+1);
         long[] right=Arrays.copyOfRange(arr,mid+1,ei+1);
         int i=si;

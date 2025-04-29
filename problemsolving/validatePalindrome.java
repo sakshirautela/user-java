@@ -1,6 +1,3 @@
-
-import java.util.Collections;
-
 public class validatePalindrome {
 
     public boolean isPalindrome(String s) {

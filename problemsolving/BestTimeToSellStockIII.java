@@ -7,7 +7,7 @@ public class BestTimeToSellStockIII {
         System.out.println(bestTimeToSellStock(new int[]{3,2,6,5,0,3}));
     }
     public static int bestTimeToSellStock(int[] prices){
-        ArrayList<Integer> al=new ArrayList();
+        ArrayList<Integer> al=new ArrayList<>();
         int buyprice=Integer.MAX_VALUE;
         int maxPrice=0;
         for(int i=0;i<prices.length;i++){

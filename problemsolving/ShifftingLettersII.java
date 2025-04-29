@@ -1,4 +1,7 @@
-class Solution {
+public class ShifftingLettersII {
+    public static void main(String[] args) {
+
+    }
 
     public String shiftingLetters(String s, int[][] shifts) {
         int n = s.length();
@@ -23,7 +26,8 @@ class Solution {
 
         for (int i = 0; i < n; i++) {
             numberOfShifts = (numberOfShifts + diffArray[i]) % 26;
-            if (numberOfShifts < 0) numberOfShifts += 26;
+            if (numberOfShifts < 0)
+                numberOfShifts += 26;
 
             char shiftedChar = (char) ('a' + ((s.charAt(i) - 'a' + numberOfShifts) % 26));
             result.setCharAt(i, shiftedChar);

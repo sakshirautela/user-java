@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class InsertIntervalsGFG {
     static ArrayList<int[]> insertInterval(int[][] inter, int[] newInterval) {

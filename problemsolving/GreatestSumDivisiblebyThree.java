@@ -1,11 +1,5 @@
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
-
-import javax.swing.text.AbstractDocument.BranchElement;
-
-import java.util.Comparator;
-
 public class GreatestSumDivisiblebyThree {
     public static void main(String[] args) {
     //     System.out.println(greatestSumDivisiblebyThree(new int[]{3,6,5,1,8}));
@@ -61,7 +55,7 @@ public class GreatestSumDivisiblebyThree {
         for (int i = 0; i < nums.length; i++) {
             sum+=nums[i];
         }
-        PriorityQueue<Integer> pq = new PriorityQueue();
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
         for (int i = 0; i < nums.length; i++) {
             pq.add(nums[i]);
         }

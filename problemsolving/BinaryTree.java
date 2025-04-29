@@ -1,6 +1,7 @@
 import java.util.*;
 
-class TreeNode {
+public class BinaryTree {
+static class TreeNode {
     int val;
     TreeNode left, right;
 
@@ -11,7 +12,7 @@ class TreeNode {
     }
 }
 
-class Node {
+static class Node {
     int data;
     Node left;
     Node right;
@@ -23,7 +24,6 @@ class Node {
     }
 }
 
-public class BinaryTree {
 
     // public Node GetNode(int i) {
 

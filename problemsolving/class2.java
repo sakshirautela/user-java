@@ -1,5 +1,4 @@
 
-import java.util.ArrayList;
 public class class2 {
     public String fname;
     public String lname;

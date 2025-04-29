@@ -4,7 +4,7 @@ import java.util.*;
 public class SingleElement {
     static int singleElement(int[] arr , int N) {
         // code here
-        HashMap<Integer, Integer> map = new HashMap();
+        HashMap<Integer, Integer> map = new HashMap<>();
         int res=-1;
         for(int i=0;i<N;i++){
             map.put(arr[i],map.getOrDefault(arr[i],0)+1);

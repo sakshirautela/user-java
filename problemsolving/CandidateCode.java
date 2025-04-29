@@ -1,7 +1,4 @@
 
-import java.io.*;
-import java.util.*;
-
 public class CandidateCode {
     public static void main(String args[]) throws Exception {
         int[] array = { -1, 0, -2, -1 };

@@ -1,7 +1,6 @@
 
 import java.io.File;
-import java.lang.*;
-class FileHanding{
+public class FileHanding{
       public static void main(String args[]){
         File myfile = new File("Sample.txt");
         try{

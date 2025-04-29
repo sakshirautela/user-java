@@ -18,5 +18,6 @@ public class OddOneOut{
             }
 
         }
+        scanner.close();
     }
 }

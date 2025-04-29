@@ -19,5 +19,6 @@ public class ArithmeticProgression {
             System.out.println(a+" ");
             a+=d;
         }
+        scanner.close();
     }
 }

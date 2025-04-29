@@ -6,7 +6,7 @@ public class FindtheWinneroftheCircularGame {
     }
 
     public static int findTheWinner(int n, int k) {
-        ArrayList<Integer> arr = new ArrayList();
+        ArrayList<Integer> arr = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             arr.add(i + 1);
         }

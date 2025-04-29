@@ -50,6 +50,7 @@ public class LiftSystem {
         UserProperties user = new UserProperties(src, dest);
         addUser(user);
         startLift();
+        sc.close();
     }
 
     private static void startLift() {

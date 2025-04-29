@@ -6,7 +6,7 @@ class RemoveStars {
         System.out.println(removeStars2("leet**cod*e*"));
     }
     public static String removeStars(String s) {
-        Stack<Character> stack=new Stack();
+        Stack<Character> stack=new Stack<>();
         String str="";
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i);

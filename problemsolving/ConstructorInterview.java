@@ -13,5 +13,6 @@ public class ConstructorInterview {
     public static void main(String[] args) {
         
         AConstctor b=new BConstctor();
+        System.out.println(b);
     }
 }

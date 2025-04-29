@@ -21,7 +21,7 @@ public class ClimbingStairsArray {
     }
 
     public static void main(String args[]) {
-        ArrayList<Integer> al = new ArrayList();
+        ArrayList<Integer> al = new ArrayList<>();
         al.add(4);
         System.out.println(solve(al));
     }

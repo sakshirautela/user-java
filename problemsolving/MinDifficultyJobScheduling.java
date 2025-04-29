@@ -1,6 +1,3 @@
-
-import java.util.Arrays;
-
 public class MinDifficultyJobScheduling {
     public static int minDifficulty(int[] jobDifficulty, int d) {
         int n=jobDifficulty.length;

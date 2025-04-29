@@ -35,6 +35,7 @@ public class RedundantConnection {
     public int[] findRedundantConnection1(int[][] edges) {
         int N = edges.length;
 
+        @SuppressWarnings("unchecked")
         List<Integer>[] adjList = new ArrayList[N];
         for (int i = 0; i < N; i++) {
             adjList[i] = new ArrayList<>();
@@ -59,6 +60,7 @@ public class RedundantConnection {
         int res[] = new int[2];
         int n = edges.length;
         boolean[] visited = new boolean[n];
+        @SuppressWarnings("unchecked")
         ArrayList<Integer>[] graph = new ArrayList[n];
         for (int i = 0; i < n; i++) {
             graph[i] = new ArrayList<Integer>();
@@ -88,6 +90,7 @@ public class RedundantConnection {
 
     class DSU {
 
+        @SuppressWarnings("unused")
         private int N;
         private int[] size;
         private int[] representative;

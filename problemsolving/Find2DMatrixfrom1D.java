@@ -5,7 +5,7 @@ import java.util.List;
 public class Find2DMatrixfrom1D {
     public static List<List<Integer>> findMatrix(int[] nums) {
         int[] temp=new int[201];
-        List<List<Integer>> list=new ArrayList();
+        List<List<Integer>> list=new ArrayList<>();
         for(int i=0;i<nums.length;i++){
             temp[nums[i]]=temp[nums[i]]+1;
             if(list.size()<temp[nums[i]]){

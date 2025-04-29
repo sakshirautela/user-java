@@ -8,7 +8,7 @@ public class GroupAnargram {
         if (s.length() != t.length()) {
             return false;
         }
-        HashMap<Character, Integer> hm = new HashMap();
+        HashMap<Character, Integer> hm = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             char a = s.charAt(i);
             hm.put(a, hm.getOrDefault(a, 0) + 1);
@@ -28,14 +28,14 @@ public class GroupAnargram {
         return true;
     }
     public static List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> result=new ArrayList();
+        List<List<String>> result=new ArrayList<>();
         HashMap<String ,Integer>hm=new HashMap<>();
         for (int i = 0; i < strs.length; i++) {
             hm.put(strs[i],1);
         }
         for (int i = 0; i < strs.length; i++){
             if(hm.containsKey(strs[i])){
-                List<String> temp = new ArrayList();
+                List<String> temp = new ArrayList<>();
                 temp.add(strs[i]);
                 hm.remove(strs[i]);
                 for (int j = i + 1; j < strs.length; j++) {

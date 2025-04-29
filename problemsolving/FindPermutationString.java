@@ -3,7 +3,7 @@ import java.util.*;
 
 class FindPermutationString {
     public static boolean checkInclusion(String s1, String s2) {
-        HashMap<Character,Integer> hm=new HashMap();
+        HashMap<Character,Integer> hm=new HashMap<>();
         for(char c:s1.toCharArray()){
             hm.put(c,hm.getOrDefault(c,0)+1);
         }
@@ -11,7 +11,7 @@ class FindPermutationString {
         System.out.println(hm);
         int n=s1.length();
         for(int i=0;i<=s2.length()-s1.length();i++){
-            HashMap<Character,Integer> temp=new HashMap();
+            HashMap<Character,Integer> temp=new HashMap<>();
             for(int j=i;j<i+s1.length();j++){
                 char ch=s2.charAt(j);
                 if(hm.containsKey(ch)){

@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 public class PartitionArrayIntoTwoArraystoMinimizeSumDifference {
     public static void main(String[] args) {
         int[] nums = {1, 6, 11, 5};
@@ -27,6 +25,7 @@ public class PartitionArrayIntoTwoArraystoMinimizeSumDifference {
         minimumDifferenceHelper(nums, n - 1, sum + nums[i], totalsum, result, i - 1);
         minimumDifferenceHelper(nums, n, sum, totalsum, result, i - 1);
     }
+    @SuppressWarnings("unused")
     public static int minimumDifference(int[] nums) {
         int n=nums.length;
         int sum = 0;

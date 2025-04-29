@@ -26,5 +26,6 @@ public class getBowl {
             game.addPlayer(name, points);
         }
         game.getWinner();
+        sc.close();
     }
 }

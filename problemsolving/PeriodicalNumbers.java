@@ -30,5 +30,6 @@ public class PeriodicalNumbers {
       }
       System.out.println(r);
     }
+    sc.close();
   }
 }

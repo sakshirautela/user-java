@@ -39,7 +39,7 @@ public class StringMatchinginanArray {
             if (j == indexToExclude)
                 continue;
             String other = words[j];
-            if (other.contains(curr)) { // TODO is null allowed ?
+            if (other.contains(curr)) { 
                 return true;
             }
         }

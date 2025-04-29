@@ -1,7 +1,4 @@
-
 import java.util.Arrays;
-import java.util.*;
-
 class MinOperationsToContinuesArray {
     public static int minOperations(int[] nums) {
         // int N = nums.length;

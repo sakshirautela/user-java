@@ -19,7 +19,6 @@ public class ConnectionDB {
                 System.out.println(rs.getInt(1)+rs.getString(2)+rs.getInt(3));
             }
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println(e);
         }
     }

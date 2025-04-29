@@ -24,6 +24,7 @@ public class ClassRoom{
     }
     public static void mian(String args[]){
         int V=4;
+        @SuppressWarnings("unchecked")
         ArrayList<Edges> graph[]=new ArrayList[V];
         CreateGraph(graph);
        for(int i=0;i<graph[1].size();i++){

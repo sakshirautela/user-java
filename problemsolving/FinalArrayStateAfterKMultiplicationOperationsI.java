@@ -35,7 +35,6 @@ public class FinalArrayStateAfterKMultiplicationOperationsI {
     }
 
     public int[] getFinalState2(int[] arr, int k, int multiplier) {
-        int ans[] = new int[arr.length];
         while (k > 0) {
             int x = 0;
             for (int i = 1; i < arr.length; i++) {

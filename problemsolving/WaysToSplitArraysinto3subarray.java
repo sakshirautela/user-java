@@ -1,5 +1,6 @@
 
 public class WaysToSplitArraysinto3subarray {
+    @SuppressWarnings("unused")
     public static int waysToSplit(int[] nums) {
         int count=0;
         int sum[]=new int[nums.length];

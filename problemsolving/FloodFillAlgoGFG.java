@@ -2,6 +2,12 @@
 public class FloodFillAlgoGFG {
     public static void main(String[] args) {
         int[][] res = floodFill(new int[][] { {} }, 2, 3, 4);
+        for(int[] i : res){
+            for(int j : i){
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
     }
 
     public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {

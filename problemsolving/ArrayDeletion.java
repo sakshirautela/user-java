@@ -1,5 +1,4 @@
 
-import java.util.*;
 public class ArrayDeletion {
     public static void main(String args[]){
         int[] array={1,2,34,23,45,10};

@@ -6,7 +6,7 @@ public class PascalTriangle {
     public static List<List<Integer>> getRow(int rowIndex) {
         List<List<Integer>> dp=new ArrayList<List<Integer>>();
         for(int i=0;i<rowIndex;i++){
-            dp.add(new ArrayList());
+            dp.add(new ArrayList<>());
             dp.get(i).add(1);
         }
         for(int i=0;i<rowIndex;i++){

@@ -11,6 +11,7 @@ public class VehicalCar {
     }
     public static void main(String args[]){
         VehicalCar obj = new VehicalCar();
+        System.out.print(obj);
     }
 }
         

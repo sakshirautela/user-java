@@ -1,6 +1,5 @@
 
 import java.util.* ;
-import java.io.*; 
 public class MaxSubSumKConcat {
 
 	public static long maxSubSumKConcat(ArrayList<Integer> arr, int n, int k) {
@@ -22,7 +21,7 @@ public class MaxSubSumKConcat {
 		return result;
 	}
     public static void main(String[] args) {
-        ArrayList<Integer> array=new ArrayList();
+        ArrayList<Integer> array=new ArrayList<>();
         array.add(1);
         array.add(-3);
         System.out.println(maxSubSumKConcat(array,array.size(),3));

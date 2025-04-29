@@ -17,8 +17,6 @@ class SortByPower {
     }
     public static  int getKth(int lo, int hi, int k) {
         PriorityQueue<int[]> q=new PriorityQueue<int[]>((a,b)->a[1]==b[1]?a[0]-b[0]:a[1]-b[1]);
-        int temp[][]=new int[hi-lo+1][2];
-        List<Integer> list=new ArrayList();
         for(int i=lo;i<=hi;i++){
             q.add(new int[]{i,powerCal(i)});
         }

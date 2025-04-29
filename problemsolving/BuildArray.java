@@ -1,6 +1,5 @@
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -34,7 +33,7 @@ class BuildArray {
     
     class Solution {
         public List<String> buildArray(int[] target, int n) {
-            List<String> L = new ArrayList();
+            List<String> L = new ArrayList<>();
             int last = 1;
             for (int i : target) {
                 for (int j = last; j < i; j++) {

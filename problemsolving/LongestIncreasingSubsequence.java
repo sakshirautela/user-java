@@ -24,7 +24,7 @@ public class LongestIncreasingSubsequence {
         return max;
     }
     public static int longestIncreasigSubsequence(int[] arr){
-        HashSet<Integer> set=new HashSet();
+        HashSet<Integer> set=new HashSet<>();
         for(int i=0;i<arr.length;i++){
             set.add(arr[i]);
         }

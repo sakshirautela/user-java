@@ -2,7 +2,7 @@
 import java.util.Stack;
 public class StackExample {
     public static void main(String[] args) {
-        Stack<Object> stack =new Stack();
+        Stack<Object> stack =new Stack<>();
         stack.push("sakshi");
         stack.push("sakshi");
         stack.push("sakshi");

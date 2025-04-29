@@ -6,7 +6,7 @@ public class SakshiRev {
         String s="Vipin Bhandari";
         String res="";
         String re = "";
-        HashMap<Integer,Integer> hs=new HashMap();
+        HashMap<Integer,Integer> hs=new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             if(s.charAt(i)==' '){
                 hs.put(i,1);

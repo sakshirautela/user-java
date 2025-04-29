@@ -81,6 +81,7 @@ public class CourseScheduleII {
         st.push(curr);
     }
     
+    @SuppressWarnings("unchecked")
     public static int[] findOrder(int numCourses, int[][] prerequisites) {
         int[] res = new int[numCourses];
         ArrayList<Edge>[] graph = new ArrayList[numCourses];

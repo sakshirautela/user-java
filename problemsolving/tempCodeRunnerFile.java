@@ -1,5 +1,6 @@
 
 class Happy {
+    @SuppressWarnings("unused")
     public static boolean isHappy(int n) {
         if(n==1){
             return true;

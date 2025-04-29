@@ -9,8 +9,9 @@ public class Calendar {
 
         int dayOfWeek = getStartDayOfYear(year); // 0=Sunday, 1=Monday, ..., 6=Saturday
         String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-        String[] months = {"January","February","March","April","May","June","July",
+       /* String[] months = {"January","February","March","April","May","June","July",
                            "August","September","October","November","December"};
+        */
         int[] daysInMonth = {31,28,31,30,31,30,31,31,30,31,30,31};
 
         if (isLeapYear(year)) {

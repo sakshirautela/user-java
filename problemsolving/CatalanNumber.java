@@ -1,6 +1,4 @@
 
-import java.util.Arrays;
-
 public class CatalanNumber {
     public static void main(String[] args) {
         int n=4;

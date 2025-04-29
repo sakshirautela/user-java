@@ -2,10 +2,11 @@
 import java.util.*;
 
 public class ParallelCoursesIII {
+    @SuppressWarnings("unchecked")
     public static int minimumTime(int n, int[][] relations, int[] time) {
         List<Integer>[] graph=new ArrayList[n];
         for(int i=0;i<n;i++){
-            graph[i]=new ArrayList();
+            graph[i]=new ArrayList<>();
         }
         for(int i=0;i<relations.length;i++){
             int s=relations[i][0];

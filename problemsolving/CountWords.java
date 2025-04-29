@@ -1,7 +1,5 @@
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 
 class CountWords {
     public static int countWords(String[] words1, String[] words2) {

@@ -2,7 +2,7 @@
 import java.util.Scanner;
  class Main {
  
-    static int prime(int b) {
+    int prime(int b) {
         int j,cnt;
         cnt=1;
         for (j = 2; j <= b/2; j++) {

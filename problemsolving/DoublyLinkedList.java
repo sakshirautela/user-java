@@ -1,8 +1,6 @@
 
 import java.util.*;
 
-import org.w3c.dom.Node;
-
 public class DoublyLinkedList {
     static class Node {
         int data;

@@ -25,6 +25,7 @@ public class TakeGiftsFromtheRichestPile {
             return solution2(gifts, k);
         }
     
+        @SuppressWarnings("unused")
         private long solution1(int[] gifts, int k) {
             PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
             long numGifts = 0;

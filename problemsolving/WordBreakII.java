@@ -12,7 +12,7 @@ public class WordBreakII {
     public List<String> wordBreak(String s, List<String> wordDict) {
         sb=new StringBuilder();
         li=new ArrayList<>();
-        helper(s, new HashSet(wordDict),new HashMap());
+        helper(s, new HashSet<>(wordDict),new HashMap<>());
         return li;
     }
     public static boolean helper(String str,HashSet<String> hs,HashMap<String,Boolean> temp){

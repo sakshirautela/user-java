@@ -76,6 +76,7 @@ public class CourseSchedule {
         st.push(curr);
     }
 
+    @SuppressWarnings("unchecked")
     public static boolean findOrder(int numCourses, int[][] prerequisites) {
         ArrayList<Edge>[] graph = new ArrayList[numCourses];
         createGraph(graph, numCourses, prerequisites);

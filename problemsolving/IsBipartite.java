@@ -31,6 +31,7 @@ class IsBipartite {
         int[] color = new int[graph.length];
         Arrays.fill(color, -1);
         Queue<Integer> q = new LinkedList<>();
+        @SuppressWarnings("unchecked")
         ArrayList<Edge>[] g = new ArrayList[graph.length];
         graphCreation(g, graph);
         for (int i = 0; i < g.length; i++) {

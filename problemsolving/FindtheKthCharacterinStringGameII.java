@@ -1,5 +1,3 @@
-
-import java.util.*;
 public class FindtheKthCharacterinStringGameII {
     public static char kthCharacter(int k, int[] operations) {
         StringBuilder str=new StringBuilder();

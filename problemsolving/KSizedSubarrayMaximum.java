@@ -1,9 +1,6 @@
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Deque;
-import java.util.PriorityQueue;
 
 public class KSizedSubarrayMaximum {
     public static void main(String[] args) {
@@ -12,7 +9,6 @@ public class KSizedSubarrayMaximum {
 
     public static ArrayList<Integer> maxOfSubarrays(int arr[], int k) {
         // code here
-        int n = arr.length;
         ArrayList<Integer> res = new ArrayList<Integer>();
 
         Deque<Integer> dq = new ArrayDeque<Integer>();

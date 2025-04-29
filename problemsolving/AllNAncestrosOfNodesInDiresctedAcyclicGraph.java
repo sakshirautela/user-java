@@ -2,6 +2,7 @@
 import java.util.*;
 
 public class AllNAncestrosOfNodesInDiresctedAcyclicGraph {
+    @SuppressWarnings("unchecked")
     public static List<List<Integer>> getAncestors(int n, int[][] edges) {
         List<List<Integer>> list=new ArrayList<>();
         for (int i = 0; i < n; i++) {
@@ -9,7 +10,7 @@ public class AllNAncestrosOfNodesInDiresctedAcyclicGraph {
         }
         ArrayList<Integer>[] graph=new ArrayList[n];
         for (int i = 0; i < n; i++) {
-            graph[i]=new ArrayList();
+            graph[i]=new ArrayList<>();
         }
         for (int[] g : edges) {
             graph[g[0]].add(g[1]);

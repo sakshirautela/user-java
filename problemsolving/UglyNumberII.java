@@ -49,7 +49,6 @@ public class UglyNumberII {
     }
     public static int nthUglyNumberDP(int n) {
         int[] dp=new int[n];
-        int idx2=0,idx3=0,idx5=0;
         int n2=0,n3=0,n5=0;
         int current=Integer.MAX_VALUE;
         for(int i=0;i<n;i++){

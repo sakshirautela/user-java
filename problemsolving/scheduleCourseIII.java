@@ -1,6 +1,3 @@
-
-import java.util.*;
-
 import java.util.PriorityQueue;
 
 public class scheduleCourseIII {
@@ -21,7 +18,7 @@ public class scheduleCourseIII {
 
     }
     public static int scheduleCourse(int[][] courses) {
-        PriorityQueue<Info> q=new PriorityQueue();
+        PriorityQueue<Info> q=new PriorityQueue<>();
         for(int i=0;i<courses.length;i++){
             q.add(new Info(courses[i][0],courses[i][1]));
         }

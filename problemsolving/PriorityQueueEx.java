@@ -6,7 +6,7 @@ class Node{
     Node(Object data,int priority){
         this.data=data;
         this.priority=priority;
-        this.next=next;
+       // this.next=next;
     }
 }
 public class PriorityQueueEx {
@@ -32,7 +32,6 @@ public class PriorityQueueEx {
         if(head==null){
             return head;
         }
-        Node curr=head;
         head=head.next;
         return head;
     }

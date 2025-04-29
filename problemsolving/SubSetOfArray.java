@@ -3,8 +3,8 @@ import java.util.*;
 
 public class SubSetOfArray {
     public static List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> result=new ArrayList();
-        List<Integer> list=new ArrayList();
+        List<List<Integer>> result=new ArrayList<>();
+        List<Integer> list=new ArrayList<>();
         getHelp(result,0,list,nums);
         return result;
     }
@@ -18,6 +18,7 @@ public class SubSetOfArray {
         getHelp(result,i+1,list,nums);
         list.remove(list.size()-1);
     }
+    @SuppressWarnings("unused")
     private void backtrack(List<List<Integer>> resultList, List<Integer> tempList, int[] nums, int start){
         resultList.add(new ArrayList<Integer> (tempList));
         for(int i = start; i < nums.length; i++){

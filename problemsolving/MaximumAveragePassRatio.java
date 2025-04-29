@@ -22,7 +22,6 @@ public class MaximumAveragePassRatio {
         // Distribute extra students
         while (extraStudents-- > 0) {
             double[] current = maxHeap.poll();
-            double currentGain = current[0];
             int passes = (int) current[1];
             int totalStudents = (int) current[2];
             maxHeap.offer(

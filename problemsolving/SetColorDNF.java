@@ -29,6 +29,7 @@ public class SetColorDNF {
     public void sortColors2(int[] nums){
         int count0=0;
         int count1=0;
+        @SuppressWarnings("unused")
         int count2 = 0;
         for (int i = 0; i < nums.length; i++) {
             if(nums[i]==0){

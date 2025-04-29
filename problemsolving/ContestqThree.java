@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class ContestqThree {
     public static void main(String[] args) {
         ContestqThree contest = new ContestqThree();

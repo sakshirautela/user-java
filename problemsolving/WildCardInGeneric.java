@@ -46,13 +46,14 @@ class WildCard {
 }
 
 public class WildCardInGeneric {
+    @SuppressWarnings({ "static-access", "unused" })
     public static void main(String[] args) {
         List<?> li = new ArrayList<String>(Arrays.asList("hello", "Sakshi"));
         // li.add("hii");
         List<? extends Number> numbers;
         numbers = List.of(1, 2, 3); // List of Integer is valid
         numbers = List.of(1.1, 2.2, 3.3); // List of Double is valid
-        List<Integer> intList = List.of(1, 2, 3);
+        //List<Integer> intList = List.of(1, 2, 3);
         WildCard wd = new WildCard();
         wd.GetList(li);
 

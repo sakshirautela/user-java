@@ -11,6 +11,7 @@ public class CircleOfAString {
         int[] outDegree = new int[26];
         
         // Adjacency list to store the edges between characters.
+        @SuppressWarnings("unchecked")
         ArrayList<Integer>[] adj = new ArrayList[26];
         for (int i = 0; i < 26; i++) {
             adj[i] = new ArrayList<>();

@@ -23,6 +23,7 @@ public class sumPrime {
                 System.out.print(2);
             }           
         }
+        obj.close();
         return sum;
     }
 }

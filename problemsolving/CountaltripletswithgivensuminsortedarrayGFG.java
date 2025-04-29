@@ -1,7 +1,3 @@
-
-import java.util.Arrays;
-import java.util.HashMap;
-
 public class CountaltripletswithgivensuminsortedarrayGFG {
     public static void main(String[] args) {
         System.out.println(countTriplets(new int[]{},2));

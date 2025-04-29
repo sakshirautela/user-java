@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Inventary {
     public static void main(String args[]){
         Scanner obj= new Scanner(System.in);
-        ArrayList<String> itmlist= new ArrayList();
+        ArrayList<String> itmlist= new ArrayList<>();
         // System.out.println("how many categories you want to add:");
         // int n=obj.nextInt();
         // int i=1;
@@ -46,5 +46,6 @@ public class Inventary {
             i++;
         }
         System.out.println(newmap);
+        obj.close();
     }
 }

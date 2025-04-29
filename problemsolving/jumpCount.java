@@ -1,5 +1,3 @@
-
-import java.util.Scanner;
 public class jumpCount {
  
      static int path(int m , int n) {

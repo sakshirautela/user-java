@@ -45,7 +45,7 @@ public class CheapestFlightsWithKStops {
                 dist[i]=Integer.MAX_VALUE;
             }
         }
-        Queue<Info> q=new LinkedList();
+        Queue<Info> q=new LinkedList<>();
         q.add(new Info(src,0,0));
         while(!q.isEmpty()){
             Info curr=q.remove();
@@ -54,7 +54,6 @@ public class CheapestFlightsWithKStops {
             }
             for(int i=0;i<graph[curr.v].size();i++){
                 Edge e=graph[ curr.v].get(i);
-                int u=e.src;
                 int v=e.dest;
                 int wt=e.weight;
                 if( dist[v]>curr.cost+wt && curr.stops<=k){
@@ -72,6 +71,7 @@ public class CheapestFlightsWithKStops {
     }
     public static void main(String[] args) {
         int[][] flights={{0,1,100},{1,2,100},{2,0,100},{1,3,600},{2,3,200}};
+        @SuppressWarnings("unchecked")
         ArrayList<Edge>[] graph =new ArrayList[flights.length];
         graphCreation(flights.length,graph,flights);
         System.out.println(cheapestFlightsWithKStops(0,3,1,graph));

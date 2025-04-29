@@ -1,6 +1,3 @@
-
-import java.util.ArrayList;
-
 public class ZeroFilledSubarray {
     public static void main(String[] args) {
         int[] array={1,3,0,0,2,0,0,4};

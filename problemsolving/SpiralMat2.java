@@ -1,7 +1,4 @@
 
-import java.text.Collator;
-import java.util.ArrayList;
-
 public class SpiralMat2 {
     static int[][] spiralMatrix(int[][] matrix){
         int[][] ans=new int[matrix.length][matrix.length];

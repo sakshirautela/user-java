@@ -16,7 +16,6 @@ public class LongestWordWithAllPrefix {
     public static void insert(String str) {
         Node curr = root;
         for (int i = 0; i < str.length(); i++) {
-            int idx = str.charAt(i) - 'a';
             if (curr.children[i] == null) {
                 curr.children[i] = new Node();
             } else {

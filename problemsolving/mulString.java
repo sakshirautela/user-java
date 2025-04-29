@@ -1,5 +1,3 @@
-
-import java.util.*;
 public class mulString {
     public static String multiply(String num1, String num2) {
         int m=num1.length();

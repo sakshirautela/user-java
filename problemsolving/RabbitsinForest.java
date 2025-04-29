@@ -23,7 +23,6 @@ public class RabbitsinForest {
 
     public int numRabbits2(int[] answers) {
 
-        int n = answers.length;
         int[] count = new int[1000];
 
         int ans = 0;

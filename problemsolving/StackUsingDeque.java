@@ -4,7 +4,7 @@ import java.util.*;
 class MyStack {
     Deque<Integer> dq;
     public MyStack() {
-        dq=new LinkedList();
+        dq=new LinkedList<>();
     }
     
     public void push(int x) {

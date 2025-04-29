@@ -1,7 +1,5 @@
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 public class Vipin {
 
@@ -23,7 +21,6 @@ public class Vipin {
         String result = "";
         List<Integer> arr = new ArrayList<>();
         // int k=0;
-        int pos = digit.length - 1;
         // int pos=2;
         int sum = 0;
         int newum = 0;

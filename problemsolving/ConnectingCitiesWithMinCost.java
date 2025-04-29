@@ -1,7 +1,4 @@
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 import java.util.PriorityQueue;
 
 public class ConnectingCitiesWithMinCost {
@@ -27,7 +24,7 @@ public class ConnectingCitiesWithMinCost {
     }
     public static int connectingCitiesWithMinCost(int cities[][ ]){
         boolean visited[]= new boolean[cities.length];
-        PriorityQueue<Info> q=new PriorityQueue();
+        PriorityQueue<Info> q=new PriorityQueue<>();
         q.add(new Info(0,0));
         int finalcost=0;
         while(!q.isEmpty()){

@@ -1,6 +1,3 @@
-
-import java.util.Arrays;
-
 public class MaxLengthUniqueCharacters {
     public static int maxLength(String[] arr) {
         if(arr.length<=1){

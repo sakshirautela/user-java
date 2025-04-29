@@ -1,5 +1,3 @@
-
-import java.util.Arrays;
 import java.util.Scanner;
  
 public class MakeAllEqualCodeForce {
@@ -32,5 +30,6 @@ public class MakeAllEqualCodeForce {
             System.out.println(arr.length-r);
             n--;
         }
+        scanner.close();
     }
 }

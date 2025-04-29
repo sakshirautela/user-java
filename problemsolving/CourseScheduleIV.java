@@ -52,6 +52,7 @@ public class CourseScheduleIV {
         return answer;
     }
 
+    @SuppressWarnings("unchecked")
     public List<Boolean> checkIfPrerequisite2(int numCourses, int[][] prerequisites, int[][] queries) {
         int n = prerequisites.length, m = queries.length;
         if (n == 0) {

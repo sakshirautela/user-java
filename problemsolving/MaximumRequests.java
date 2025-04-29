@@ -42,6 +42,7 @@ public class MaximumRequests {
             }
         }
     }
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         int[][] requests = {{0,1},{1,0},{0,1},{1,2},{2,0},{3,4}};
         // System.out.println(maximumRequests(n,requests));

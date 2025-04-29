@@ -17,7 +17,7 @@ public class BridgeInGraphTarjanAlgo {
 
     public static void createGraph(ArrayList<Edge>[] graph, int V) {
         for (int i = 0; i < V; i++) {
-            graph[i] = new ArrayList();
+            graph[i] = new ArrayList<>();
         }
         graph[0].add(new Edge(0, 1));
         graph[0].add(new Edge(0, 2));
@@ -71,6 +71,7 @@ public class BridgeInGraphTarjanAlgo {
 
     public static void main(String[] args) {
         int V = 6;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge>[] graph = new ArrayList[V];
         createGraph(graph, V);
         tarjanAlgo(graph, V);

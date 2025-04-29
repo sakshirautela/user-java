@@ -85,6 +85,7 @@ public class MostProfitablePathinaTree {
         return false;
     }
 
+    @SuppressWarnings("unchecked")
     public int mostProfitablePath(int[][] edges, int bob, int[] amount) {
         mx = Integer.MIN_VALUE;
         int n = amount.length;

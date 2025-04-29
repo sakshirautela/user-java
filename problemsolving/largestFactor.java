@@ -36,6 +36,7 @@ public class largestFactor {
                 s1 = (int) (s1 + s[i]);
             System.out.println(s1);
         }
+        sc.close();
     }
 
 }

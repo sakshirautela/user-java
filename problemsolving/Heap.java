@@ -2,7 +2,6 @@
 import java.util.ArrayList;
 public class Heap {
     public static void main(String[] args) {
-        Heap hp=new Heap();
         ArrayList<Integer> ar=new ArrayList<>();
         insert(ar, 2);
         insert(ar, 10);
@@ -10,7 +9,6 @@ public class Heap {
         insert(ar, 3);
         insert(ar, 4);
         insert(ar, 1);
-        hp.remove(ar);
         System.out.println(ar);
     }
     static void insert(ArrayList<Integer> ar,int data){

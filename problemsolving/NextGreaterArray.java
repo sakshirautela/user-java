@@ -1,5 +1,3 @@
-
-import java.sql.Array;
 import java.util.Stack;
 
 public class NextGreaterArray {

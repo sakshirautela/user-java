@@ -1,7 +1,6 @@
 
 public class Vehicle {
     private int currentSpeed;
-    private int currentGear;
     private String engineState = "off";
 
     // Constructor

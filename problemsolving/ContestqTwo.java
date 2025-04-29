@@ -6,7 +6,6 @@ public class ContestqTwo {
 
     public static int maximumPossibleSize(int[] nums) {
         int n = nums.length;
-        int max=0;
         int len=0;
         int prev=nums[0];
         int result=n;

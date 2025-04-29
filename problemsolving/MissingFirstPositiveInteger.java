@@ -11,8 +11,8 @@ public class MissingFirstPositiveInteger {
         for(int i=0;i<n;i++){
             st.add(nums[i]);
         }
-        ArrayList list=new ArrayList();
-        Iterator it=st.iterator();
+        ArrayList<Object> list=new ArrayList<>();
+        Iterator<Integer> it=st.iterator();
         while(it.hasNext()){
             list.add((int)it.next());
         }

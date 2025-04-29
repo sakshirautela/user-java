@@ -27,6 +27,7 @@ public class PridictorialNumber {
             int r = 10;
             System.out.println(countPeriodicalNumbers(r));
         }
+        scanner.close();
     }
 }
 

@@ -15,6 +15,7 @@ public class HashMapImplement {
         //@SuppressWarning("unchecked")
          LinkedList<Node> bucket[];
         int n;
+        @SuppressWarnings("unchecked")
         public HashMap(){
             this.n=0;
             this.bucket=new LinkedList[4];

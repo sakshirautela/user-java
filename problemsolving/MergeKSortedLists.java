@@ -13,7 +13,7 @@ public class MergeKSortedLists {
     }
 
     public ListNode mergeKLists(ListNode[] lists) {
-        ArrayList<Integer> list = new ArrayList();
+        ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < lists.length; i++) {
             if(lists[i]==null){
                 continue;

@@ -7,7 +7,7 @@ class distributeCookie {
     public static int distributeCookies(int[] cookies, int k) {
         int n = cookies.length;
         int sum = 0;
-        HashMap<Integer, Integer> rest = new HashMap();
+        HashMap<Integer, Integer> rest = new HashMap<>();
         ArrayList<Integer> temp = new ArrayList<Integer>();
         for (int i = 0; i < n; i++) {
             sum += cookies[i];

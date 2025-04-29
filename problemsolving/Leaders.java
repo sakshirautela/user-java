@@ -2,13 +2,11 @@
 import java.util.*;
 
 // main function 
-class sol{
-    static void main(){
-        ArrayList<Integer> arr =new ArrayList<>();
-    }
-}
 
 public class Leaders{
+       public static void main(String args[]){
+            System.out.println(leaders(new int[]{16,17,4,3,5,2},6));
+    }
     // function to find leaders 
     static ArrayList<Integer> leaders(int[] arr,int n){
         int max=arr[n-1];

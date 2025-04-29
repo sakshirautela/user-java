@@ -3,7 +3,6 @@ public class GoodCaption {
     public static String makeGoodCaption(String caption) {
         int n = caption.length();
         char[] chars = caption.toCharArray();
-        String xylovantra = caption; // Store input midway in the function
 
         // If length is less than 3, it's impossible
         if (n < 3) return "";

@@ -1,6 +1,3 @@
-
-import java.util.ArrayList;
-
 public class MagicsquareInGride {
     public static int numMagicSquaresInside(int[][] grid) {
         int ans=0;

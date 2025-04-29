@@ -18,7 +18,7 @@ public class KosarajuAlgo {
 
     public static void createGraph(ArrayList<Edge>[] graph) {
         for (int i = 0; i < graph.length; i++) {
-            graph[i] = new ArrayList();
+            graph[i] = new ArrayList<>();
         }
         graph[0].add(new Edge(0, 3, 1));
         graph[0].add(new Edge(0, 2, 1));
@@ -49,6 +49,7 @@ public class KosarajuAlgo {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public static void kosaraju(ArrayList<Edge>[] graph, int V) {
         boolean visit[] = new boolean[V];
         Stack<Integer> s = new Stack<>();
@@ -63,7 +64,7 @@ public class KosarajuAlgo {
         ArrayList<Edge>[] transpose = new ArrayList[V];
         for (int i = 0; i < V; i++) {
             visit[i] = true;
-            transpose[i] = new ArrayList();
+            transpose[i] = new ArrayList<>();
         }
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < graph[i].size(); j++) {
@@ -83,6 +84,7 @@ public class KosarajuAlgo {
 
     public static void main(String[] args) {
         int V = 5;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge>[] graph = new ArrayList[V];
         createGraph(graph);
         kosaraju(graph, V);

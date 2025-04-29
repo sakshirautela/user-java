@@ -85,7 +85,7 @@ public class KruskalAlgo {
 
     public static void main(String[] args) {
         init();
-        ArrayList<Edge> graph = new ArrayList();
+        ArrayList<Edge> graph = new ArrayList<>();
         createGraph(graph);
         int v = 4;//graph.size() - 1;
         System.out.println(kruskalMST(graph,v));

@@ -1,7 +1,5 @@
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
 
 class ContainsNearbyAlmostDuplicate {
     static class Info implements Comparable<Info> {
@@ -21,9 +19,7 @@ class ContainsNearbyAlmostDuplicate {
 
     public static boolean containsNearbyAlmostDuplicate(int[] nums, int indexDiff, int valueDiff) {
         boolean res = false;
-        int start = 0;
-        int end = 1;
-        ArrayList<Info> al = new ArrayList();
+        ArrayList<Info> al = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             al.add(new Info(nums[i], i));
         }

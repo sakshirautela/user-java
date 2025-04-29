@@ -12,5 +12,6 @@ public class Test {
         byte a = 10;
         byte b = 15;
         Test test = new Test(a, b);
+        System.out.println(test);
     }
 }

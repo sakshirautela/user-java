@@ -18,7 +18,6 @@ public class MaximumValueofanOrderedTripletI {
     }
 
     public long maximumTripletValue2(int[] nums) {
-        int n = nums.length;
         long res = 0;
         int imax = 0, dmax = 0;
         for (int num : nums) {

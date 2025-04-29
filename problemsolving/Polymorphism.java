@@ -39,11 +39,8 @@ public class Polymorphism {
         System.out.println("str" + "b");
         // Calling method by passing
         // input as in arguments
-        int a = 5;
-Integer b = 10;
-Integer c = a + b;  // Unboxing, addition, then autoboxing
-// Instead of a + b for complex numbers
-//ComplexNumber result = a.add(b);
+        // Instead of a + b for complex numbers
+        // ComplexNumber result = a.add(b);
         System.out.println(Helper.Multiply(2, 4));
         System.out.println(Helper.Multiply(5.5, 6.3));
     }

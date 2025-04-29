@@ -6,6 +6,7 @@ public class MaximumNumberofKDivisibleComponents {
     public static void main(String[] args) {
         System.out.println(maxKDivisibleComponents(5,new int[][]{{}},new int[]{},3));
             }
+            @SuppressWarnings("unchecked")
             public static int maxKDivisibleComponents(int n, int[][] edges, int[] values, int k) {
         // Step 1: Create adjacency list from edges
         List<Integer>[] adjList = new ArrayList[n];

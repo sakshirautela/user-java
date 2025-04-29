@@ -10,9 +10,8 @@ class Substring {
     public static void main(String args[]){
       // String str="azcbobobegghakl";
        //String str="mississippi";
-        String s,rev="";
+        String s;
         String h="issip";
-        int count=0;
        for(int i=0;i<h.length();i++){
         for(int j=i+1;j<=h.length();j++){
             s=h.substring(i,j);

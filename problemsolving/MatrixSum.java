@@ -1,6 +1,3 @@
-
-import java.util.*;
-
 class MatrixSum {
     public static void helperRemove(int[] arr, int k) {
         for (int i = k; i < arr.length - 1; i++) {

@@ -13,7 +13,7 @@ public class ContainsDuplicate {
         // }
         // }
         // return bool;
-        HashMap<Integer, Integer> map = new HashMap();
+        HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (map.containsValue(nums[i])) {
              

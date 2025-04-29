@@ -1,5 +1,3 @@
-
-import java.util.*;
 public class RotateMatrixNightyDegree {
     public static void rotate(int[][] matrix) {
         int n=matrix.length;

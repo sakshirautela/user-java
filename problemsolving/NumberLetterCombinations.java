@@ -2,29 +2,33 @@
 import java.util.*;
 class NumberLetterCombinations {
     public static List<String> letterCombinations(String digits) {
-        List<Character> l = new ArrayList<Character>();
-        HashMap<String, String> hs = new HashMap<>();
-        for (int i = 0; i < digits.length(); i++) {
-            if(digits.charAt(i)=='2'){
-                hs.put("2","abc");
-            }
-            else if(digits.charAt(i)=='3'){
-                hs.put("3","def");
-            }else if(digits.charAt(i)=='4'){
-                hs.put("4","ghi");
-            }if(digits.charAt(i)=='5'){
-                hs.put("5","jkl");
-            }if(digits.charAt(i)=='6'){
-                hs.put("6","mno");
-            }if(digits.charAt(i)=='7'){
-                hs.put("7","pqrs");
-            }if(digits.charAt(i)=='8'){
-                hs.put("8","tuv");
-            }else{
-                hs.put("9","wxyz");
-            }
+        List<String> combination=new ArrayList<>();
+        if(digits.length()<=0){
+           return combination;
         }
-    }
+       HashMap<Character, String> latters = new HashMap<>();
+           latters.put('2', "abc");
+           latters.put('3', "def");
+           latters.put('4', "ghi");
+           latters.put('5', "jkl");
+           latters.put('6', "mno");
+           latters.put('7', "pqrs");
+           latters.put('8', "tuv");
+           latters.put('9', "wxyz");
+       letterCombinationsUtil(digits,0,digits.length(),new StringBuilder(),combination,latters);
+       return combination;
+   }
+   private static void letterCombinationsUtil(String digits, int i,int n, StringBuilder str, List<String> combination, HashMap<Character,String> latters) {
+       if(i==n){
+           combination.add(str.toString());
+           return;
+       }
+       for(char ch:latters.get(digits.charAt(i)).toCharArray()){
+           str.append(ch);
+           letterCombinationsUtil(digits, i+1, n, str, combination,latters);
+           str.deleteCharAt(str.length()-1);
+       }
+   }
     public static void main(String[] args){
 
     }

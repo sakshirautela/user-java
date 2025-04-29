@@ -19,9 +19,10 @@ public class ATMExample {
             System.out.println("Choose 3 for Balance History");
             System.out.println("Choose 4 for EXIT");
             System.out.print("Choose the operation you want to perform:");
-
+            
             // get choice from user
             int choice = sc.nextInt();
+            sc.close();
             switch (choice) {
                 case 1:
                     System.out.print("Enter money to be withdrawn:");

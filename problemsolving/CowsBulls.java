@@ -17,15 +17,40 @@ Explanation: Bulls are connected with a '|' and cows are underlined:
 "1807"
   |
 "7810"*/
-import java.util.HashMap;
 
 public class CowsBulls {
-    public static void main(String[] args) {
-        String s1 = "";
-        String s2 = "";
-        HashMap<Integer,String> map=new HashMap<>();
-        for (int i = 0; i < args.length; i++) {
-            
-        }
-    }
+  public static String getHint(String secret, String guess) {
+      int bulls = 0;
+      int cows = 0;
+
+      int[] secretCount = new int[10]; // counts of digits 0-9
+      int[] guessCount = new int[10];
+
+      for (int i = 0; i < secret.length(); i++) {
+          char s = secret.charAt(i);
+          char g = guess.charAt(i);
+
+          if (s == g) {
+              bulls++;
+          } else {
+              // Count digits for later cow comparison
+              secretCount[s - '0']++;
+              guessCount[g - '0']++;
+          }
+      }
+
+      // Count cows (min overlap of non-bull digits)
+      for (int i = 0; i < 10; i++) {
+          cows += Math.min(secretCount[i], guessCount[i]);
+      }
+
+      return bulls + "A" + cows + "B";
+  }
+
+  public static void main(String[] args) {
+      String secret = "1807";
+      String guess = "7810";
+
+      System.out.println(getHint(secret, guess)); // Output: 1A3B
+  }
 }

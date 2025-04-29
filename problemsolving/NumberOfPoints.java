@@ -33,7 +33,7 @@ class NumberOfPoints {
         return result;
     }
     public static void main(String[] args){
-        List<List<Integer>> list=new ArrayList();
+        List<List<Integer>> list=new ArrayList<>();
         list.add(new ArrayList<>(List.of(2,3)));       
         list.add(new ArrayList<>(List.of(3,9)));       
         list.add(new ArrayList<>(List.of(5,7)));       

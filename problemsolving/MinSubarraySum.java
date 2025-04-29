@@ -1,6 +1,4 @@
-
 import java.util.* ;
-import java.io.*; 
 public class MinSubarraySum
 {
 public static int minSubarraySum(ArrayList<Integer> arr, int n, int k)
@@ -20,7 +18,7 @@ public static int minSubarraySum(ArrayList<Integer> arr, int n, int k)
         return minSum;
     }
     public static void main(String[] args) {
-        ArrayList<Integer> arr=new ArrayList();
+        ArrayList<Integer> arr=new ArrayList<>();
         arr.add(1 );
         arr.add(-4);
         arr.add( 2);

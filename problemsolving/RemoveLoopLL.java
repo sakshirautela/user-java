@@ -1,4 +1,3 @@
-package com.learn.java.problemsolving;//{ Driver Code Starts
 // driver code
 
 import java.util.Scanner;
@@ -74,7 +73,6 @@ public class RemoveLoopLL {
             int pos = sc.nextInt();
             makeLoop(head, pos);
 
-            LetterTilePossibilities x = new LetterTilePossibilities();
             RemoveLoopLL.removeLoop(head);
 
             if (detectLoop(head) || length(head) != n)
@@ -82,6 +80,7 @@ public class RemoveLoopLL {
             else
                 System.out.println("1");
         }
+        sc.close();
     }
 
 // } Driver Code Ends

@@ -1,8 +1,5 @@
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 public class PushZerosAtEnd {
     public static void pushZerosAtEnd(ArrayList<Integer> arr) {

@@ -1,7 +1,7 @@
 
 public class JumpGame {
     public boolean canJump(int[] nums) {
-        int next=nums[0],jumps=0;
+        int next=nums[0];
         if(nums.length<=1){
             return true;
         }

@@ -15,9 +15,7 @@ public class nextGreater {
         int[] array = { 2, 1, 8, 7, 6, 5 };
         int temp = array[array.length - 1];
         int idx = 0;
-        int k = 0;
-        ArrayList<Integer> sample=new ArrayList();
-        int[] new_array = new int[array.length];
+        ArrayList<Integer> sample=new ArrayList<>();
         int temp2 = - 1;
         for (int i = array.length - 1; i >= 1; i--) {
             for (int j = array.length - 2; j >= 0; j--) {

@@ -55,7 +55,7 @@ public class ThreeSubarrays {
     }
     public static void main(String[] args) {
 
-        ArrayList<Integer> array=new ArrayList();
+        ArrayList<Integer> array=new ArrayList<>();
         array.add(2);
         array.add(-3);
         array.add(-1);

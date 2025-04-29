@@ -36,6 +36,7 @@ public class Calender {
         int dayOfWeek = (base_day + total_days) % 7; // 0: Monday, 1: Tuesday, etc.
 
         printCalendar(year, dayOfWeek, months, days);
+        sc.close();
     }
 
     public static boolean isLeapYear(int year) {

@@ -6,7 +6,7 @@ public class kidsWithGreatestNoOFCandies {
         for(int i=0;i<candies.length;i++){
             maxNum=Math.max(maxNum,candies[i]);
         }
-        List<Boolean> list=new ArrayList();
+        List<Boolean> list=new ArrayList<>();
         for(int i=0;i<candies.length;i++){
             if(candies[i]+extraCandies<=maxNum){
                 list.add(true);

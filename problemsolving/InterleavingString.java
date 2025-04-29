@@ -6,7 +6,6 @@ public class InterleavingString {
     public static boolean isInterleave(String s1, String s2, String s3) {
         int a = s1.length();
         int b = s2.length();
-        int c = s3.length();
         boolean[][] dp = new boolean[a + 1][b + 1];
         dp[0][0] = true;
         for (int i = 1; i <= a; i++) {

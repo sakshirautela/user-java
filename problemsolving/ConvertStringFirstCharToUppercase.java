@@ -1,7 +1,4 @@
 
-import java.util.*;
-import java.io.*;
-
 public class ConvertStringFirstCharToUppercase {
     public static String convertString(String str) {
         // Write your code here

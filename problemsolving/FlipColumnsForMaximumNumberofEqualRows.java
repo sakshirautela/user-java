@@ -12,7 +12,6 @@ public class FlipColumnsForMaximumNumberofEqualRows {
     public static int maxEqualRowsAfterFlips(int[][] matrix) {
         HashMap<String, Integer> hs = new HashMap<String, Integer>();
         int m = matrix.length;
-        int n = matrix[0].length;
         for (int i = 0; i < m; i++) {
             StringBuilder s = new StringBuilder();
             StringBuilder f = new StringBuilder();

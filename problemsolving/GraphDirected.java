@@ -220,7 +220,7 @@ public class GraphDirected {
                 dist[i]=Integer.MAX_VALUE;
             }
         }
-        PriorityQueue<dijkstraPair> pq=new PriorityQueue();
+        PriorityQueue<dijkstraPair> pq=new PriorityQueue<>();
         pq.add(new dijkstraPair(src, 0));
         while (!pq.isEmpty()) {
             dijkstraPair p=pq.remove();
@@ -270,9 +270,11 @@ public class GraphDirected {
          * 2 - - -> 3 - - -> 1
          */
         int v = 5;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge>[] graph = new ArrayList[v];
-        //graohCreation(v, graph);
-        // BFS(graph);
+        //grahCreation(v, graph);
+        createGraph(graph, v);
+         BFS(graph);
         // System.out.println();
         // DFS(graph);
         // System.out.println();

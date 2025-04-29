@@ -8,6 +8,7 @@ class java
         System.out.println("enter a number");
         Scanner obj =new Scanner(System.in);
         a=obj.nextInt();
+        obj.close();
         System.out.println(a);
         int f=1, i=2;
         while(++i<5)

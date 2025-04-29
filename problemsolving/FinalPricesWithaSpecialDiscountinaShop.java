@@ -2,6 +2,9 @@
 public class FinalPricesWithaSpecialDiscountinaShop {
     public static void main(String[] args) {
         int[] res = finalPrices(new int[] {});
+        for (int i : res) {
+            System.out.print(i + " ");
+        }
     }
 
     public static int[] finalPrices(int[] prices) {

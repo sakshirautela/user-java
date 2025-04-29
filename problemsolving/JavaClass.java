@@ -4,6 +4,7 @@ enum Day {
 public class JavaClass {
     public static void hello() {
 
+        @SuppressWarnings("unused")
         class C {
             public static void hello() {
                 class D {

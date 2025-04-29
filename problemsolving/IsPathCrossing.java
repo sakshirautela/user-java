@@ -2,7 +2,7 @@
 import java.util.*;
 public class IsPathCrossing {
     public static boolean isPathCrossing(String path) {
-        HashSet<String> hm=new HashSet();
+        HashSet<String> hm=new HashSet<>();
         int x=0;
         int y=0;
         hm.add(0+""+0);
