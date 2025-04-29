@@ -1,0 +1,56 @@
+//Initial Template for Java
+
+/*package whatever //do not write package name here */
+
+import java.util.Random;
+
+public class KthSmallestElement{
+    public static void main(String[] args) {
+
+    }
+    void swap(int arr[], int l, int r){
+        int tmp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = tmp;
+    }
+    
+    int randomPartition(int arr[], int l, int r){
+        int n = r-l+1;
+        Random rd = new Random();
+        int pivot = rd.nextInt(n);
+        swap(arr, l + pivot, r);
+        return partition(arr, l, r);
+    }
+    
+    int kthSmallest(int arr[], int l, int r, int k)
+    {
+        if (k > 0 && k <= r - l + 1)
+        {
+            int pos = randomPartition(arr, l, r);
+            
+            if (pos-l == k-1)
+                return arr[pos];
+                
+            if (pos-l > k-1)  
+                return kthSmallest(arr, l, pos-1, k);
+            return kthSmallest(arr, pos+1, r, k-pos+l-1);
+        }
+    
+        return Integer.MAX_VALUE;
+    }
+    
+    int partition(int arr[], int l, int r)
+    {
+        int x = arr[r], i = l;
+        for (int j = l; j <= r - 1; j++)
+        {
+            if (arr[j] <= x)
+            {
+                swap(arr, i, j);
+                i++;
+            }
+        }
+        swap(arr, i, r);
+        return i;
+    }
+}
