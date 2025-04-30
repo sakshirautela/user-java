@@ -879,4 +879,62 @@ static class TreeNode {
 
         return head;
     }
+    static Node segregate(Node head) {
+        // code here
+        int one=0;
+        int two=0;
+        int zero=0;
+        Node temp=head;
+        while (temp!=null) {
+            if(temp.data==0){
+                zero++;
+            }else if(temp.data==2){
+                two++;
+            }else{
+                one++;
+            }
+            temp=temp.next;
+        }
+        temp=head;
+        while (zero!=0) {
+            temp.data=0;
+            temp=temp.next;
+            zero--;
+        }
+        while (one!=0) {
+            temp.data=1;
+            temp=temp.next;
+            one--;
+        }while (two!=0) {
+            temp.data=2;
+            temp=temp.next;
+            two--;
+        }
+        return head;
+    }
+    public int countNodesinLoop(Node head) {
+        // code here.
+        int c=0;
+        Node fast = head;
+        Node slow = head;
+        boolean isloop=false;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                isloop=true;
+                break;
+            }
+        }
+        if(!isloop){
+            return c;
+        }
+        c++;
+        slow=slow.next;
+        while (slow!=fast) {
+            c++;
+            slow=slow.next;
+        }
+        return c;
+    }
 }
