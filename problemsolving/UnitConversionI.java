@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class UnitConversionI {
+    @SuppressWarnings("unused")
     public int[] baseUnitConversions(int[][] conversions) {
         final int MOD = 1_000_000_007;
         int maxUnit = 0;

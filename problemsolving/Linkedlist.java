@@ -937,4 +937,39 @@ static class TreeNode {
         }
         return c;
     }
+    Node primeList(Node head) {
+        // code here
+        Node temp=head;
+        while (temp!=null) {
+            if(temp.data==1){
+                temp.data=2;
+            }
+            else if(!isPrime(temp.data)){
+                temp.data=primeListHalper(temp.data);
+            }
+            temp=temp.next;
+        }
+        return head;
+    }
+    int primeListHalper(int val){
+        int sqrt=(int)Math.sqrt(val);
+        for(int i=1;i<=sqrt;i++){
+            if(isPrime(val-i)){
+                return val-i;
+            }
+            if(isPrime(val+i)){
+                return val+i;
+            }
+        }
+        return -1;
+    }
+
+    private boolean isPrime(int i) {
+        for (int j = 2; j*j <=i; j++) {
+            if(i%j==0){
+                return false;
+            }
+        }
+        return true;
+    }
 }
