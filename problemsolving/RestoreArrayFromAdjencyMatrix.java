@@ -2,6 +2,7 @@ import java.util.*;
 
 public class RestoreArrayFromAdjencyMatrix {
 
+    @SuppressWarnings("unused")
     public int[] restoreArray(int[][] adjacentPairs) {
         // Build adjacency list
         Map<Integer, List<Integer>> graph = new HashMap<>();

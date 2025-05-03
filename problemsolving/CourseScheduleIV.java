@@ -13,6 +13,7 @@ public class CourseScheduleIV {
         System.out.println(checkIfPrerequisite(5, new int[][] { {} }, new int[][] { {} }));
     }
 
+    @SuppressWarnings("unused")
     public static List<Boolean> checkIfPrerequisite(int numCourses, int[][] prerequisites, int[][] queries) {
         Map<Integer, List<Integer>> adjList = new HashMap<>();
         int[] indegree = new int[numCourses];

@@ -1,6 +1,7 @@
 
 import java.util.*;
 public class ValidArrangementofPairs {
+    @SuppressWarnings("unused")
     public int[][] validArrangement(int[][] pairs) {
         Map<Integer, List<Integer>> adjacencyList = new HashMap<>();
         Map<Integer, Integer> inOutDegree = new HashMap<>();
@@ -45,6 +46,7 @@ public class ValidArrangementofPairs {
         
         return arrangement;
     }
+    @SuppressWarnings("unused")
     public int[][] validArrangement2(int[][] pairs) {
         int n = pairs.length;
         
