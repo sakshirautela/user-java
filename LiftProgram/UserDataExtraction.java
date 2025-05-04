@@ -1,9 +1,6 @@
-package LiftProgram;
-
 import java.util.Scanner;
-
-public class UserDataExtration {
-    public void getUserData() {
+public class UserDataExtraction extends Thread{
+    public void run() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Lift System Started.");
@@ -18,32 +15,29 @@ public class UserDataExtration {
                 System.out.println("Exiting Lift Application.");
                 break;
             }
-            System.out.print("Enter destination floor : ");
-            int destInput = scanner.nextInt();
+
+            System.out.print("Enter destination floor (or 'exit'): ");
+            String destInputStr = scanner.nextLine();
+
+            if (destInputStr.equalsIgnoreCase("exit")) {
+                System.out.println("Exiting Lift Application.");
+                break;
+            }
 
             try {
                 int srcFloor = Integer.parseInt(srcInput);
-                int destFloor = destInput;
-                if (srcFloor == destFloor) {
-                    System.out.println("You are already on the destination floor.");
-                } else {
-                    System.out.println("Moving lift from floor " + srcFloor + " to floor " + destFloor + "...");
-                    System.out.println("Lift arrived at floor " + destFloor);
-                }
-                int dir=0;
-                if(destFloor>srcFloor){
-                    dir=1;
-                }
-                LiftData obj=new LiftData(dir,destFloor,srcFloor);
-            } catch (Exception e) {
-                System.out.println("Invalid floor number. Please enter integers only.");
-            }
+                int destFloor = Integer.parseInt(destInputStr);
 
-            System.out.println(); 
+                if (srcFloor == destFloor) {
+                    System.out.println("You are already on the destination floor.\n");
+                } else {
+                }
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
 
         scanner.close();
-
-
     }
 }

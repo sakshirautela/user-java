@@ -1,27 +1,27 @@
-package LiftProgram;
 import java.util.ArrayList;
-import java.util.Queue;
 
-public record LiftData() {
-    static int dest; // destination floor
-    static int src; // base floor 
-    static boolean state; // true-running ,false - rest
-    static int dir; // 1-running up ,0 - down
-    static ArrayList<Integer> up;
-    static ArrayList<Integer> down;
-    static Queue<int[]> priority;
-    LiftData(int dir,int src,int dest){
-        this();
-        this.dir=dir;
-        this.src=src;
-        this.dest=dest;
-        this.priority.add(new int[]{src,dest,dir});
-        if(dir==1){
+public class LiftData {
+    public static ArrayList<Integer> up = new ArrayList<>();
+    public static ArrayList<Integer> down = new ArrayList<>();
+    public static ArrayList<int[]> priority = new ArrayList<>();
+    public synchronized void addLiftData(int dir, int src, int dest) {
+        LiftData.priority.add(new int[]{src, dest, dir});
+        if (dir == 1) {
             up.add(src);
             up.add(dest);
-        }else{
+        } else {
             down.add(src);
             down.add(dest);
         }
     }
-} 
+    public static ArrayList<Integer> getUp() {
+        return up;
+    }
+
+    public static ArrayList<Integer> getDown() {
+        return down;
+    }
+    public static ArrayList<int[]> getPriority() {
+        return priority;
+    }
+}
