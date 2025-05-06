@@ -2,33 +2,33 @@
 import java.util.*;
 
 public class Linkedlist {
- static class ListNode {
-    int data;
-    ListNode next;
+    static class ListNode {
+        int data;
+        ListNode next;
 
-    ListNode(int data) {
-        this.data = data;
-        this.next = null;
+        ListNode(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
-}
 
-static class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-    TreeNode(int data) {
-        this.val = data;
-        this.right = null;
-        this.left = null;
+        TreeNode(int data) {
+            this.val = data;
+            this.right = null;
+            this.left = null;
+        }
     }
-}
 
     static class Node {
         int data;
         Node next;
 
-        Node(int data) {
+        public Node(int data) {
             this.data = data;
             this.next = null;
         }
@@ -856,6 +856,7 @@ static class TreeNode {
         quickSort(p, mid);
         quickSort(mid, end);
     }
+
     public ListNode swapNodes(ListNode head, int k) {
         ListNode first = head, second = head, fast = head;
 
@@ -879,97 +880,118 @@ static class TreeNode {
 
         return head;
     }
+
     static Node segregate(Node head) {
         // code here
-        int one=0;
-        int two=0;
-        int zero=0;
-        Node temp=head;
-        while (temp!=null) {
-            if(temp.data==0){
+        int one = 0;
+        int two = 0;
+        int zero = 0;
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == 0) {
                 zero++;
-            }else if(temp.data==2){
+            } else if (temp.data == 2) {
                 two++;
-            }else{
+            } else {
                 one++;
             }
-            temp=temp.next;
+            temp = temp.next;
         }
-        temp=head;
-        while (zero!=0) {
-            temp.data=0;
-            temp=temp.next;
+        temp = head;
+        while (zero != 0) {
+            temp.data = 0;
+            temp = temp.next;
             zero--;
         }
-        while (one!=0) {
-            temp.data=1;
-            temp=temp.next;
+        while (one != 0) {
+            temp.data = 1;
+            temp = temp.next;
             one--;
-        }while (two!=0) {
-            temp.data=2;
-            temp=temp.next;
+        }
+        while (two != 0) {
+            temp.data = 2;
+            temp = temp.next;
             two--;
         }
         return head;
     }
+
     public int countNodesinLoop(Node head) {
         // code here.
-        int c=0;
+        int c = 0;
         Node fast = head;
         Node slow = head;
-        boolean isloop=false;
+        boolean isloop = false;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
             if (fast == slow) {
-                isloop=true;
+                isloop = true;
                 break;
             }
         }
-        if(!isloop){
+        if (!isloop) {
             return c;
         }
         c++;
-        slow=slow.next;
-        while (slow!=fast) {
+        slow = slow.next;
+        while (slow != fast) {
             c++;
-            slow=slow.next;
+            slow = slow.next;
         }
         return c;
     }
+
     Node primeList(Node head) {
         // code here
-        Node temp=head;
-        while (temp!=null) {
-            if(temp.data==1){
-                temp.data=2;
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == 1) {
+                temp.data = 2;
+            } else if (!isPrime(temp.data)) {
+                temp.data = primeListHalper(temp.data);
             }
-            else if(!isPrime(temp.data)){
-                temp.data=primeListHalper(temp.data);
-            }
-            temp=temp.next;
+            temp = temp.next;
         }
         return head;
     }
-    int primeListHalper(int val){
-        int sqrt=(int)Math.sqrt(val);
-        for(int i=1;i<=sqrt;i++){
-            if(isPrime(val-i)){
-                return val-i;
+
+    int primeListHalper(int val) {
+        int sqrt = (int) Math.sqrt(val);
+        for (int i = 1; i <= sqrt; i++) {
+            if (isPrime(val - i)) {
+                return val - i;
             }
-            if(isPrime(val+i)){
-                return val+i;
+            if (isPrime(val + i)) {
+                return val + i;
             }
         }
         return -1;
     }
 
     private boolean isPrime(int i) {
-        for (int j = 2; j*j <=i; j++) {
-            if(i%j==0){
+        for (int j = 2; j * j <= i; j++) {
+            if (i % j == 0) {
                 return false;
             }
         }
         return true;
+    }
+
+    Node removeDuplicates(Node head) {
+        // Your code here
+        if(head==null && head.next==null){
+            return head;
+        }
+         Node temp=head;
+        while (temp!=null && temp.next!=null ) {
+            if (temp.data==temp.next.data) {
+                temp.next=temp.next.next;
+            }else{
+
+                temp=temp.next;
+            }
+        }
+        return head;
     }
 }
