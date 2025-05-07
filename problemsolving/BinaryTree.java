@@ -1,29 +1,28 @@
 import java.util.*;
 
 public class BinaryTree {
-static class TreeNode {
-    int val;
-    TreeNode left, right;
+    static class TreeNode {
+        int val;
+        TreeNode left, right;
 
-    public TreeNode(int val) {
-        this.val = val;
-        this.left = null;
-        this.right = null;
+        public TreeNode(int val) {
+            this.val = val;
+            this.left = null;
+            this.right = null;
+        }
     }
-}
 
-static class Node {
-    int data;
-    Node left;
-    Node right;
+    static class Node {
+        int data;
+        Node left;
+        Node right;
 
-    public Node(int val) {
-        this.data = val;
-        this.left = null;
-        this.right = null;
+        public Node(int val) {
+            this.data = val;
+            this.left = null;
+            this.right = null;
+        }
     }
-}
-
 
     // public Node GetNode(int i) {
 
@@ -1132,9 +1131,8 @@ static class Node {
         return 1 + Math.max(height(root.left), height(root.right));
     }
 
-
     int maxPathSum(Node root) {
-        int max[] ={ Integer.MIN_VALUE};
+        int max[] = { Integer.MIN_VALUE };
         int res = maxPathSum(root, max);
         if (root.left == null || root.right == null) {
             return Math.max(max[0], res);
@@ -1146,9 +1144,28 @@ static class Node {
     static int maxPathSum(Node node, int max[]) {
         if (node == null)
             return 0;
-        int left = Math.max(0,maxPathSum(node.left, max));
-        int right =Math.max(0, maxPathSum(node.right, max));
+        int left = Math.max(0, maxPathSum(node.left, max));
+        int right = Math.max(0, maxPathSum(node.right, max));
         max[0] = (Math.max(left + right + node.data, max[0]));
-        return Math.max(left,right) + node.data;
+        return Math.max(left, right) + node.data;
+    }
+
+    public static ArrayList<ArrayList<Integer>> Paths(Node root) {
+        // code here
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        addPaths(result, root, new ArrayList<Integer>());
+        return result;
+    }
+    private static void addPaths(ArrayList<ArrayList<Integer>> result, Node root, ArrayList<Integer> al) {
+        if (root == null) {
+            return;
+        }
+        al.add(root.data);
+        addPaths(result, root.left, al);
+        addPaths(result, root.right, al);
+        if(root.left==null && root.right==null){
+            result.add(new ArrayList<>(al));
+        }
+        al.remove(al.size() - 1);
     }
 }
