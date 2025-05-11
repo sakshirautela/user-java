@@ -4,7 +4,6 @@ public class LargestSumSubarrayofSizeatleastK {
     }
 
     public static long maxSumWithK2(long a[], long n, long k) {
-        long max = 0;
         long sum = 0;
         for (int i = 0; i < k; i++) {
             sum += a[i];

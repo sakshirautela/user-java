@@ -978,6 +978,7 @@ public class Linkedlist {
         return true;
     }
 
+    @SuppressWarnings("null")
     Node removeDuplicates(Node head) {
         // Your code here
         if(head==null && head.next==null){
@@ -993,6 +994,19 @@ public class Linkedlist {
             }
         }
         return head;
+    }
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ArrayList<Integer> al=new ArrayList<>();
+        ListNode temp=head;
+        while (temp!=null) {
+            al.add(temp.data);
+            temp=temp.next;
+        }
+        for (int i = 0; i < al.size(); i++) {
+            if((al.get(i)%k)==0){
+                
+            }
+        }
     }
     
 }

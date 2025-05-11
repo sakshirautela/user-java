@@ -4,7 +4,7 @@ public class FindMinimumTimetoReachLastRoomII {
 
     private static final int INF = 0x3f3f3f3f;
 
-    class State implements Comparable<State> {
+    static class State implements Comparable<State> {
 
         int x, y, dis;
 

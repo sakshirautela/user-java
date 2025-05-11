@@ -1,5 +1,5 @@
 
-class longestValidParentheses {
+public class LongestValidParentheses {
     static int capacity = 10;
     int top = -1;
     static int count=0;
@@ -30,7 +30,7 @@ class longestValidParentheses {
         || (ch== '(' && ch2 == ')'));
     }
     public static void main(String[] args) {
-        longestValidParentheses st=new longestValidParentheses();
+        LongestValidParentheses st=new LongestValidParentheses();
         String s="(()))";
         for(int i=0;i<s.length();i++){
             if(s.charAt(i)=='(' || s.charAt(i)=='{' ||s.charAt(i)=='['){
