@@ -26,6 +26,7 @@ public class LiftRunning extends Thread {
         System.out.println("Lift reached floor " + dest);
     }
 
+    @SuppressWarnings("unused")
     private void floor(int floor) {
         try {
             Thread.sleep(3000); 
