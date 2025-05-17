@@ -18,9 +18,9 @@ public class MinOpr {
             al.add(new int[]{k,freq.get(k)});
         }
         Collections.sort(al,(a,b)->b[1]-a[1]);
-        for(int i[]:al){
+        // for(int i[]:al){
             
-        }
+        // }
         return operations;
     }
 }
