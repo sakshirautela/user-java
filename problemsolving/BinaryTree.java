@@ -1156,6 +1156,7 @@ public class BinaryTree {
         addPaths(result, root, new ArrayList<Integer>());
         return result;
     }
+
     private static void addPaths(ArrayList<ArrayList<Integer>> result, Node root, ArrayList<Integer> al) {
         if (root == null) {
             return;
@@ -1163,9 +1164,126 @@ public class BinaryTree {
         al.add(root.data);
         addPaths(result, root.left, al);
         addPaths(result, root.right, al);
-        if(root.left==null && root.right==null){
+        if (root.left == null && root.right == null) {
             result.add(new ArrayList<>(al));
         }
         al.remove(al.size() - 1);
+    }
+
+    public ArrayList<Integer> findSpiral(Node root) {
+        // code here
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        if (root == null) {
+            return al;
+        }
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        q.add(null);
+        ArrayList<Integer> temp = new ArrayList<Integer>();
+        boolean spiral = true;
+        while (!q.isEmpty()) {
+            Node curr = q.remove();
+            if (curr == null) {
+                if (spiral) {
+                    Collections.reverse(temp);
+                }
+                al.addAll(temp);
+                temp = new ArrayList<Integer>();
+                spiral = !spiral;
+                if (q.isEmpty()) {
+                    break;
+                } else {
+                    q.add(null);
+                }
+            } else {
+                temp.add(curr.data);
+                if (curr.left != null) {
+                    q.add(curr.left);
+                }
+                if (curr.right != null) {
+                    q.add(curr.right);
+                }
+            }
+        }
+        return al;
+    }
+
+    public ArrayList<Node> findPreSuc(Node root, int key) {
+        // code here
+        ArrayList<Node> al = new ArrayList<Node>();
+        Node pre = new Node(-1);
+        Node suc = new Node(-1);
+        findPreSucHelper(root, key, pre, suc);
+        al.add(pre);
+        al.add(suc);
+        return al;
+    }
+
+    private void findPreSucHelper(Node root, int key, Node pre, Node suc) {
+        if (root == null) {
+            return;
+        }
+        if (root.data < key && pre.data < root.data) {
+            pre.data = root.data;
+        }
+        if (root.data > key && (suc.data == -1 || suc.data > root.data)) {
+            suc.data = root.data;
+        }
+        findPreSucHelper(root.left, key, pre, suc);
+        findPreSucHelper(root.right, key, pre, suc);
+    }
+
+    static int maxDistance = 0;
+
+    public static int minTime(Node root, int target) {
+        // code here
+        minTimeHelper(root, target);
+        return maxDistance;
+    }
+
+    private static int minTimeHelper(Node root, int start) {
+        int depth = 0;
+        if (root == null) {
+            return depth;
+        }
+
+        int leftDepth = minTimeHelper(root.left, start);
+        int rightDepth = minTimeHelper(root.right, start);
+
+        if (root.data == start) {
+            maxDistance = Math.max(leftDepth, rightDepth);
+            depth = -1;
+        } else if (leftDepth >= 0 && rightDepth >= 0) {
+            depth = Math.max(leftDepth, rightDepth) + 1;
+        } else {
+            int distance = Math.abs(leftDepth) + Math.abs(rightDepth);
+            maxDistance = Math.max(maxDistance, distance);
+            depth = Math.min(leftDepth, rightDepth) - 1;
+        }
+
+        return depth;
+    }
+
+    public static ArrayList<Integer> KDistanceNodes(Node root, int target, int k) {
+        // return the sorted list of all nodes at k dist
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        KDistanceNodesHelper(root, target, k, 0, al);
+        return al;
+    }
+
+    private static void KDistanceNodesHelper(Node root, int target, int k, int depth, ArrayList<Integer> al) {
+        if (root == null) {
+            return;
+        }
+        if (depth == k) {
+            al.add(root.data);
+        }
+        if (root.data == target) {
+            KDistanceNodesHelper(root.left, target, k, 1, al);
+            KDistanceNodesHelper(root.right, target, k, 1, al);
+        }else{
+            KDistanceNodesHelper(root.left, target, k, depth+1, al);
+            KDistanceNodesHelper(root.right, target, k, depth+1, al);
+        }
     }
 }
