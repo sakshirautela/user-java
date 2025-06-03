@@ -981,32 +981,53 @@ public class Linkedlist {
     @SuppressWarnings("null")
     Node removeDuplicates(Node head) {
         // Your code here
-        if(head==null && head.next==null){
+        if (head == null && head.next == null) {
             return head;
         }
-         Node temp=head;
-        while (temp!=null && temp.next!=null ) {
-            if (temp.data==temp.next.data) {
-                temp.next=temp.next.next;
-            }else{
+        Node temp = head;
+        while (temp != null && temp.next != null) {
+            if (temp.data == temp.next.data) {
+                temp.next = temp.next.next;
+            } else {
 
-                temp=temp.next;
+                temp = temp.next;
             }
         }
         return head;
     }
+
     public ListNode reverseKGroup(ListNode head, int k) {
-        ArrayList<Integer> al=new ArrayList<>();
-        ListNode temp=head;
-        while (temp!=null) {
+        ArrayList<Integer> al = new ArrayList<>();
+        ListNode temp = head;
+        while (temp != null) {
             al.add(temp.data);
-            temp=temp.next;
+            temp = temp.next;
         }
         for (int i = 0; i < al.size(); i++) {
-            if((al.get(i)%k)==0){
-                
+            if ((al.get(i) % k) == 0) {
+
             }
         }
     }
-    
+
+    public Node sortedInsert(Node head, int data) {
+        Node newNode = new Node(data);
+        Node curr = head;
+        if (data < head.data) {
+            while (curr.next != head) {
+                curr = curr.next;
+            }
+            curr.next = newNode;
+            newNode.next = head;
+            return newNode;
+        }
+        while (curr.next != head && curr.next.data < data) {
+            curr = curr.next;
+        }
+
+        newNode.next = curr.next;
+        curr.next = newNode;
+
+        return head;
+    }
 }

@@ -1281,9 +1281,109 @@ public class BinaryTree {
         if (root.data == target) {
             KDistanceNodesHelper(root.left, target, k, 1, al);
             KDistanceNodesHelper(root.right, target, k, 1, al);
-        }else{
-            KDistanceNodesHelper(root.left, target, k, depth+1, al);
-            KDistanceNodesHelper(root.right, target, k, depth+1, al);
+        } else {
+            KDistanceNodesHelper(root.left, target, k, depth + 1, al);
+            KDistanceNodesHelper(root.right, target, k, depth + 1, al);
         }
+    }
+
+    public ArrayList<Integer> leafNodes(int[] preorder) {
+        // code here
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        Stack<Integer> st = new Stack<Integer>();
+        int n = preorder.length;
+        for (int i = 0; i < n; i++) {
+            if (st.isEmpty()) {
+                st.add(preorder[i]);
+            } else {
+                if (st.peek() < preorder[i]) {
+                    int s = st.peek();
+                    int a = 0;
+                    while (!st.isEmpty() && st.peek() < preorder[i]) {
+                        a++;
+                        st.pop();
+                    }
+                    if (a >= 2) {
+                        al.add(s);
+                    }
+                }
+                st.add(preorder[i]);
+            }
+        }
+        if (!st.isEmpty()) {
+            al.add(st.peek());
+        }
+        return al;
+    }
+
+    static void sumOfRootToLeaf(Node root, int sum,
+            int length, int[] maxLen,
+            int[] maxSum) {
+
+        // Base case: if the current node is null
+        if (root == null) {
+
+            // Checking if the current path has a longer
+            // length and update maxLen and maxSum
+            // accordingly
+            if (length > maxLen[0]) {
+                maxLen[0] = length;
+                maxSum[0] = sum;
+            }
+
+            // If the lengths are equal, check if the
+            // current sum is greater and update maxSum if
+            // necessary
+            else if (length == maxLen[0]
+                    && sum > maxSum[0]) {
+                maxSum[0] = sum;
+            }
+            return;
+        }
+
+        // Recursively calculating the sum of
+        // the left and right subtrees
+        sumOfRootToLeaf(root.left, sum + root.data,
+                length + 1, maxLen, maxSum);
+        sumOfRootToLeaf(root.right, sum + root.data,
+                length + 1, maxLen, maxSum);
+    }
+
+    // Function to calculate the sum of the longest root to
+    // leaf path
+    static int sumOfLongRootToLeafPath(Node root) {
+
+        // Base case: if the tree is empty
+        if (root == null)
+            return 0;
+
+        // Initializing the variables to
+        // store the maximum length and sum
+        int[] maxSum = { Integer.MIN_VALUE };
+        int[] maxLen = { 0 };
+
+        // Calling the utility function
+        sumOfRootToLeaf(root, 0, 0, maxLen, maxSum);
+
+        // Returning the maximum sum
+        return maxSum[0];
+    }
+
+    public int findMaxFork(Node root, int k) {
+        // code here.
+        int[] res={-1};
+        findMaxForkHelper(root, k,res);
+        return res[0];
+    }
+
+    private void findMaxForkHelper(Node root, int k, int[] res) {
+        if(root==null){
+            return ;
+        }
+        if(root.data<=k){
+            res[0]=Math.max(res[0],root.data);
+        }
+         findMaxForkHelper(root.left, k,res);
+        findMaxForkHelper(root.right, k,res);
     }
 }
