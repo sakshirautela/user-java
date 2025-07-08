@@ -1,0 +1,173 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+
+public class PowerGridMaintenance {
+    public static void main(String[] args) {
+        int[] result = processQueries(5, new int[][] { { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 } },
+                new int[][] { { 1, 3 }, { 2, 1 }, { 1, 1 }, { 2, 2 }, { 1, 2 } });
+        for (int i : result) {
+            System.out.println(i);
+        }
+    }
+    static class DSU2 {
+        int[] parent;
+        int[] size;
+        int comps;
+
+        DSU2(int n) {
+            parent = new int[n];
+            size = new int[n];
+            comps = n;
+            for (int i = 0; i < n; i++) {
+                parent[i] = i;
+                size[i] = 1;
+            }
+        }
+
+        public int find(int u) {
+            if (parent[u] == u)
+                return u;
+            int curParent = parent[u];
+            return parent[u] = find(curParent);
+        }
+
+        public boolean union(int u, int v) {
+            int pu = find(u), pv = find(v);
+            if (pu == pv)
+                return false;
+
+            if (size[pu] > size[pv]) {
+                size[pu] += size[pv];
+                parent[pv] = parent[pu];
+            } else {
+                size[pv] += size[pu];
+                parent[pu] = parent[pv];
+            }
+            comps--;
+            return true;
+        }
+    }
+
+    public int[] processQueries2(int c, int[][] connections, int[][] queries) {
+        DSU2 dsu = new DSU2(c + 1);
+        int[] offlineCount = new int[c + 1];
+        int[] min = new int[c + 1];
+        Arrays.fill(min, Integer.MAX_VALUE);
+
+        int n = 0;
+        for (int[] con : connections) {
+            dsu.union(con[0], con[1]);
+        }
+
+        for (int[] query : queries) {
+            if (query[0] == 2) {
+                offlineCount[query[1]]++;
+            } else
+                n++;
+        }
+
+        for (int node = 1; node <= c; node++) {
+            if (offlineCount[node] == 0) {
+                int root = dsu.find(node);
+                min[root] = Math.min(min[root], node);
+            }
+
+        }
+
+        int[] res = new int[n];
+
+        for (int i = queries.length - 1; i >= 0; i--) {
+            int first = queries[i][0];
+            int station = queries[i][1];
+            int root = dsu.find(station);
+            if (first == 1) {
+                boolean isOnline = (offlineCount[station] == 0);
+                if (isOnline) {
+                    res[--n] = station;
+                } else {
+                    int minStation = min[root];
+                    res[--n] = minStation == Integer.MAX_VALUE ? -1 : minStation;
+                }
+            } else {
+                offlineCount[station]--;
+                if (offlineCount[station] == 0) {
+                    min[root] = Math.min(station, min[root]);
+                }
+
+            }
+        }
+        return res;
+    }
+    static class DSU {
+        int[] parent;
+
+        public DSU(int n) {
+            parent = new int[n + 1];
+            for (int i = 0; i <= n; i++)
+                parent[i] = i;
+        }
+
+        public int find(int x) {
+            if (parent[x] != x)
+                parent[x] = find(parent[x]); 
+            return parent[x];
+        }
+
+        public boolean union(int x, int y) {
+            int px = find(x), py = find(y);
+            if (px == py)
+                return false;
+            parent[py] = px;
+            return true;
+        }
+    }
+
+    public static int[] processQueries(int c, int[][] connections, int[][] queries) {
+        DSU dsu = new DSU(c);
+        boolean[] online = new boolean[c + 1];
+        Arrays.fill(online, true);
+
+        for (int[] conn : connections)
+            dsu.union(conn[0], conn[1]);
+
+        Map<Integer, PriorityQueue<Integer>> componentHeap = new HashMap<>();
+        for (int station = 1; station <= c; station++) {
+            int root = dsu.find(station);
+            componentHeap.putIfAbsent(root, new PriorityQueue<>());
+            componentHeap.get(root).offer(station);
+        }
+
+        List<Integer> result = new ArrayList<>();
+
+        for (int[] query : queries) {
+            int type = query[0], x = query[1];
+
+            if (type == 2) {
+                online[x] = false;
+            } else {
+                if (online[x]) {
+                    result.add(x);
+                } else {
+                    int root = dsu.find(x);
+                    PriorityQueue<Integer> heap = componentHeap.get(root);
+
+                    while (heap != null && !heap.isEmpty() && !online[heap.peek()]) {
+                        heap.poll();
+                    }
+
+                    result.add((heap == null || heap.isEmpty()) ? -1 : heap.peek());
+                }
+            }
+        }
+
+        int[] ans = new int[result.size()];
+        for (int i = 0; i < result.size(); i++) {
+            ans[i] = result.get(i);
+        }
+        return ans;
+    }
+}
