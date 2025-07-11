@@ -997,17 +997,24 @@ public class Linkedlist {
     }
 
     public ListNode reverseKGroup(ListNode head, int k) {
-        ArrayList<Integer> al = new ArrayList<>();
         ListNode temp = head;
-        while (temp != null) {
-            al.add(temp.data);
+        int count = 0;
+        while (temp != null && count < k) {
+            count++;
             temp = temp.next;
         }
-        for (int i = 0; i < al.size(); i++) {
-            if ((al.get(i) % k) == 0) {
-
+        if (count == k) {
+            ListNode prev = reverseKGroup(temp, k);
+            ListNode curr = head;
+            for (int i = 0; i < k; i++) {
+                ListNode next = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
             }
+            return prev;
         }
+        return head;
     }
 
     public Node sortedInsert(Node head, int data) {
