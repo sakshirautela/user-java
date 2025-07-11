@@ -1,10 +1,10 @@
 
 import java.util.*;
 
-public class getBowl {
+public class GetBowl {
     HashMap<String, Integer> players;
     
-    getBowl() {
+    GetBowl() {
         players = new HashMap<String, Integer>();
     }
     public void addPlayer(String name, int p) {
