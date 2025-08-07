@@ -473,7 +473,7 @@ public class BinaryTree {
         // System.out.println(lowestCommonAncester2(root, 90, 10).val);
         // System.out.println(minDistanceTwoNodes(root, 90, 10));
         // KthAncestor(root, 1, 2);
-        int array[] = { 2, 3, 4, 5, 6 };
+        int array[] = {2, 3, 4, 5, 6};
         TreeNode root = new TreeNode(array[0]);
         createTreeArray(root, array);
         // System.out.print(minDepth(root));
@@ -930,7 +930,7 @@ public class BinaryTree {
 
     int findMaxSum(Node node) {
         // your code goes here
-        int[] res = { node.data };
+        int[] res = {node.data};
         findMaxSumUtil(node, res);
         return res[0];
     }
@@ -977,7 +977,7 @@ public class BinaryTree {
 
     public int kthSmallest(Node root, int k) {
         // Write your code here
-        int[] count = { 0, -1 };
+        int[] count = {0, -1};
         kthSmallestUtil(root, count, k);
         return count[1];
     }
@@ -1087,7 +1087,7 @@ public class BinaryTree {
     // Function to deserialize a list and construct the tree.
     public Node deSerialize(ArrayList<Integer> arr) {
         // code here'
-        int[] idx = new int[] { 0 };
+        int[] idx = new int[]{0};
         return deSerializeUtil(arr, idx);
 
     }
@@ -1132,7 +1132,7 @@ public class BinaryTree {
     }
 
     int maxPathSum(Node root) {
-        int max[] = { Integer.MIN_VALUE };
+        int max[] = {Integer.MIN_VALUE};
         int res = maxPathSum(root, max);
         if (root.left == null || root.right == null) {
             return Math.max(max[0], res);
@@ -1317,8 +1317,8 @@ public class BinaryTree {
     }
 
     static void sumOfRootToLeaf(Node root, int sum,
-            int length, int[] maxLen,
-            int[] maxSum) {
+                                int length, int[] maxLen,
+                                int[] maxSum) {
 
         // Base case: if the current node is null
         if (root == null) {
@@ -1359,8 +1359,8 @@ public class BinaryTree {
 
         // Initializing the variables to
         // store the maximum length and sum
-        int[] maxSum = { Integer.MIN_VALUE };
-        int[] maxLen = { 0 };
+        int[] maxSum = {Integer.MIN_VALUE};
+        int[] maxLen = {0};
 
         // Calling the utility function
         sumOfRootToLeaf(root, 0, 0, maxLen, maxSum);
@@ -1371,19 +1371,264 @@ public class BinaryTree {
 
     public int findMaxFork(Node root, int k) {
         // code here.
-        int[] res={-1};
-        findMaxForkHelper(root, k,res);
+        int[] res = {-1};
+        findMaxForkHelper(root, k, res);
         return res[0];
     }
 
     private void findMaxForkHelper(Node root, int k, int[] res) {
-        if(root==null){
-            return ;
+        if (root == null) {
+            return;
         }
-        if(root.data<=k){
-            res[0]=Math.max(res[0],root.data);
+        if (root.data <= k) {
+            res[0] = Math.max(res[0], root.data);
         }
-         findMaxForkHelper(root.left, k,res);
-        findMaxForkHelper(root.right, k,res);
+        findMaxForkHelper(root.left, k, res);
+        findMaxForkHelper(root.right, k, res);
     }
+
+    public List<List<Integer>> verticalTraversal(TreeNode root) {
+        List<int[]> map = new ArrayList<>();
+        int min = 0;
+        verticalTraversalHelper(root, map, 0, 0);
+        map.sort((a, b) -> {
+            if (a[0] != b[0]) {
+                return Integer.compare(a[0], b[0]);
+            }
+            if (a[1] != b[1]) {
+                return Integer.compare(a[1], b[1]);
+            }
+            return Integer.compare(a[2], b[2]);
+        });
+        int prev = Integer.MIN_VALUE;
+        List<List<Integer>> res = new ArrayList<>();
+        int idx = -1;
+        for (int[] nodes : map) {
+            if (prev != nodes[0]) {
+                res.add(new ArrayList<>());
+                idx++;
+                prev = nodes[0];
+            }
+            res.get(idx).add(nodes[2]);
+        }
+        return res;
+    }
+
+    private void verticalTraversalHelper(TreeNode root, List<int[]> map, int r, int c) {
+        if (root == null) {
+            return;
+        }
+        map.add(new int[]{c, r, root.val});
+        verticalTraversalHelper(root.left, map, r + 1, c - 1);
+        verticalTraversalHelper(root.right, map, r + 1, c + 1);
+    }
+    // /**
+//  * Definition for a binary tree node.
+//  * public class TreeNode {
+//  *     int val;
+//  *     TreeNode left;
+//  *     TreeNode right;
+//  *     TreeNode() {}
+//  *     TreeNode(int val) { this.val = val; }
+//  *     TreeNode(int val, TreeNode left, TreeNode right) {
+//  *         this.val = val;
+//  *         this.left = left;
+//  *         this.right = right;
+//  *     }
+//  * }
+//  */
+// class Solution {
+
+//     public class QEntry{
+//         TreeNode node;
+//         int index;
+
+//         public QEntry(int index, TreeNode node){
+//             this.node = node;
+//             this.index = index;
+//         }
+//     }
+
+//     public List<List<Integer>> verticalTraversal(TreeNode root) {
+//         Queue<QEntry> q = new LinkedList<>();
+//         List<List<Integer>> ans = new ArrayList<>();
+//         Map<Integer, List<Integer>> mainMp = new TreeMap<>();
+//         if(root == null) {
+//             return ans;
+//         }
+//         q.add(new QEntry(0, root));
+//         while(!q.isEmpty()) {
+//             int n = q.size();
+//             Map<Integer, List<Integer>> mp = new TreeMap<>();
+//             for(int i=0; i<n; i++) {
+//                 QEntry entry = q.poll();
+//                 if(mp.get(entry.index) != null) {
+//                     mp.get(entry.index).add(entry.node.val);
+//                 } else {
+//                     mp.put(entry.index, new ArrayList<>(List.of(entry.node.val)));
+//                 }
+//                 if(entry.node.left != null) {
+//                     q.add(new QEntry(entry.index-1, entry.node.left));
+//                 }
+//                 if(entry.node.right != null) {
+//                     q.add(new QEntry(entry.index+1, entry.node.right));
+//                 }
+//             }
+//             for(Map.Entry<Integer, List<Integer>> mpEntry : mp.entrySet()) {
+//                 int key = mpEntry.getKey();
+//                 Collections.sort(mpEntry.getValue());
+//                 if(mainMp.get(key) != null) {
+//                     mainMp.get(key).addAll(mpEntry.getValue());
+//                 } else {
+//                     mainMp.put(key, mpEntry.getValue());
+//                 }
+//             }
+//         }
+//         for(Map.Entry<Integer, List<Integer>> mpEntry : mainMp.entrySet()) {
+//             ans.add(mpEntry.getValue());
+//         }
+//         return ans;
+//     }
+// }
+
+// import java.util.*;
+
+// class Solution {
+//     public List<List<Integer>> verticalTraversal(TreeNode root) {
+//         List<int[]> nodes = new ArrayList<>();
+
+//         // Step 1: DFS to collect all (col, row, val)
+//         dfs(root, 0, 0, nodes);
+
+//         // Step 2: Sort by col, then row, then value
+//         nodes.sort((a, b) -> {
+//             if (a[0] != b[0]) return Integer.compare(a[0], b[0]);     // col
+//             if (a[1] != b[1]) return Integer.compare(a[1], b[1]);     // row
+//             return Integer.compare(a[2], b[2]);                       // value
+//         });
+
+//         List<List<Integer>> result = new ArrayList<>();
+//         int prevCol = Integer.MIN_VALUE;
+
+//         // Step 3: Group by column
+//         for (int[] node : nodes) {
+//             int col = node[0], val = node[2];
+//             if (col != prevCol) {
+//                 result.add(new ArrayList<>());
+//                 prevCol = col;
+//             }
+//             result.get(result.size() - 1).add(val);
+//         }
+
+//         return result;
+//     }
+
+//     // DFS helper to collect column, row, and value
+//     private void dfs(TreeNode node, int row, int col, List<int[]> nodes) {
+//         if (node == null) return;
+//         nodes.add(new int[]{col, row, node.val});
+//         dfs(node.left, row + 1, col - 1, nodes);   // Left child
+//         dfs(node.right, row + 1, col + 1, nodes);  // Right child
+//     }
+// }
+
+/*    class Solution {
+        public List<List<Integer>> verticalTraversal(TreeNode root) {
+            if (root == null) {
+                return new LinkedList<>();
+            }
+
+            return new MyHack(root);
+        }
+    }
+
+    class MyHack extends LinkedList<List<Integer>> {
+        TreeNode root;
+        Map<Integer, List<LeveldValue>> columns;
+
+        MyHack(TreeNode root) {
+            this.root = root;
+            this.columns = null;
+        }
+
+        public int size() {
+            if (columns == null) {
+                columns = new HashMap<>();
+
+                Queue<TreeNodeWithColumn> bfs = new LinkedList<>();
+
+                int minColumn = 0;
+                bfs.add(new TreeNodeWithColumn(root, 0, 0));
+
+                while(!bfs.isEmpty()) {
+                    TreeNodeWithColumn nextTuple = bfs.poll();
+                    TreeNode node = nextTuple.node;
+                    int nodeColumn = nextTuple.column;
+                    List<LeveldValue> nodesInLevel = columns.computeIfAbsent(nodeColumn, (l) -> new LinkedList<>());
+                    nodesInLevel.add(new LeveldValue(node.val, nextTuple.level));
+
+                    if (node.left != null) {
+                        bfs.add(new TreeNodeWithColumn(node.left, nodeColumn - 1, nextTuple.level + 1));
+                    }
+
+                    if (node.right != null) {
+                        bfs.add(new TreeNodeWithColumn(node.right, nodeColumn + 1, nextTuple.level + 1));
+                    }
+
+                    // System.out.println("visit= " + node.val+ ", l="+nodeColumn + ", nodes=" + nodesInLevel + ", q=" + bfs);
+
+                    minColumn = Math.min(nodeColumn, minColumn);
+                }
+
+                while(columns.containsKey(minColumn)) {
+                    List<LeveldValue> column = columns.get(minColumn);
+                    Collections.sort(column);
+
+                    super.add(column.stream().map(LeveldValue::getValue).toList());
+
+                    minColumn += 1;
+                }
+            }
+
+            return super.size();
+        }
+    }
+
+    class TreeNodeWithColumn {
+        TreeNode node;
+        int column;
+        int level;
+
+        TreeNodeWithColumn(TreeNode node, int column, int level) {
+            this.node = node;
+            this.column = column;
+            this.level = level;
+        }
+
+        public String toString() {
+            return "node(val=" + node.val + ", col=" + column + ")";
+        }
+    }
+
+    class LeveldValue implements Comparable<LeveldValue> {
+        int val;
+        int level;
+
+        LeveldValue(int val, int level) {
+            this.val = val;
+            this.level = level;
+        }
+
+        int getValue() {
+            return val;
+        }
+
+        public int compareTo(LeveldValue o) {
+            if (level == o.level) {
+                return Integer.compare(val, o.val);
+            }
+
+            return Integer.compare(level, o.level);
+            }
+        }*/
 }

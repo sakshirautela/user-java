@@ -3,6 +3,6 @@ public class FindSumofArrayProductofMagicalSequences {
         
      }
         public int magicalSum(int m, int k, int[] nums) {
-            
+            return 0;
         }
 }

@@ -4,5 +4,6 @@ public class MinimumReplacementstoSorttheArray {
     }
     public static long minimumReplacement(int[] nums) {
         int n=nums.length;
+        return 0;
     }
 }

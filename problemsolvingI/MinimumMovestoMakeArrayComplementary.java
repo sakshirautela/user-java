@@ -5,5 +5,6 @@ public class MinimumMovestoMakeArrayComplementary {
     public static int minMoves(int[] nums, int limit) {
         int minsum=0;
         int diff[]=new int[limit*2+2];
+        return 0;
     }
 }

@@ -6,12 +6,13 @@ public class LongestSubsequenceRepeatedKTimes {
         int n=s.length();
         for(int i=0;i<=n/k;i++){
             String[] str={""};
-            getSubstring(i,n,0,s,k,"",str);
+            getSubstring(i,n,0,s,k,"");
         }
+        return "";
     }
-    private static void getSubstring(int i, int n,int idx, String s, int k,String sub,String[] str) {
+    private static void getSubstring(int i, int n,int idx, String s, int k,String sub) {
         if(idx==n/k){
-            str[0]=sub;
+           // str[0]=sub;
             return ;
         }
         getSubstring(i+1, n, idx, s, k, sub);
