@@ -11,8 +11,9 @@ public class MaxMinHeight {
         for (int i = 0; i < n; i++) {
             pq.add(arr[i]);
         }
-        while (condition) {
-            
-        }
+//        while (condition) {
+//
+//        }
+        return 0;
     }
 }
