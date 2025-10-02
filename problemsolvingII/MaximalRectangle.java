@@ -26,6 +26,8 @@ class Solution {
             for (int j = 0; j < m; j++) {
                 if (chars[j] == '1') {
                     height[j] += 1;
+                }else{
+                    height[j]=0;
                 }
             }
             res = Math.max(res, largestArea(height));

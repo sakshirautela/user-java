@@ -1,6 +1,5 @@
-
 //{ Driver Code Starts
-public class minimumJumps {
+public class MinimumJumps2 {
     public static void main(String[] args) {
         System.out.println(minJumps(new int[] {}));
     }
