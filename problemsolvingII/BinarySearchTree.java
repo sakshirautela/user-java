@@ -1,20 +1,31 @@
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
-class TreeNode {
-    int val;
-    TreeNode left, right;
-
-    public TreeNode(int val) {
-        this.val = val;
-    }
-}
+import java.util.*;
 
 public class BinarySearchTree {
+    public static class Node {
+        int val;
+        Node left, right;
+
+        public Node(int val) {
+
+            this.val = val;
+        }
+
+        public Node() {
+        }
+    }
+    public static class TreeNode {
+        int val;
+        TreeNode left, right;
+
+        public TreeNode(int val) {
+
+            this.val = val;
+        }
+
+        public TreeNode() {
+        }
+    }
 
     // public Node GetNode(int i) {
 
@@ -36,6 +47,7 @@ public class BinarySearchTree {
         return root;
 
     }
+
 
     // // BFS-inorder ,postorder,preorder
     // public void preOrder(TreeNode root) {
@@ -361,7 +373,7 @@ public class BinarySearchTree {
         if (lefNode || rigNode) {
             return true;
         }
-        path.remove(path.size() - 1);
+        path.removeLast();
         return false;
     }
 
@@ -385,7 +397,7 @@ public class BinarySearchTree {
         int rightVal = getlcd(root.right, n);
         if (leftVal == -1 && rightVal == -1) {
             return -1;
-        } else if (leftVal == -1 && rightVal != -1) {
+        } else if (leftVal == -1) {
             return rightVal + 1;
         } else {
             return leftVal + 1;
@@ -411,7 +423,7 @@ public class BinarySearchTree {
         return max + 1;
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // BinarySearchTree tree = new BinarySearchTree();
         // int val = 15;
         // var t = tree.GetNode(3);
@@ -443,7 +455,7 @@ public class BinarySearchTree {
         // System.out.println(lowestCommonAncester2(root, 90, 10).val);
         // System.out.println(minDistanceTwoNodes(root, 90, 10));
         // KthAncestor(root, 1, 2);
-        int array[] = { 2, 3, 4, 5, 6 };
+        int[] array = {2, 3, 4, 5, 6};
         TreeNode root = new TreeNode(array[0]);
         createTreeArray(root, array);
         System.out.print(minDepth(root));
@@ -548,15 +560,15 @@ public class BinarySearchTree {
         }
         ArrayList<Integer> list = new ArrayList<Integer>();
         inorderFlatten(root, list);
-        root.val = list.get(0);
+        root.val = list.getFirst();
         root.left = null;
-        for (int i = 0; i < list.size(); i++) {
+        for (Integer integer : list) {
             if (root.right == null) {
-                root.right = new TreeNode(list.get(i));
+                root.right = new TreeNode(integer);
                 root = root.right;
                 root.left = null;
             } else {
-                root.val = list.get(i);
+                root.val = integer;
                 root = root.right;
                 root.left = null;
             }
@@ -570,5 +582,215 @@ public class BinarySearchTree {
         list.add(root.val);
         inorderFlatten(root.left, list);
         inorderFlatten(root.right, list);
+    }
+
+    public boolean isValidBST(TreeNode root) {
+        return isValidBSTHelper(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+
+    private boolean isValidBSTHelper(TreeNode root, Long min, Long max) {
+        if (root == null) {
+            return true;
+        }
+        if (root.val >= max || root.val <= min) {
+            return false;
+        }
+        return isValidBSTHelper(root.left, min, (long) root.val) && isValidBSTHelper(root.right, (long) root.val, max);
+    }
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        levelOrderHelper(res, root, 0);
+        return res;
+    }
+
+    private void levelOrderHelper(List<List<Integer>> res, TreeNode root, int i) {
+        if (root == null) {
+            return;
+        }
+        if (res.size() < i) {
+            res.add(new ArrayList<>());
+        }
+        res.get(i).add(root.val);
+        levelOrderHelper(res, root.left, i + 1);
+        levelOrderHelper(res, root.right, i + 1);
+    }
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        int[] res = {0};
+        diameterOfBinaryTreeHelper(root, res);
+        return res[0];
+    }
+
+    private int diameterOfBinaryTreeHelper(TreeNode root, int[] d) {
+        if (root == null) {
+            return 0;
+        }
+        int l = diameterOfBinaryTreeHelper(root.left, d);
+        int r = diameterOfBinaryTreeHelper(root.right, d);
+        d[0] = Math.max(d[0], l + r);
+        return Math.max(l, r) + 1;
+    }
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        levelOrderHelper(res, root, 0);
+        return res;
+    }
+
+    private void zigzagLevelOrderHelper(List<List<Integer>> res, TreeNode root, int i) {
+        if (root == null) {
+            return;
+        }
+        if (res.size() <= i) {
+            res.add(new ArrayList<>());
+        }
+        if (i % 2 == 0) {
+            res.get(i).addFirst(root.val);
+        } else {
+            res.get(i).addLast(root.val);
+        }
+        zigzagLevelOrderHelper(res, root.left, i + 1);
+        zigzagLevelOrderHelper(res, root.right, i + 1);
+    }
+
+    private int postIndex;
+
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        postIndex = postorder.length - 1;
+        return constructTree(inorder, postorder, 0, inorder.length - 1);
+    }
+
+    private TreeNode constructTree(int[] inorder, int[] postorder, int inLeft, int inRight) {
+        if (inLeft > inRight) {
+            return null;
+        }
+        int rootVal = postorder[postIndex--];
+        TreeNode root = new TreeNode(rootVal);
+
+        int idx = 0;
+        for (int i = inLeft; i <= inRight; i++) {
+            if (inorder[i] == rootVal) {
+                idx = i;
+                break;
+            }
+        }
+
+        root.right = constructTree(inorder, postorder, idx + 1, inRight);
+        root.left = constructTree(inorder, postorder, inLeft, idx - 1);
+
+        return root;
+    }
+    int inorderEnd;
+    int postEnd;
+    public TreeNode buildTreeFast(int[] inorder, int[] postorder) {
+        inorderEnd = inorder.length-1;
+        postEnd = postorder.length-1;
+        return solutionFirst(inorder, postorder, Integer.MIN_VALUE);
+    }
+
+    private TreeNode solutionFirst(int[] inorder, int[] postorder, int boundary) {
+        if(postEnd < 0) return null;
+        if(inorder[inorderEnd] == boundary) {
+            inorderEnd--;
+            return null;
+        }
+
+        TreeNode root = new TreeNode(postorder[postEnd--]);
+        root.right = solutionFirst(inorder, postorder, root.val);
+        root.left = solutionFirst(inorder, postorder, boundary);
+
+        return root;
+    }
+    int maxdiff=0;
+    public boolean isBalanced(TreeNode root) {
+        System.out.println(maxdiff);
+        int a=isBalancedUtil(root);
+        return maxdiff<2;
+    }
+
+    private int isBalancedUtil(TreeNode root) {
+        if(root==null){
+            return 0;
+        }
+        int l=isBalancedUtil(root.left);
+        int r=isBalancedUtil(root.right);
+        maxdiff=Math.max(Math.abs(l-r),maxdiff);
+        return Math.max(l,r)+1;
+    }
+    public boolean isBalanced2(TreeNode root) {
+        return checkBalance(root) != -1;
+    }
+
+    private int checkBalance(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int leftHeight = checkBalance(node.left);
+        if (leftHeight == -1) {
+            return -1;
+        }
+
+        int rightHeight = checkBalance(node.right);
+        if (rightHeight == -1) {
+            return -1;
+        }
+
+        if (Math.abs(leftHeight - rightHeight) > 1) {
+            return -1;
+        }
+
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+    static int findDist(Node root, int a, int b) {
+        // Your code here
+        boolean[] find={false,false};
+        int[] dist={0,0};
+        findDistHelper(root,a,b,find,dist);
+        return dist[0]+dist[1]-2;
+    }
+
+    private static void findDistHelper(Node root, int a, int b, boolean[] find, int[] dist) {
+        if(root==null){
+            return;
+        }
+        if(root.val==a){
+            find[0]=true;
+        }
+        if(root.val==b){
+            find[1]=true;
+        }
+        if(find[0]&&find[1]){
+            return;
+        }
+        if(find[0]){
+            dist[0]++;
+        }
+        if(find[1]){
+            dist[1]++;
+        }
+        findDistHelper(root.left,a,b,find,dist);
+        findDistHelper(root.right,a,b,find,dist);
+
+    }
+
+    public int minDiffInBST(TreeNode root) {
+        ArrayList<Integer> ar=new ArrayList<>();
+        minDiffInBSTHelper(root,ar);
+        int res=ar.get(1)-ar.get(0);
+        for (int i = 1; i < ar.size(); i++) {
+            res=Math.min(ar.get(i)-ar.get(i-1),res);
+        }
+        return res;
+    }
+
+    private void minDiffInBSTHelper(TreeNode root, ArrayList<Integer>pq) {
+        if(root==null){
+            return;
+        }
+        minDiffInBSTHelper(root.left,pq);
+        pq.add(root.val);
+        minDiffInBSTHelper(root.right,pq);
     }
 }
