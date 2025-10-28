@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class FruitIntoBasketsIII {
     public static void main(String[] args) {
         System.out.println(numOfUnplacedFruits(new int[]{35,61}, new int[]{76,56}));
