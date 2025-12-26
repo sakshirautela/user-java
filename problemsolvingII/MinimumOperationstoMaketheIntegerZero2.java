@@ -1,4 +1,4 @@
-public class MinimumOperationstoMaketheIntegerZero {
+public class MinimumOperationstoMaketheIntegerZero2 {
     public static void main(String[] args) {
         System.out.println(makeTheIntegerZero(5, 7));
     }

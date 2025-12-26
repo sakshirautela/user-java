@@ -1,6 +1,6 @@
 import java.util.Map;
 import java.util.HashMap;
-public class c2 {
+public class c22 {
     public static void main(String[] args) {
         System.out.println(partitionArray(new int[]{35,39,65,101,101,54,1,111,8,107,96,90,91,54,115,36,46,76,111,39,29,122,4,113,101,73,125,39,124,33,82,39},16));
         System.out.println(partitionArray(new int[]{1},1));

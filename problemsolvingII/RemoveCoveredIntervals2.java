@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class RemoveCoveredIntervals {
+public class RemoveCoveredIntervals2 {
     public static void main(String[] args) {
         System.out.println(removeCoveredIntervals(new int[][]{{1, 4}, {1, 2}, {3, 4}}));
     }

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ShopCandyInAStore {
+public class ShopCandyInAStore2 {
     public static void main(String[] args) {
         System.out.println(minMaxCandy(new int[]{9 ,13 ,4 ,17 ,7 ,13},1));
     }
