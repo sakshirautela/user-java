@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class PrimeSubstring {
+public class PrimeSubstring2 {
     public static void main(String[] args) {
 
         System.out.println(solve("2609800966"));

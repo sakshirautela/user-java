@@ -1,4 +1,4 @@
-public class TwistedMirrorPathCount {
+public class TwistedMirrorPathCount2 {
     public static void main(String[] args) {
         System.out.println(uniquePaths(new int[][]{{}}));
     }

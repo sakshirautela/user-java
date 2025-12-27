@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class PopulatingNextRightPointersinEachNode {
+public class PopulatingNextRightPointersinEachNode2 {
     static class Node {
         public int val;
         public Node left;

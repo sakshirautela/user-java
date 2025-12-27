@@ -9,7 +9,7 @@ public class WordLadder {
     public static void main(String[] args) {
         System.out.println(ladderLength("hit","cog",new ArrayList<>(Arrays.asList("hot","dot","dog","lot","log","cog"))));
     }
-    public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
         HashSet<String> unique=new HashSet<>(wordList);
         if(!unique.contains(endWord)){
             return 0;

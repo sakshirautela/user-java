@@ -1,6 +1,6 @@
 import java.util.HashSet;
 
-public class RestoringFishingOrder {
+public class RestoringFishingOrder2 {
     public static void main(String[] args) {
         int[] res=recoverOrder(new int[]{},new int[]{});
     }

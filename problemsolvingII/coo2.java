@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class co2 {
+public class coo2 {
     public static void main(String[] args) {
         System.out.println(score(new String[]{"cb", "ca", "cc" }, 'c')); // 0
     }
