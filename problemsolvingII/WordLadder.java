@@ -89,4 +89,27 @@ public class WordLadder {
         }
         return c != 1 ? false : true;
     }
+
+    public static class CarPooling {
+        static void main() {
+            System.out.println(carPooling(new int[][]{{9, 0, 1}, {3, 3, 7}}, 4));
+        }
+
+        public static boolean carPooling(int[][] trips, int capacity) {
+            int[] passenges = new int[1001];
+            for (int[] trip : trips) {
+                passenges[trip[1]] += trip[0];
+                passenges[trip[2]] -= trip[0];
+            }
+            for (int i = 0; i < 1001; i++) {
+                if (i != 0) {
+                    passenges[i] += passenges[i - 1];
+                }
+                if (passenges[i] > capacity) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
 }

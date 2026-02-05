@@ -14,6 +14,7 @@ public class BinarySearchTree {
         public Node() {
         }
     }
+
     public static class TreeNode {
         int val;
         TreeNode left, right;
@@ -681,17 +682,19 @@ public class BinarySearchTree {
 
         return root;
     }
+
     int inorderEnd;
     int postEnd;
+
     public TreeNode buildTreeFast(int[] inorder, int[] postorder) {
-        inorderEnd = inorder.length-1;
-        postEnd = postorder.length-1;
+        inorderEnd = inorder.length - 1;
+        postEnd = postorder.length - 1;
         return solutionFirst(inorder, postorder, Integer.MIN_VALUE);
     }
 
     private TreeNode solutionFirst(int[] inorder, int[] postorder, int boundary) {
-        if(postEnd < 0) return null;
-        if(inorder[inorderEnd] == boundary) {
+        if (postEnd < 0) return null;
+        if (inorder[inorderEnd] == boundary) {
             inorderEnd--;
             return null;
         }
@@ -702,22 +705,25 @@ public class BinarySearchTree {
 
         return root;
     }
-    int maxdiff=0;
+
+    int maxdiff = 0;
+
     public boolean isBalanced(TreeNode root) {
         System.out.println(maxdiff);
-        int a=isBalancedUtil(root);
-        return maxdiff<2;
+        int a = isBalancedUtil(root);
+        return maxdiff < 2;
     }
 
     private int isBalancedUtil(TreeNode root) {
-        if(root==null){
+        if (root == null) {
             return 0;
         }
-        int l=isBalancedUtil(root.left);
-        int r=isBalancedUtil(root.right);
-        maxdiff=Math.max(Math.abs(l-r),maxdiff);
-        return Math.max(l,r)+1;
+        int l = isBalancedUtil(root.left);
+        int r = isBalancedUtil(root.right);
+        maxdiff = Math.max(Math.abs(l - r), maxdiff);
+        return Math.max(l, r) + 1;
     }
+
     public boolean isBalanced2(TreeNode root) {
         return checkBalance(root) != -1;
     }
@@ -743,54 +749,90 @@ public class BinarySearchTree {
 
         return Math.max(leftHeight, rightHeight) + 1;
     }
+
     static int findDist(Node root, int a, int b) {
         // Your code here
-        boolean[] find={false,false};
-        int[] dist={0,0};
-        findDistHelper(root,a,b,find,dist);
-        return dist[0]+dist[1]-2;
+        boolean[] find = {false, false};
+        int[] dist = {0, 0};
+        findDistHelper(root, a, b, find, dist);
+        return dist[0] + dist[1] - 2;
     }
 
     private static void findDistHelper(Node root, int a, int b, boolean[] find, int[] dist) {
-        if(root==null){
+        if (root == null) {
             return;
         }
-        if(root.val==a){
-            find[0]=true;
+        if (root.val == a) {
+            find[0] = true;
         }
-        if(root.val==b){
-            find[1]=true;
+        if (root.val == b) {
+            find[1] = true;
         }
-        if(find[0]&&find[1]){
+        if (find[0] && find[1]) {
             return;
         }
-        if(find[0]){
+        if (find[0]) {
             dist[0]++;
         }
-        if(find[1]){
+        if (find[1]) {
             dist[1]++;
         }
-        findDistHelper(root.left,a,b,find,dist);
-        findDistHelper(root.right,a,b,find,dist);
+        findDistHelper(root.left, a, b, find, dist);
+        findDistHelper(root.right, a, b, find, dist);
 
     }
 
     public int minDiffInBST(TreeNode root) {
-        ArrayList<Integer> ar=new ArrayList<>();
-        minDiffInBSTHelper(root,ar);
-        int res=ar.get(1)-ar.get(0);
+        ArrayList<Integer> ar = new ArrayList<>();
+        minDiffInBSTHelper(root, ar);
+        int res = ar.get(1) - ar.get(0);
         for (int i = 1; i < ar.size(); i++) {
-            res=Math.min(ar.get(i)-ar.get(i-1),res);
+            res = Math.min(ar.get(i) - ar.get(i - 1), res);
         }
         return res;
     }
 
-    private void minDiffInBSTHelper(TreeNode root, ArrayList<Integer>pq) {
-        if(root==null){
+    private void minDiffInBSTHelper(TreeNode root, ArrayList<Integer> pq) {
+        if (root == null) {
             return;
         }
-        minDiffInBSTHelper(root.left,pq);
+        minDiffInBSTHelper(root.left, pq);
         pq.add(root.val);
-        minDiffInBSTHelper(root.right,pq);
+        minDiffInBSTHelper(root.right, pq);
+    }
+
+    public int maxLevelSum(TreeNode root) {
+        int max = root.val;
+        Queue<TreeNode> pq = new LinkedList<>();
+        pq.add(root);
+        int level=0;
+        int res=0;
+        pq.add(null);
+        int sum = 0;
+        while (!pq.isEmpty()) {
+            TreeNode curr = pq.remove();
+            sum+=curr.val;
+            if (curr == null) {
+                if (pq.isEmpty()) {
+                    break;
+                } else {
+                    level++;
+                    if(sum>max){
+                        max=sum;
+                        res=level;
+                    }
+                    sum = 0;
+                    pq.add(null);
+                }
+            }else{
+                if(curr.left!=null){
+                    pq.add(curr.left);
+                }
+                if(curr.right!=null){
+                    pq.add(curr.right);
+                }
+            }
+        }
+        return  res;
     }
 }
