@@ -27,7 +27,9 @@ public class MinimumPenaltyForaSoup {
         return result;
     }
     public int bestClosingTimeFast(String customers) {
-        byte[] cs = customers.getBytes(java.nio.charset.Charset.forName("ISO-8859-1"));
+       // byte[] cs = customers.getBytes(java.nio.charset.Charset.forName("ISO-8859-1"));
+
+        byte cs[]=new byte[10000];
         int bestTime = -1;
         int customersLeft = 0;
         for (int i = 0; i < cs.length; i++) {

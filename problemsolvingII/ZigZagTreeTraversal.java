@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -55,5 +56,29 @@ static class Node {
     }
     public static void main(String[] args) {
 
+    }
+
+    public static class MaximumLengthofPairChain {
+        static void main() {
+            System.out.println(findLongestChain(new int[][]{{-6, 9}, {1, 6}, {8, 10}, {-1, 4}, {-6, -2}, {-9, 8}, {-5, 3}, {0, 3}}));
+        }
+
+        public static int findLongestChain(int[][] pairs) {
+            Arrays.sort(pairs, (a, b) -> (a[0] == b[0]) ? a[1] - b[1] : a[0] - b[0]);
+            int result = 0;
+            int n = pairs.length;
+            for (int i = 0; i < n; i++) {
+                int prev = -1001;
+                int chain = 0;
+                for (int j = i; j < n; j++) {
+                    if (pairs[j][0] > prev) {
+                        result++;
+                        prev = pairs[j][1];
+                    }
+                    result = Math.max(result, chain);
+                }
+            }
+            return result;
+        }
     }
 }

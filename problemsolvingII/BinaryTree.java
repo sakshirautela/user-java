@@ -1532,103 +1532,138 @@ public class BinaryTree {
 //     }
 // }
 
-/*    class Solution {
-        public List<List<Integer>> verticalTraversal(TreeNode root) {
-            if (root == null) {
-                return new LinkedList<>();
-            }
-
-            return new MyHack(root);
-        }
-    }
-
-    class MyHack extends LinkedList<List<Integer>> {
-        TreeNode root;
-        Map<Integer, List<LeveldValue>> columns;
-
-        MyHack(TreeNode root) {
-            this.root = root;
-            this.columns = null;
-        }
-
-        public int size() {
-            if (columns == null) {
-                columns = new HashMap<>();
-
-                Queue<TreeNodeWithColumn> bfs = new LinkedList<>();
-
-                int minColumn = 0;
-                bfs.add(new TreeNodeWithColumn(root, 0, 0));
-
-                while(!bfs.isEmpty()) {
-                    TreeNodeWithColumn nextTuple = bfs.poll();
-                    TreeNode node = nextTuple.node;
-                    int nodeColumn = nextTuple.column;
-                    List<LeveldValue> nodesInLevel = columns.computeIfAbsent(nodeColumn, (l) -> new LinkedList<>());
-                    nodesInLevel.add(new LeveldValue(node.val, nextTuple.level));
-
-                    if (node.left != null) {
-                        bfs.add(new TreeNodeWithColumn(node.left, nodeColumn - 1, nextTuple.level + 1));
-                    }
-
-                    if (node.right != null) {
-                        bfs.add(new TreeNodeWithColumn(node.right, nodeColumn + 1, nextTuple.level + 1));
-                    }
-
-                    // System.out.println("visit= " + node.val+ ", l="+nodeColumn + ", nodes=" + nodesInLevel + ", q=" + bfs);
-
-                    minColumn = Math.min(nodeColumn, minColumn);
+    /*    class Solution {
+            public List<List<Integer>> verticalTraversal(TreeNode root) {
+                if (root == null) {
+                    return new LinkedList<>();
                 }
 
-                while(columns.containsKey(minColumn)) {
-                    List<LeveldValue> column = columns.get(minColumn);
-                    Collections.sort(column);
+                return new MyHack(root);
+            }
+        }
 
-                    super.add(column.stream().map(LeveldValue::getValue).toList());
+        class MyHack extends LinkedList<List<Integer>> {
+            TreeNode root;
+            Map<Integer, List<LeveldValue>> columns;
 
-                    minColumn += 1;
+            MyHack(TreeNode root) {
+                this.root = root;
+                this.columns = null;
+            }
+
+            public int size() {
+                if (columns == null) {
+                    columns = new HashMap<>();
+
+                    Queue<TreeNodeWithColumn> bfs = new LinkedList<>();
+
+                    int minColumn = 0;
+                    bfs.add(new TreeNodeWithColumn(root, 0, 0));
+
+                    while(!bfs.isEmpty()) {
+                        TreeNodeWithColumn nextTuple = bfs.poll();
+                        TreeNode node = nextTuple.node;
+                        int nodeColumn = nextTuple.column;
+                        List<LeveldValue> nodesInLevel = columns.computeIfAbsent(nodeColumn, (l) -> new LinkedList<>());
+                        nodesInLevel.add(new LeveldValue(node.val, nextTuple.level));
+
+                        if (node.left != null) {
+                            bfs.add(new TreeNodeWithColumn(node.left, nodeColumn - 1, nextTuple.level + 1));
+                        }
+
+                        if (node.right != null) {
+                            bfs.add(new TreeNodeWithColumn(node.right, nodeColumn + 1, nextTuple.level + 1));
+                        }
+
+                        // System.out.println("visit= " + node.val+ ", l="+nodeColumn + ", nodes=" + nodesInLevel + ", q=" + bfs);
+
+                        minColumn = Math.min(nodeColumn, minColumn);
+                    }
+
+                    while(columns.containsKey(minColumn)) {
+                        List<LeveldValue> column = columns.get(minColumn);
+                        Collections.sort(column);
+
+                        super.add(column.stream().map(LeveldValue::getValue).toList());
+
+                        minColumn += 1;
+                    }
                 }
+
+                return super.size();
+            }
+        }
+
+        class TreeNodeWithColumn {
+            TreeNode node;
+            int column;
+            int level;
+
+            TreeNodeWithColumn(TreeNode node, int column, int level) {
+                this.node = node;
+                this.column = column;
+                this.level = level;
             }
 
-            return super.size();
+            public String toString() {
+                return "node(val=" + node.val + ", col=" + column + ")";
+            }
         }
+
+        class LeveldValue implements Comparable<LeveldValue> {
+            int val;
+            int level;
+
+            LeveldValue(int val, int level) {
+                this.val = val;
+                this.level = level;
+            }
+
+            int getValue() {
+                return val;
+            }
+
+            public int compareTo(LeveldValue o) {
+                if (level == o.level) {
+                    return Integer.compare(val, o.val);
+                }
+
+                return Integer.compare(level, o.level);
+                }
+            }*/
+    static TreeNode result;
+    public TreeNode subtreeWithAllDeepest(TreeNode root) {
+        int a= subtreeWithAllDeepestHelper(root);
+        subtreeWithAllDeepestHelper2(root,a-1);
+        if(result==null){
+            return root;
+        }
+        return  result;
+        
     }
 
-    class TreeNodeWithColumn {
-        TreeNode node;
-        int column;
-        int level;
-
-        TreeNodeWithColumn(TreeNode node, int column, int level) {
-            this.node = node;
-            this.column = column;
-            this.level = level;
+    private void subtreeWithAllDeepestHelper2(TreeNode root, int i) {
+        if(i==0){
+            if(root.left!=null && root.right!=null){
+                result=root;
+            }else if(root.left!=null){
+                result=root.left;
+            }else if(root.right!=null){
+                result=root.right;
+            }
+                return;
         }
-
-        public String toString() {
-            return "node(val=" + node.val + ", col=" + column + ")";
+        if(root==null){
+            return;
         }
+        subtreeWithAllDeepestHelper2(root.left,i-1);
+        subtreeWithAllDeepestHelper2(root.right,i-1);
     }
 
-    class LeveldValue implements Comparable<LeveldValue> {
-        int val;
-        int level;
-
-        LeveldValue(int val, int level) {
-            this.val = val;
-            this.level = level;
+    private int subtreeWithAllDeepestHelper(TreeNode root) {
+        if(root==null ){
+            return 0;
         }
-
-        int getValue() {
-            return val;
-        }
-
-        public int compareTo(LeveldValue o) {
-            if (level == o.level) {
-                return Integer.compare(val, o.val);
-            }
-
-            return Integer.compare(level, o.level);
-            }
-        }*/
+        return Math.max(subtreeWithAllDeepestHelper(root.left),subtreeWithAllDeepestHelper(root.right))+1;
+    }
 }

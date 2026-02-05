@@ -1,58 +1,48 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class MinimumPairRemovaltoSortArrayI {
 
     public static void main(String[] args) {
-        System.out.println(minimumPairRemoval(new int[]{3, 1, 2, 4, 5}));
-        System.out.println(minimumPairRemoval(new int[]{1, 3, 2, 3, 1}));
-        System.out.println(minimumPairRemoval(new int[]{1, 2, 3, 4, 5}));
+        System.out.println(minimumPairRemoval(new int[]{5,2,3,1}));
+//        System.out.println(minimumPairRemoval(new int[]{1, 3, 2, 3, 1}));
+//        System.out.println(minimumPairRemoval(new int[]{1, 2, 3, 4, 5}));
     }
 
     public static int minimumPairRemoval(int[] nums) {
-        int n = nums.length;
-        if (isSorted(nums, n)) {
-            return 0;
-        }
-
-        // Find the length of the Longest Increasing Subsequence (LIS)
-        int lisLength = findLISLength(nums, n);
-
-        // To make the array sorted, remove the elements that are not part of the LIS
-        return n - lisLength;
-    }
-
-    private static boolean isSorted(int[] nums, int n) {
-        for (int i = 1; i < n; i++) {
-            if (nums[i] < nums[i - 1]) {
-                return false;
+            List<Integer> li = new ArrayList<>();
+            for (int num : nums) {
+                li.add(num);
             }
-        }
-        return true;
-    }
+            var count = 0;
 
-    // Find the length of the Longest Increasing Subsequence (LIS)
-    private static int findLISLength(int[] nums, int n) {
-        int[] dp = new int[n];
-        int maxLIS = 1;
+            while (li.size() > 1) {
+                var isAscending = true;
+                var minSum = Integer.MAX_VALUE;
+                var targetIndex = -1;
 
-        // Initialize dp array where each element starts as a subsequence of length 1
-        for (int i = 0; i < n; i++) {
-            dp[i] = 1;
-        }
+                for (var i = 0; i < li.size() - 1; i++) {
+                    var sum = li.get(i) + li.get(i + 1);
 
-        // Fill the dp array
-        for (int i = 1; i < n; i++) {
-            for (int j = 0; j < i; j++) {
-                if (nums[i] > nums[j]) {
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                    if (li.get(i) > li.get(i + 1)) {
+                        isAscending = false;
+                    }
+
+                    if (sum < minSum) {
+                        minSum = sum;
+                        targetIndex = i;
+                    }
                 }
+
+                if (isAscending) {
+                    break;
+                }
+
+                count++;
+                li.set(targetIndex, minSum);
+                li.remove(targetIndex + 1);
             }
-        }
 
-        // The maximum value in dp will be the length of the LIS
-        for (int i = 0; i < n; i++) {
-            maxLIS = Math.max(maxLIS, dp[i]);
+            return count;
         }
-
-        return maxLIS;
-    }
 }
