@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.TreeMap;
 
 public class SumofModes {
     public static void main(String[] args) {

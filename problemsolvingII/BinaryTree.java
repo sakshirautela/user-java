@@ -1632,38 +1632,144 @@ public class BinaryTree {
                 }
             }*/
     static TreeNode result;
+
     public TreeNode subtreeWithAllDeepest(TreeNode root) {
-        int a= subtreeWithAllDeepestHelper(root);
-        subtreeWithAllDeepestHelper2(root,a-1);
-        if(result==null){
+        int a = subtreeWithAllDeepestHelper(root);
+        subtreeWithAllDeepestHelper2(root, a - 1);
+        if (result == null) {
             return root;
         }
-        return  result;
-        
+        return result;
+
     }
 
     private void subtreeWithAllDeepestHelper2(TreeNode root, int i) {
-        if(i==0){
-            if(root.left!=null && root.right!=null){
-                result=root;
-            }else if(root.left!=null){
-                result=root.left;
-            }else if(root.right!=null){
-                result=root.right;
+        if (i == 0) {
+            if (root.left != null && root.right != null) {
+                result = root;
+            } else if (root.left != null) {
+                result = root.left;
+            } else if (root.right != null) {
+                result = root.right;
             }
-                return;
-        }
-        if(root==null){
             return;
         }
-        subtreeWithAllDeepestHelper2(root.left,i-1);
-        subtreeWithAllDeepestHelper2(root.right,i-1);
+        if (root == null) {
+            return;
+        }
+        subtreeWithAllDeepestHelper2(root.left, i - 1);
+        subtreeWithAllDeepestHelper2(root.right, i - 1);
     }
 
     private int subtreeWithAllDeepestHelper(TreeNode root) {
-        if(root==null ){
+        if (root == null) {
             return 0;
         }
-        return Math.max(subtreeWithAllDeepestHelper(root.left),subtreeWithAllDeepestHelper(root.right))+1;
+        return Math.max(subtreeWithAllDeepestHelper(root.left), subtreeWithAllDeepestHelper(root.right)) + 1;
+    }
+
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
+     * }
+     */
+    public boolean isBalanced(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        int r = height(root.right);
+        int l = height(root.left);
+        return Math.abs(r - l) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+    }
+
+    public int kthLargestPerfectSubtree(TreeNode root, int k) {
+        ArrayList<Integer> pq = new ArrayList<>();
+        kthLargestPerfectSubtreeHelepr(root, pq);
+        if (pq.size() >= k) {
+            return pq.get(pq.size() - k);
+        }
+        return -1;
+    }
+
+    private int kthLargestPerfectSubtreeHelepr(TreeNode root, ArrayList<Integer> pq) {
+        if (root == null) {
+            return 0;
+        }
+        int r = kthLargestPerfectSubtreeHelepr(root.right, pq);
+        int l = kthLargestPerfectSubtreeHelepr(root.left, pq);
+        if (l == r) {
+            pq.add(l + r + 1);
+        }
+        return Math.max(l, r) + 1;
+    }
+
+    public int minCameraCover(TreeNode root) {
+        int f = minCameraCoverHelper(root, false);
+        int t = minCameraCoverHelper(root, true);
+        return Math.min(f, t);
+    }
+
+    private int minCameraCoverHelper(TreeNode root, boolean b) {
+        if (root == null) return 0;
+        int a = 0;
+        if (b) {
+            a = 1;
+        }
+        int r = minCameraCoverHelper(root.right, !b);
+        int l = minCameraCoverHelper(root.left, !b);
+        return a + l + r;
+    }
+
+    public TreeNode balanceBST(TreeNode root) {
+        List<Integer> li = new ArrayList<>();
+        inorderbst(root, li);
+        return createBST(li, 0, li.size() - 1);
+    }
+
+    private TreeNode createBST(List<Integer> li, int i, int j) {
+        if (i > j) {
+            return null;
+        }
+        int mid = i + (j - i) / 2;
+        TreeNode root = new TreeNode(li.get(mid));
+        root.left = createBST(li, i, mid - 1);
+        root.right = createBST(li, mid + 1, j);
+        return root;
+    }
+
+    private void inorderbst(TreeNode root, List<Integer> li) {
+        if (root == null) {
+            return;
+        }
+        inorderbst(root.left, li);
+        li.add(root.val);
+        inorderbst(root.right, li);
+    }
+
+
+    public int sumRootToLeaf(TreeNode root) {
+        return sumRootToLeafHeleper(root, 0, 1);
+    }
+
+    private int sumRootToLeafHeleper(TreeNode root, int num, int i) {
+        if (root == null) {
+            return 0;
+        }
+
+        num = num * 2 + (root.val);
+        if (root.left == root.right) {
+            return num;
+        }
+        return sumRootToLeafHeleper(root.left, num, i * 2) + sumRootToLeafHeleper(root.right, num, i * 2);
     }
 }

@@ -136,7 +136,7 @@ public class Linkedlist {
      * (public ListNode isPalindromic(ListNode head){
      * int mid=countNode(head)/2;
      * while(
-     * 
+     *
      * )
      * }
      */
@@ -264,7 +264,7 @@ public class Linkedlist {
 
     Node[] alternatingSplitList(Node head) {
         if (head.next == null) {
-            return new Node[] { head, null };
+            return new Node[]{head, null};
         }
         Node curr = head.next;
         Node first = head;
@@ -274,7 +274,7 @@ public class Linkedlist {
             first = curr;
             curr = curr.next;
         }
-        return new Node[] { head, second };
+        return new Node[]{head, second};
     }
 
     public static int sumOfLastN_Nodes(Node head, int n) {
@@ -327,7 +327,7 @@ public class Linkedlist {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 5, 6, 9, 3, 4, 10 };
+        int[] arr = {5, 6, 9, 3, 4, 10};
         Node node = new Node(0);
         Node curr = node;
         for (int d : arr) {
@@ -1036,5 +1036,34 @@ public class Linkedlist {
         curr.next = newNode;
 
         return head;
+    }
+
+    /**
+     * Definition for singly-linked list.
+     * class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode(int x) {
+     * val = x;
+     * next = null;
+     * }
+     * }
+     */
+    public ListNode detectCycle(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                fast = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
+            }
+        }
+        return null;
     }
 }

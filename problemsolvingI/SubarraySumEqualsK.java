@@ -3,7 +3,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SubarraySumEqualsK {
-    public static int subarraySum(int[] nums, int s) {
+    public static int subarraySumTwoPointsers(int[] nums, int s) {
+        int n=nums.length;
+        int[] prefixSum=new int[n];
+        prefixSum[0]=nums[0];
+        for(int i=1;i<n;i++){
+            prefixSum[i]=(prefixSum[i-1]+nums[i]);
+        }
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int ans=0;
+        map.put(0,1);
+        for(int i=0;i<n;i++){
+            ans+=map.getOrDefault(prefixSum[i]-s,0);
+            map.put(prefixSum[i],map.getOrDefault(prefixSum[i],0)+1);
+        }
+        return ans;
+    }
+        public static int subarraySum(int[] nums, int s) {
         int result=0;
         int n=nums.length;
         for(int i=0;i<n;i++){
@@ -57,7 +73,7 @@ public class SubarraySumEqualsK {
         return res;
     }
     public static void main(String args[]){
-        System.out.println(subarraySum2(new int[]{1,2,3},3));
+        System.out.println(subarraySumTwoPointsers(new int[]{1,1,1},2));
     }
 
 }
