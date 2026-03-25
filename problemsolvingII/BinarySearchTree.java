@@ -215,14 +215,14 @@ public class BinarySearchTree {
 
     // return sum1 + sum2 + root.val;
     // }
-    // public static int daimeter(TreeNode root){
+    // public static int diameter(TreeNode root){
     // if(root==null){
     // return 0;
     // }
     // int lh=heightRecursion(root.left);
     // int rh = heightRecursion(root.right);
-    // int ld=daimeter(root.left);
-    // int rd = daimeter(root.right);
+    // int ld=diameter(root.left);
+    // int rd = diameter(root.right);
     // int self=lh+rh+1;
     // return Math.max(self,Math.max(rd, ld));
     // }

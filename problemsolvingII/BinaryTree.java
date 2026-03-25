@@ -208,14 +208,14 @@ public class BinaryTree {
 
     // return sum1 + sum2 + root.val;
     // }
-    // public static int daimeter(TreeNode root){
+    // public static int diameter(TreeNode root){
     // if(root==null){
     // return 0;
     // }
     // int lh=heightRecursion(root.left);
     // int rh = heightRecursion(root.right);
-    // int ld=daimeter(root.left);
-    // int rd = daimeter(root.right);
+    // int ld=diameter(root.left);
+    // int rd = diameter(root.right);
     // int self=lh+rh+1;
     // return Math.max(self,Math.max(rd, ld));
     // }
@@ -454,11 +454,11 @@ public class BinaryTree {
         // tree.insertion(root, 6);
         // // System.out.println(root.val);
         // System.out.println(root.right.val);
-        // System.out.println("preoreder");
+        // System.out.println("preorder");
         // tree.preOrder(root);
-        // System.out.println("inoreder");
+        // System.out.println("inorder");
         // System.out.println(tree.inorderTraversal(root));
-        // System.out.println("postoreder");
+        // System.out.println("postorder");
         // tree.postOrder(root);
         // tree.BFS(root);
         // System.out.println(tree.height(root));
@@ -793,7 +793,7 @@ public class BinaryTree {
         if (root == null) {
             return true;
         }
-        isBSTHaleper(root);
+        isBSTHelper(root);
         for (int index = 0; index < li.size() - 1; index++) {
             if (li.get(index) > li.get(index + 1)) {
                 return false;
@@ -802,7 +802,7 @@ public class BinaryTree {
         return true;
     }
 
-    private void isBSTHaleper(Node root) {
+    private void isBSTHelper(Node root) {
         if (root == null) {
             return;
         }
@@ -842,29 +842,29 @@ public class BinaryTree {
     }
 
     static class dia {
-        int daimeter;
+        int diameter;
         int height;
 
         public dia(int d, int h) {
-            this.daimeter = d;
+            this.diameter = d;
             this.height = h;
         }
     }
 
     int diameter(Node root) {
         // Your code here
-        dia d = diameterHelepr(root);
-        return Math.max(d.daimeter, d.height);
+        dia d = diameterHelper(root);
+        return Math.max(d.diameter, d.height);
     }
 
-    static dia diameterHelepr(Node root) {
+    static dia diameterHelper(Node root) {
         // Your code here
         if (root == null) {
             return new dia(0, 0);
         }
-        dia l = diameterHelepr(root.left);
-        dia r = diameterHelepr(root.right);
-        int d = Math.max(l.daimeter + r.daimeter + 1, l.height + r.height + 1);
+        dia l = diameterHelper(root.left);
+        dia r = diameterHelper(root.right);
+        int d = Math.max(l.diameter + r.diameter + 1, l.height + r.height + 1);
         int h = l.height + r.height + 1;
         return new dia(d, h);
     }
@@ -1544,7 +1544,7 @@ public class BinaryTree {
 
         class MyHack extends LinkedList<List<Integer>> {
             TreeNode root;
-            Map<Integer, List<LeveldValue>> columns;
+            Map<Integer, List<LeveledValue>> columns;
 
             MyHack(TreeNode root) {
                 this.root = root;
@@ -1564,8 +1564,8 @@ public class BinaryTree {
                         TreeNodeWithColumn nextTuple = bfs.poll();
                         TreeNode node = nextTuple.node;
                         int nodeColumn = nextTuple.column;
-                        List<LeveldValue> nodesInLevel = columns.computeIfAbsent(nodeColumn, (l) -> new LinkedList<>());
-                        nodesInLevel.add(new LeveldValue(node.val, nextTuple.level));
+                        List<LeveledValue> nodesInLevel = columns.computeIfAbsent(nodeColumn, (l) -> new LinkedList<>());
+                        nodesInLevel.add(new LeveledValue(node.val, nextTuple.level));
 
                         if (node.left != null) {
                             bfs.add(new TreeNodeWithColumn(node.left, nodeColumn - 1, nextTuple.level + 1));
@@ -1581,10 +1581,10 @@ public class BinaryTree {
                     }
 
                     while(columns.containsKey(minColumn)) {
-                        List<LeveldValue> column = columns.get(minColumn);
+                        List<LeveledValue> column = columns.get(minColumn);
                         Collections.sort(column);
 
-                        super.add(column.stream().map(LeveldValue::getValue).toList());
+                        super.add(column.stream().map(LeveledValue::getValue).toList());
 
                         minColumn += 1;
                     }
@@ -1610,11 +1610,11 @@ public class BinaryTree {
             }
         }
 
-        class LeveldValue implements Comparable<LeveldValue> {
+        class LeveledValue implements Comparable<LeveledValue> {
             int val;
             int level;
 
-            LeveldValue(int val, int level) {
+            LeveledValue(int val, int level) {
                 this.val = val;
                 this.level = level;
             }
@@ -1623,7 +1623,7 @@ public class BinaryTree {
                 return val;
             }
 
-            public int compareTo(LeveldValue o) {
+            public int compareTo(LeveledValue o) {
                 if (level == o.level) {
                     return Integer.compare(val, o.val);
                 }
@@ -1694,19 +1694,19 @@ public class BinaryTree {
 
     public int kthLargestPerfectSubtree(TreeNode root, int k) {
         ArrayList<Integer> pq = new ArrayList<>();
-        kthLargestPerfectSubtreeHelepr(root, pq);
+        kthLargestPerfectSubtreeHelper(root, pq);
         if (pq.size() >= k) {
             return pq.get(pq.size() - k);
         }
         return -1;
     }
 
-    private int kthLargestPerfectSubtreeHelepr(TreeNode root, ArrayList<Integer> pq) {
+    private int kthLargestPerfectSubtreeHelper(TreeNode root, ArrayList<Integer> pq) {
         if (root == null) {
             return 0;
         }
-        int r = kthLargestPerfectSubtreeHelepr(root.right, pq);
-        int l = kthLargestPerfectSubtreeHelepr(root.left, pq);
+        int r = kthLargestPerfectSubtreeHelper(root.right, pq);
+        int l = kthLargestPerfectSubtreeHelper(root.left, pq);
         if (l == r) {
             pq.add(l + r + 1);
         }
@@ -1732,7 +1732,7 @@ public class BinaryTree {
 
     public TreeNode balanceBST(TreeNode root) {
         List<Integer> li = new ArrayList<>();
-        inorderbst(root, li);
+        inorders(root, li);
         return createBST(li, 0, li.size() - 1);
     }
 
@@ -1747,13 +1747,13 @@ public class BinaryTree {
         return root;
     }
 
-    private void inorderbst(TreeNode root, List<Integer> li) {
+    private void inorders(TreeNode root, List<Integer> li) {
         if (root == null) {
             return;
         }
-        inorderbst(root.left, li);
+        inorders(root.left, li);
         li.add(root.val);
-        inorderbst(root.right, li);
+        inorders(root.right, li);
     }
 
 
@@ -1771,5 +1771,149 @@ public class BinaryTree {
             return num;
         }
         return sumRootToLeafHeleper(root.left, num, i * 2) + sumRootToLeafHeleper(root.right, num, i * 2);
+    }
+
+    public ArrayList<Integer> topView(Node root) {
+        // code here
+        ArrayList<Integer> li = new ArrayList<>();
+        TreeMap<Integer, int[]> map = new TreeMap<>();
+        topViewHelper(0, 0, root, map);
+        for (int key : map.keySet()) {
+            li.add(map.get(key)[1]);
+        }
+        return li;
+    }
+
+    private void topViewHelper(int i, int d, Node root, TreeMap<Integer, int[]> map) {
+        if (root == null) {
+            return;
+        }
+        if (!map.containsKey(i) || map.get(i)[0] >= d) {
+            map.put(i, new int[]{d, root.data});
+        }
+        topViewHelper(i - 1, d + 1, root.left, map);
+        topViewHelper(i + 1, d + 1, root.right, map);
+    }
+
+    public int countAllPaths(Node root, int k) {
+        // code here
+        if (root == null) {
+            return 0;
+        }
+        int paths = countAllPathsUtil(root, k, 0);
+        paths += countAllPaths(root.right, k);
+        paths += countAllPaths(root.left, k);
+        return paths;
+    }
+
+    private int countAllPathsUtil(Node root, int k, int i) {
+        if (root == null) {
+            return 0;
+        }
+        int path = 0;
+        i += root.data;
+        if (i == k) {
+            path++;
+        }
+        path += countAllPathsUtil(root.left, k, i);
+        path += countAllPathsUtil(root.right, k, i);
+        return path;
+    }
+
+    public int minTimeWrong(Node root, int target) {
+        // code here
+        if (root == null) {
+            return 0;
+        }
+        minTimeWrongUtil(root, target, 0);
+        return MinTime;
+    }
+
+    int MinTime = 0;
+
+    private void minTimeWrongUtil(Node root, int target, int i) {
+        if (root == null) {
+            MinTime = Math.max(MinTime, i);
+        }
+        MinTime = Math.max(MinTime, i);
+        if (root.data == target) {
+            i = 0;
+        }
+        minTimeWrongUtil(root.left, target, i + 1);
+        minTimeWrongUtil(root.right, target, i + 1);
+    }
+
+    static int largestBst(Node root) {
+        // Write your code here
+        LargestBst largestBst = largestBstUtil(root);
+        return largestBst.size;
+    }
+
+    static class LargestBst {
+        int max;
+        int min;
+        int size;
+        boolean isBst;
+
+        LargestBst(int max, int min, int size, boolean isBst) {
+            this.min = min;
+            this.max = max;
+            this.size = size;
+            this.isBst = isBst;
+        }
+    }
+
+    private static LargestBst largestBstUtil(Node root) {
+        if (root == null) {
+            return new LargestBst(Integer.MIN_VALUE, Integer.MAX_VALUE, 0, true);
+        }
+        LargestBst l = largestBstUtil(root.left);
+        LargestBst r = largestBstUtil(root.right);
+        if (l.isBst && r.isBst && root.data > l.max && root.data < r.min) {
+            return new LargestBst(
+                    Math.max(root.data, r.max),
+                    Math.min(root.data, l.min),
+                    l.size + r.size + 1,
+                    true
+            );
+        }
+        return new LargestBst(Integer.MAX_VALUE, Integer.MIN_VALUE, Math.max(l.size, r.size), false);
+    }
+
+    public ArrayList<Node> findPreSuc2(Node root, int key) {
+        // code here
+        ArrayList<Node> list = new ArrayList<>();
+        PreSucPair pair = new PreSucPair(null, null); // class because java handle pass by value
+        findPreSucUtil(pair, root, key);
+        list.add(pair.pre);
+        list.add(pair.suc);
+        return list;
+    }
+
+
+    static class PreSucPair {
+        Node pre;
+        Node suc;
+
+        PreSucPair(Node pre, Node suc) {
+            this.pre = pre;
+            this.suc = suc;
+        }
+    }
+
+    private void findPreSucUtil(PreSucPair pair, Node root, int key) {
+        if (root == null) return;
+        if (root.data < key) {
+            if (pair.pre == null || pair.pre.data < root.data) {
+                pair.pre = root;
+            }
+        }
+        if (root.data > key) {
+            if (pair.suc == null || pair.suc.data > root.data) {
+                pair.suc = root;
+            }
+        }
+        findPreSucUtil(pair, root.left, key);
+        findPreSucUtil(pair, root.right, key);
     }
 }

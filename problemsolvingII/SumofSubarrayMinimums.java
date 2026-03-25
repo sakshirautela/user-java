@@ -18,7 +18,6 @@ public class SumofSubarrayMinimums {
         Deque<Integer> stack = new ArrayDeque<>();
 
         for (int i = 0; i < length; ++i) {
-            System.out.println(stack);
             while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {
                 stack.pop();
             }
@@ -27,14 +26,9 @@ public class SumofSubarrayMinimums {
             }
             stack.push(i);
         }
-        for (int i = 0; i < right.length; i++) {
-            System.out.print(left[i] + " ");
-        }
-        System.out.println();
         stack.clear();
 
         for (int i = length - 1; i >= 0; --i) {
-            System.out.println(stack);
             while (!stack.isEmpty() && arr[stack.peek()] > arr[i]) {
                 stack.pop();
             }
@@ -46,10 +40,6 @@ public class SumofSubarrayMinimums {
 
         int mod = (int) 1e9 + 7;
         long answer = 0;
-        for (int i = 0; i < right.length; i++) {
-            System.out.print(right[i] + " ");
-        }
-        System.out.println();
         for (int i = 0; i < length; ++i) {
             answer += (long) (i - left[i]) * (right[i] - i) % mod * arr[i] % mod;
             answer %= mod;
@@ -57,4 +47,5 @@ public class SumofSubarrayMinimums {
 
         return (int) answer;
     }
+
 }
