@@ -1,4 +1,3 @@
-
 public class TargetSum494 {
     public static void main(String[] args) {
         System.out.println(findTargetSumWays(new int[]{1, 1, 1, 1, 1}, 3));
@@ -6,6 +5,7 @@ public class TargetSum494 {
     }
 
     public static int findTargetSumWays(int[] nums, int target) {
+
         return findTargetSumWaysHelper(nums, target, 0, 0);
     }
 
@@ -26,5 +26,32 @@ public class TargetSum494 {
         int minus = findTargetSumWaysHelper(nums, target, idx + 1, currentSum - nums[idx]);
 
         return plus + minus;
+    }
+
+    public int totalWaysOptimize(int[] arr, int target) {
+        // code here
+        int n = arr.length;
+        int totalSum = 0;
+
+        for (int x : arr) totalSum += x;
+
+        int[][] dp = new int[n + 1][2 * totalSum + 1];
+
+        dp[0][totalSum] = 1;
+
+        for (int i = 1; i <= n; i++) {
+
+            int val = arr[i - 1];
+
+            for (int j = 0; j <= 2 * totalSum; j++) {
+
+                if (j + val <= 2 * totalSum) dp[i][j + val] += dp[i - 1][j];
+
+                if (j - val >= 0) dp[i][j - val] += dp[i - 1][j];
+
+            }
+        }
+
+        return dp[n][target + totalSum];
     }
 }
