@@ -1,3 +1,5 @@
+package problemsolvingIII;
+
 public class CountNumbersContainingSpecificDigits {
     public static void main(String[] args) {
         System.out.println(countValid(1,new int[]{1,2,3}));

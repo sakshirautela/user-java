@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package problemsolvingIII;
 
 public class DiagonalTraversal {
     public static void main(String[] args) {
