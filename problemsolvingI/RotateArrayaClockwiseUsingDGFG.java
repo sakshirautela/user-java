@@ -1,6 +1,6 @@
 
 public class RotateArrayaClockwiseUsingDGFG {
-    // Function to rotate an array by d elements in counter-clockwise direction.
+    // Function to rotate an array by SearchzforSubarray elements in counter-clockwise direction.
     static void rotateArr(int arr[], int d) {
         // add your code here
         int[] temp = new int[arr.length];
@@ -19,10 +19,10 @@ public class RotateArrayaClockwiseUsingDGFG {
 
     // User function Template for Java
 
-    // Function to rotate an array by d elements in counter-clockwise direction.
+    // Function to rotate an array by SearchzforSubarray elements in counter-clockwise direction.
     static void rotateArr2(int arr[], int d) {
         int n = arr.length;
-        d = d % n; // Handle cases where d > n
+        d = d % n; // Handle cases where SearchzforSubarray > n
 
         // Step 1: Reverse the first part
         reverse(arr, 0, d - 1);

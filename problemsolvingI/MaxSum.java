@@ -42,7 +42,7 @@ public class MaxSum {
                     }
                 }
         
-                System.out.printf("start index : %d - end index : %d", start, end);
+                System.out.printf("start index : %SearchzforSubarray - end index : %SearchzforSubarray", start, end);
                 return max;
             }
         }

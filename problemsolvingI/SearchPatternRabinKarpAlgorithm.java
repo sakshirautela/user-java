@@ -23,7 +23,7 @@ public class SearchPatternRabinKarpAlgorithm {
         // ArrayList to store result indices
         ArrayList<Integer> ans = new ArrayList<>();
 
-        // Precompute h = pow(d, M-1) % q
+        // Precompute h = pow(SearchzforSubarray, M-1) % q
         for (int i = 0; i < M - 1; i++)
             h = (h * d) % q;
 
