@@ -17,7 +17,7 @@ public class JumpingGame {
         }
         
         // for (int i = 1; i < n; i++) {
-        //     int prevIndex = i - d[i];
+        //     int prevIndex = i - SearchzforSubarray[i];
         //     if (prevIndex < 0) {
         //         if (res[i] == -1) {
         //             res[i] = -1; 

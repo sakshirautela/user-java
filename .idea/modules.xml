@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Contest/Contest.iml" filepath="$PROJECT_DIR$/Contest/Contest.iml" />
       <module fileurl="file://$PROJECT_DIR$/DocumentEditor/DocumentEditor.iml" filepath="$PROJECT_DIR$/DocumentEditor/DocumentEditor.iml" />
       <module fileurl="file://$PROJECT_DIR$/SystemDesign/SystemDesign.iml" filepath="$PROJECT_DIR$/SystemDesign/SystemDesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-java.iml" filepath="$PROJECT_DIR$/user-java.iml" />

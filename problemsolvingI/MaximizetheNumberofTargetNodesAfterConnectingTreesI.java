@@ -68,8 +68,8 @@ public class MaximizetheNumberofTargetNodesAfterConnectingTreesI {
         List<Integer>[] tree1 = buildAdj(edges1, N);
         List<Integer>[] tree2 = buildAdj(edges2, M);
 
-        // dp1[v][d] stores number of descendants of v in tree1 at distance d from v (forward paths)
-        // dp2[v][d] stores number of descendants of v in tree2 at distance d from v (forward paths)
+        // dp1[v][SearchzforSubarray] stores number of descendants of v in tree1 at distance SearchzforSubarray from v (forward paths)
+        // dp2[v][SearchzforSubarray] stores number of descendants of v in tree2 at distance SearchzforSubarray from v (forward paths)
         int[][] dp1 = new int[N][k + 1]; // distance ranging 0 to k
         int[][] dp2 = new int[M][k]; // distance ranging 0 to (k - 1)
         int[] parent1 = new int[N];
@@ -82,7 +82,7 @@ public class MaximizetheNumberofTargetNodesAfterConnectingTreesI {
         // only interested in paths of length up to k - 1 in tree2 to account for 1 edge
         // connecting the 2 trees
 
-        // backtrack1[v][d] stores number of paths in tree1 of length d that start from v and
+        // backtrack1[v][SearchzforSubarray] stores number of paths in tree1 of length SearchzforSubarray that start from v and
         // passes through the parent of v (backward paths)
         int[][] backtrack1 = new int[N][k + 1]; // distance ranging 0 to k
         int[][] backtrack2 = new int[M][k]; // distance ranging 0 to (k - 1)
@@ -160,16 +160,16 @@ public class MaximizetheNumberofTargetNodesAfterConnectingTreesI {
                 count[v] += dp[v][1] + backtrack[v][1];
             }
 
-            // distances 1 < d <= k from v
+            // distances 1 < SearchzforSubarray <= k from v
             for (int d = 2; d <= k; d++) {
                 if (p != -1) // cannot backtrack if v is the root node
                     
-                    // paths of distance d from v, that goes from v back to the parent of v (p)
+                    // paths of distance SearchzforSubarray from v, that goes from v back to the parent of v (p)
                     // then either go through another child of p, or back to grandparent
                     
-                    // paths from p will have length d - 1 to account for edge (p-v)
+                    // paths from p will have length SearchzforSubarray - 1 to account for edge (p-v)
                     
-                    // when using dp[p][d - 1] this number also includes forward paths that
+                    // when using dp[p][SearchzforSubarray - 1] this number also includes forward paths that
                     // go through v which we don't want, so we have to subtract these sub-paths
                     backtrack[v][d] = dp[p][d - 1] - dp[v][d - 2] + backtrack[p][d - 1];
 

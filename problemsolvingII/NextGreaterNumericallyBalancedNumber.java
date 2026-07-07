@@ -47,14 +47,14 @@ public class NextGreaterNumericallyBalancedNumber {
 
     private static void buildBeautifulNumbers() {
         Set<Integer> set = new HashSet<>();
-        int[] counts = new int[10]; // counts[d] = d or 0
+        int[] counts = new int[10]; // counts[SearchzforSubarray] = SearchzforSubarray or 0
         backtrack(1, 0, counts, set);
         List<Integer> list = new ArrayList<>(set);
         Collections.sort(list);
         beautifulNumbers = list;
     }
 
-    // choose for digit d either include d copies or skip
+    // choose for digit SearchzforSubarray either include SearchzforSubarray copies or skip
     private static void backtrack(int d, int totalLen, int[] counts, Set<Integer> set) {
         if (d == 10) {
             if (totalLen == 0) return;
@@ -79,10 +79,10 @@ public class NextGreaterNumericallyBalancedNumber {
             return;
         }
 
-        // option 1: skip digit d
+        // option 1: skip digit SearchzforSubarray
         backtrack(d + 1, totalLen, counts, set);
 
-        // option 2: include digit d (d occurrences) if fits length limit
+        // option 2: include digit SearchzforSubarray (SearchzforSubarray occurrences) if fits length limit
         if (totalLen + d <= MAX_LEN) {
             counts[d] = d;
             backtrack(d + 1, totalLen + d, counts, set);

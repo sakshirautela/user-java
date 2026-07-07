@@ -221,10 +221,10 @@ public class BinaryTree {
     // }
 
     // public static class Info{
-    // int d;
+    // int SearchzforSubarray;
     // int h;
-    // Info(int d,int h){
-    // this.d=d;
+    // Info(int SearchzforSubarray,int h){
+    // this.SearchzforSubarray=SearchzforSubarray;
     // this.h=h;
     // }
     // }
@@ -234,7 +234,7 @@ public class BinaryTree {
     // }
     // Info linfo=diameter2(root.left);
     // Info rinfo = diameter2(root.right);
-    // int dia=Math.max(Math.max(linfo.d, rinfo.d), linfo.h+rinfo.h+1);
+    // int dia=Math.max(Math.max(linfo.SearchzforSubarray, rinfo.SearchzforSubarray), linfo.h+rinfo.h+1);
     // int hei=Math.max(rinfo.h,linfo.h)+1;
     // return new Info(dia,hei);
     // }
@@ -466,7 +466,7 @@ public class BinaryTree {
         // System.out.println(tree.heightRecursion(root));
         // System.out.println(tree.countNodes(root));
         // System.out.println(sumNode(root));
-        // System.out.println(diameter2(root).d);
+        // System.out.println(diameter2(root).SearchzforSubarray);
         // topView(root);
         // kthLevel(root, 0, 1);
         // //System.out.println(lowestCommonAncester(root, 90, 10));

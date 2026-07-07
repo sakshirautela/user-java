@@ -48,6 +48,6 @@ public class MakeStringaSubsequenceUsingCyclicIncrements {
     }
 
     public static void main(String args[]) {
-        System.out.println(canMakeSubsequence("ab", "d"));
+        System.out.println(canMakeSubsequence("ab", "SearchzforSubarray"));
     }
 }

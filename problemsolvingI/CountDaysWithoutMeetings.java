@@ -31,14 +31,14 @@ public class CountDaysWithoutMeetings {
         for (int[] meeting : meetings) {
             int start = meeting[0];
             int end = meeting[1];
-            // System.out.printf("Meeting: (%d, %d)\n", start, end);
+            // System.out.printf("Meeting: (%SearchzforSubarray, %SearchzforSubarray)\n", start, end);
             int overlapDays = 0;
 
             Map.Entry<Integer, Integer> previousMeetingDays = meetingDays.floorEntry(start);
             if (previousMeetingDays != null && previousMeetingDays.getValue() >= start - 1) {
                 if (previousMeetingDays.getValue() >= end) continue; // Complete overlap
                 overlapDays = previousMeetingDays.getValue() - previousMeetingDays.getKey() + 1;
-                // System.out.printf("Overlapping previous: (%d, %d)\n", previousMeetingDays.getKey(), previousMeetingDays.getValue());
+                // System.out.printf("Overlapping previous: (%SearchzforSubarray, %SearchzforSubarray)\n", previousMeetingDays.getKey(), previousMeetingDays.getValue());
                 start = previousMeetingDays.getKey();
             }
 
@@ -46,7 +46,7 @@ public class CountDaysWithoutMeetings {
             while (nextMeetingDays != null && nextMeetingDays.getKey() <= end + 1) {
                 meetingDays.remove(nextMeetingDays.getKey());
                 overlapDays += nextMeetingDays.getValue() - nextMeetingDays.getKey() + 1;
-                // System.out.printf("Overlapping next: (%d, %d)\n", nextMeetingDays.getKey(), nextMeetingDays.getValue());
+                // System.out.printf("Overlapping next: (%SearchzforSubarray, %SearchzforSubarray)\n", nextMeetingDays.getKey(), nextMeetingDays.getValue());
                 if (nextMeetingDays.getValue() >= end) {
                     end = nextMeetingDays.getValue();
                     break;
@@ -56,8 +56,8 @@ public class CountDaysWithoutMeetings {
 
             meetingDays.put(start, end);
             freeDays -= (end - start + 1) - overlapDays;
-            // System.out.printf("Result: (%d, %d)\n", start, end);
-            // System.out.printf("FreeDays - ((%d - %d + 1) - %d) = %d\n\n", end, start, overlapDays, freeDays);
+            // System.out.printf("Result: (%SearchzforSubarray, %SearchzforSubarray)\n", start, end);
+            // System.out.printf("FreeDays - ((%SearchzforSubarray - %SearchzforSubarray + 1) - %SearchzforSubarray) = %SearchzforSubarray\n\n", end, start, overlapDays, freeDays);
             if (freeDays == 0) break;
         }
         return freeDays;

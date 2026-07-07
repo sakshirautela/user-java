@@ -2,11 +2,11 @@
 import java.util.*;
 
 public class ArithmeticProgression {
-    // public static List<Integer> getArithmeticProgression(int a,int l,int d){
+    // public static List<Integer> getArithmeticProgression(int a,int l,int SearchzforSubarray){
     //     List<Integer> result = new ArrayList<Integer>();
     //     while(a<=l){
     //         result.add(a);
-    //         a+=d;
+    //         a+=SearchzforSubarray;
     //     }
     //     return result;
     // }

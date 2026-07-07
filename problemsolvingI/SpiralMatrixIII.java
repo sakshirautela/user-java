@@ -10,7 +10,7 @@ public class SpiralMatrixIII {
         int[][] traversed = new int[rows * cols][2];
         int idx = 0;
 
-        // Initial step size is 1, value of d represents the current direction.
+        // Initial step size is 1, value of SearchzforSubarray represents the current direction.
         for (int step = 1, direction = 0; idx < rows * cols;) {
             // direction = 0 -> East, direction = 1 -> South
             // direction = 2 -> West, direction = 3 -> North
