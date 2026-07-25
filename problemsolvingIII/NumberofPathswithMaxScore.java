@@ -3,7 +3,7 @@ package problemsolvingIII;
 import java.util.*;
 
 public class NumberofPathswithMaxScore {
-    static void main() {
+    public static void main(String[] args) {
         int[] res = pathsWithMaxScore(new ArrayList<>(Arrays.asList("E23", "2X2", "12S")));
         System.out.println(res[0]+" "+res[1]);
     }

@@ -1,10 +1,9 @@
 package problemsolvingIII;
 
 public class ConcatenateNonZeroDigitsandMultiplybySumI {
-    static void main() {
-        System.out.println(sumAndMultiply(10203004));
+    public static void main(String[] args) {
+        System.out.println();
     }
-
     public static long sumAndMultiply(int n) {
         long sum = 0;
         long num = 0;
