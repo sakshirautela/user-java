@@ -1,40 +1,21 @@
-# 🚀 User Java
+# ☕ Java Engineering Masterclass — Core, OOP, Concurrency & System Design
 
-A comprehensive Java repository covering **Core Java**, **Object-Oriented Programming (OOP)**, **Data Structures & Algorithms (DSA)**, **System Design**, **Multithreading**, **Java 8+ features**, and coding interview preparation. This repository serves as a structured learning resource with hands-on implementations, problem-solving exercises, and real-world examples.
+[![Java](https://img.shields.io/badge/Java-17%2F21-orange.svg)](https://openjdk.org/)
+[![Multithreading](https://img.shields.io/badge/Concurrency-Lock--Free%20%26%20Executors-red.svg)](https://github.com/sakshirautela/user-java)
+[![Design Patterns](https://img.shields.io/badge/Patterns-GoF%20Enterprise-blue.svg)](https://github.com/sakshirautela/user-java)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 📂 Repository Structure
+> **Deep-dive Java repository** featuring Core Java internals, JVM memory model, Multithreading & Concurrent Collections, Java 8-21 Functional Streams, and OOP Design Patterns.
 
-* 📘 Core Java Concepts
-* 🏗️ Object-Oriented Programming (OOP)
-* ⚡ Multithreading & Concurrency
-* 🔄 Lambda Expressions & Functional Programming
-* ✅ Optional API
-* ⚠️ Exception Handling
-* 🗑️ Garbage Collection
-* 📝 Annotations
-* 🌳 Segment Tree
-* 💡 Bit Manipulation
-* 🛗 Lift System Design
-* 🏛️ System Design
-* 🏆 Contest Solutions
-* 🧩 DSA Problem Solving (I, II & III)
+---
 
-## 🎯 Features
+## 📚 Core Modules
 
-* Well-organised topic-wise Java implementations
-* Coding interview and competitive programming solutions
-* Practical examples of Java concepts
-* System Design implementations and design patterns
-* Regular updates with new problems and concepts
+* **Concurrency & JVM**: Thread pools (`ExecutorService`), `CompletableFuture`, volatile/atomic references, and garbage collection tuning.
+* **Modern Java Features**: Sealed classes, records, virtual threads (Project Loom), pattern matching, and functional stream collectors.
+* **Low-Level Design**: Document editor simulation, event dispatchers, and custom exception handling architectures.
 
-## 🛠️ Tech Stack
+---
 
-* Java
-* IntelliJ IDEA
-* Git & GitHub
-
-## 🎓 Purpose
-
-This repository documents my Java learning journey, interview preparation, and problem-solving practice. It is intended as a reference for students, developers, and anyone looking to strengthen their Java and software engineering fundamentals.
-
-⭐ If you find this repository helpful, consider giving it a star!
+## 📄 License
+MIT License © Sakshi Rautela
