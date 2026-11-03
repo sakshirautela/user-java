@@ -8,53 +8,71 @@ public class RemoveInvalidParentheses {
 //        System.out.println(isValid("())".toCharArray()));
     }
 
-    public static List<String> validParenthesis(String s) {
-        // code here
+    public static List<String> validParenthesisQueue(String s) {
         int n = s.length();
-        List<String> ans = new ArrayList<>();
-        HashSet<String> set = new HashSet<>();
-        char[] arr = s.toCharArray();
-        int open=0,close=0;
-        for(char c : arr) {
-            if(c=='('){
-                open++;
-            }else if(c==')'){
-                if(open!=0){
-                    open--;
-                }else{
-                    close++;
+        Queue<String> q = new LinkedList<>();
+        List<String> res = new LinkedList<>();
+        HashSet<String> visited = new HashSet<>();
+        return res;
+
+    }
+        public static List<String> validParenthesis(String s) {
+        int left = 0;
+        int right = 0;
+        Set<String> result = new HashSet<>();
+        int minRemovals;
+
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                left++;
+            } else if (c == ')') {
+                if (left > 0) {
+                    left--;
+                } else {
+                    right++;
                 }
             }
         }
-        validParenthesisUtil(arr, 0, n,open,close,0,"",ans,set);
-        return ans;
+
+        minRemovals = left + right;
+
+        dfs(s, 0, 0, 0, "", result, minRemovals);
+
+        return new ArrayList<>(result);
     }
 
-    private static void validParenthesisUtil(char[] arr, int i, int n, int open, int close, int pair, String s, List<String> ans, HashSet<String> set) {
-        if(i==n){
-            if(open==0 && close==0 && pair==0){
-                if (!set.contains(s)) {
-                    ans.add(s);
-                    set.add(s);
-                }            }
+    private static void dfs(String s, int index, int open, int close, String current, Set<String> result, int minRemovals) {
+        if (close > open) {
             return;
         }
-        if(arr[i]!='(' && arr[i]!=')'){
-            validParenthesisUtil(arr,i+1,n,open,close,pair,s+arr[i],ans,set);
-        }else{
-            if(arr[i]==')' ){
-                if(close>=1){
-                    validParenthesisUtil(arr,i+1,n,open,close-1,pair,s,ans,set);
-                }
-                if(pair>0) {
-                    validParenthesisUtil(arr, i + 1, n, open, close , pair - 1, s + arr[i], ans, set);
-                }
-            }else{
-                if(open>=1){
-                    validParenthesisUtil(arr,i+1,n,open-1,close,pair,s,ans,set);
-                }
-                validParenthesisUtil(arr, i + 1, n, open, close, pair + 1, s + arr[i], ans, set);
+        if(open>(s.length()-minRemovals)/2){
+            return;
+        }
+        if (index == s.length()) {
+            if (open == close && minRemovals == 0) {
+                result.add(current);
             }
+            return;
+        }
+        char c = s.charAt(index);
+        if (c == '(') {
+            if (minRemovals > 0) {
+                minRemovals--;
+                dfs(s, index + 1, open, close, current, result, minRemovals);
+                minRemovals++;
+            }
+            dfs(s, index + 1, open + 1, close, current + "(", result, minRemovals);
+        } else if (c == ')') {
+            if (minRemovals > 0) {
+                minRemovals--;
+                dfs(s, index + 1, open, close, current, result, minRemovals);
+                minRemovals++;
+            }
+            if (close < open) {
+                dfs(s, index + 1, open, close + 1, current + ")", result, minRemovals);
+            }
+        } else {
+            dfs(s, index + 1, open, close, current + c, result, minRemovals);
         }
     }
 }

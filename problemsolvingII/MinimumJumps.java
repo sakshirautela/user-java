@@ -1,6 +1,7 @@
 public class MinimumJumps {
     public static void main(String[] args) {
-        System.out.println(minJumps(new int[]{2 ,1 ,0 ,3 ,5 ,1 ,2}));
+
+        System.out.println(minJumps2(new int[]{1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9}));
     }
 
     public static int minJumps(int[] arr) {
@@ -31,4 +32,23 @@ public class MinimumJumps {
         }
         return result;
     }
+
+        public static int minJumps2(int[] arr) {
+            // code here
+            int n=arr.length;
+            int jumps=0;
+            int current=0;
+            int range=0;
+            for (int i = 0; i < n-1; i++) {
+                range=Math.max(arr[i]+i,range);
+                if(range>=n-1){
+                    return jumps;
+                }
+                if(i==current){
+                    current=range;
+                    jumps++;
+                }
+            }
+            return -1;
+        }
 }

@@ -10,22 +10,19 @@ public class LongestRepeatingCharacterReplacement {
     public static int longestSubstr(String s, int k) {
         // code here
         int n = s.length();
+        int[] freq=new int[26];
+        char[] ch=s.toCharArray();
         int i=0;
-        HashMap<Character, Integer> map = new HashMap<>();
-        int max = 0;
         int result=0;
-        for(int idx=0;idx<n;idx++){
-            char c=s.charAt(idx);
-            map.put(c,map.getOrDefault(c,0)+1);
-            max = Math.max(max,map.get(c));
-            while (i<n && idx-i-max+1>k){
-                map.put(s.charAt(i),map.getOrDefault(s.charAt(i),0)-1);
-                if(map.get(s.charAt(i))==0){
-                    map.remove(s.charAt(i));
-                }
+        int max=0;
+        for(int j=0;j<n;j++){
+            freq[ch[j]-'a']++;
+            max=Math.max(max,freq[ch[j]-'a']);
+            while ((j-i+1)-max>k){
+                freq[ch[i]-'a']--;
                 i++;
             }
-            result=Math.max(result,idx-i+1);
+            result=Math.max(result,j-i+1);
         }
         return result;
     }

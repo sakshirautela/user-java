@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Stack;
 
 public class ValidParenthesisString {
     static void main() {
@@ -6,39 +7,38 @@ public class ValidParenthesisString {
     }
 
     private static boolean checkValidString(String s) {
-        int n = s.length();
-        int[][] dp = new int[n][n];
-        for(int[] row : dp) {
-            Arrays.fill(row,-1);
-        }
-        return checkValidStringHeleper(0, s, n, 0,dp);
-    }
-
-    private static boolean checkValidStringHeleper(int open, String s, int n, int i, int[][] dp) {
-        if (i == n) {
-            return open == 0 ;
-        }
-        if(dp[open][i]!=-1){
-            return dp[open][i] == 1;
-        }
-        boolean res = false;
-        if (s.charAt(i) == '(') {
-            res =  checkValidStringHeleper(open+1, s, n, i + 1, dp);
-        } else if (s.charAt(i) == ')') {
-            if(open>0){
-                res =checkValidStringHeleper(open-1, s, n, i + 1, dp);
-            }else{
+       int n = s.length();
+       if(s.charAt(0) == ')'){
+           return false;
+       }
+        Stack<Integer> open = new Stack<>();
+        Stack<Integer> ch = new Stack<>();
+       for(int i=0;i<n;i++) {
+           if(s.charAt(i)=='(' ) {
+               open.push(i);
+           }else if (s.charAt(i)!='(' && s.charAt(i)!=')'){
+               ch.push(i);
+           }else  {
+               if(!open.isEmpty()){
+                   open.pop();
+               }else if(!ch.isEmpty()){
+                   ch.pop();
+               }else{
+                   return false;
+               }
+           }
+       }
+       while(!open.isEmpty() && !ch.isEmpty()) {
+            if(open.peek()>ch.peek()) {
                 return false;
             }
-        } else {
-             res|=checkValidStringHeleper(open+1, s, n, i + 1, dp);
-            if (open>0){
-                res|=checkValidStringHeleper(open-1, s, n, i + 1, dp);
-            }
-            res|=checkValidStringHeleper(open, s, n, i + 1, dp);
-        }
-         dp[open][i]= res?1:0;
-        return res;
+            open.pop();
+            ch.pop();
+       }
+       if(!open.isEmpty()){
+           return false;
+       }
+       return true;
     }
 
 }
